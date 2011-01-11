@@ -263,6 +263,18 @@ class Database
 
     public function designView($designDocument, $view)
     {
+        if (empty($designDocument)) {
+            throw new \InvalidArgumentException(
+                'supplied view design document must not be empty'
+            );
+        }
+
+        if (empty($view)) {
+            throw new \InvalidArgumentException(
+                'supplied view function must not be empty'
+            );
+        }
+
         $request = $this->getCouchDb()->createRequest(
             sprintf(
                 '/%s/_design/%s/_view/%s',
