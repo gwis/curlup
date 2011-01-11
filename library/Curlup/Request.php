@@ -29,7 +29,9 @@ class Request extends Message
     public function __construct(array $options = array())
     {
         $this->curlHandle = curl_init();
-        $this->headers = array();
+        $this->headers = array(
+            'Expect' => ''
+        );
         $this->queryData = array();
         $this->timeout = 10;
 
