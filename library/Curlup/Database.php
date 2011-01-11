@@ -326,9 +326,6 @@ class Database
      */
     public function fetchAttachment($docId, $attachmentId)
     {
-        $docId = (string)$docId;
-        $attachmentId = (string)$attachmentId;
-
         if (empty($docId)) {
             throw new \InvalidArgumentException(
                 'supplied document ID must not be empty'
@@ -356,8 +353,6 @@ class Database
 
     public function fetchDocument($id)
     {
-        $id = (string)$id;
-
         if (empty($id)) {
             throw new \InvalidArgumentException(
                 'supplied document ID must not be empty'
