@@ -144,13 +144,20 @@ class Request extends Message
      * Convenience method for sending a request and decoding the response
      *
      * This calls the {@see send()} method and then the
-     * {@see getJsonDecodedBody()} method, and returns the result.
+     * {@see Message::getJsonDecodedBody()} method, and returns the result.
+     *
+     * This function accepts parameters which will be passed directly to
+     * {@see Message::getJsonDecodedBody()}. This can be generally used to
+     * pass extra arguments to json_decode.
      *
      * @return mixed
      */
     public function sendAndDecode()
     {
-        return $this->send()->getJsonDecodedBody();
+        return call_user_func_array(
+            array($this->send(), 'getJsonDecodedBody'),
+            func_get_args()
+        );
     }
 
     public function setMethod($method)
