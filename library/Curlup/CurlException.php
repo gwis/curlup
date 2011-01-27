@@ -18,6 +18,17 @@
 
 namespace Curlup;
 
+/**
+ * Exception thrown when there is a cURL error
+ *
+ * cURL errors include, but are not limited to:
+ *
+ * <pre>
+ * connection errors
+ * timeouts
+ * invalid protocol stuff
+ * </pre>
+ */
 class CurlException extends Exception
 {
 }

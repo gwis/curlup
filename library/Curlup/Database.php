@@ -46,6 +46,11 @@ class Database
         $this->databaseName = $databaseName;
     }
 
+    /**
+     * Corresponds to the /<db>/_all_docs API endpoint
+     *
+     * @return Request
+     */
     public function allDocs()
     {
         $request = $this->getCouchDb()->createRequest(
@@ -59,6 +64,14 @@ class Database
         return $request;
     }
 
+    /**
+     * Corresponds to the /<db>/_all_docs API endpoint
+     *
+     * Accepts multiple document keys.
+     *
+     * @param $keys
+     * @return Request
+     */
     public function allDocsMultiKey(array $keys)
     {
         $request = $this->getCouchDb()->createRequest(
@@ -73,6 +86,16 @@ class Database
         return $request;
     }
 
+    /**
+     * Correponds to the /<db>/_bulk_docs API endpoint
+     *
+     * Accepts an array of documents, and the concurrency method you wish to
+     * use when attempting to persist them.
+     *
+     * @param $docs
+     * @param bool $allOrNothing See CouchDB documentation for details
+     * @return Request
+     */
     public function bulkDocs(array $docs, $allOrNothing = false)
     {
         $request = $this->getCouchDb()->createRequest(
@@ -92,6 +115,11 @@ class Database
         return $request;
     }
 
+    /**
+     * Corresponds to the /<db>/_changes API endpoint
+     *
+     * @return Request
+     */
     public function changes()
     {
         $request = $this->getCouchDb()->createRequest(
@@ -105,6 +133,11 @@ class Database
         return $request;
     }
 
+    /**
+     * Corresponds to the /<db>/_compact API endpoint
+     *
+     * @return Request
+     */
     public function compact()
     {
         $request = $this->getCouchDb()->createRequest(
@@ -118,13 +151,27 @@ class Database
         return $request;
     }
 
-    public function compactViews($designDocument)
+    /**
+     * Corresponds to the /<db>/_compact API endpoint
+     *
+     * Compacts all views in the given view group. See CouchDB documentation
+     * for more details.
+     *
+     * @return Request
+     */
+    public function compactViews($viewGroup)
     {
+        if (empty($viewGroup)) {
+            throw new \InvalidArgumentException(
+                'supplied view group must not be empty'
+            );
+        }
+
         $request = $this->getCouchDb()->createRequest(
             sprintf(
                 '/%s/_compact/%s',
                 urlencode($this->getDatabaseName()),
-                urlencode($designDocument)
+                urlencode($viewGroup)
             ),
             Request::HTTP_METHOD_POST
         );
@@ -132,6 +179,15 @@ class Database
         return $request;
     }
 
+    /**
+     * Delete the given document ID
+     *
+     * Corresponds to the DELETE /<db>/<docId> API endpoint
+     *
+     * @param string $id Document ID
+     * @param string $rev Revision ID to delete
+     * @return Request
+     */
     public function deleteDocument($id, $rev)
     {
         if (empty($id)) {
