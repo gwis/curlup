@@ -18,7 +18,7 @@
 
 namespace Curlup;
 
-class RequestPool implements Countable, Iterator
+class RequestPool
 {
     protected $curlMultiHandle;
     protected $requests;
@@ -55,16 +55,6 @@ class RequestPool implements Countable, Iterator
         return $this;
     }
 
-    public function count()
-    {
-        return count($this->requests);
-    }
-
-    public function current()
-    {
-        return current($this->requests);
-    }
-
     public function detach(Request $request)
     {
         $this->requests->detach($request);
@@ -85,26 +75,6 @@ class RequestPool implements Countable, Iterator
     public function getTimeout()
     {
         return $this->timeout;
-    }
-
-    public function key()
-    {
-        return key($this->requests);
-    }
-
-    public function next()
-    {
-        return next($this->requests);
-    }
-
-    public function rewind()
-    {
-        return rewind($this->requests);
-    }
-
-    public function valid()
-    {
-        return $this->requests->valid();
     }
 
     public function send()
