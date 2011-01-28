@@ -62,12 +62,28 @@ class CouchDbException extends Exception
      */
     public function __construct($message = '', $code = 0, \Exception $previous = null)
     {
-        parent::__construct($message, $code, $previous);
-
         $decodedMessage = json_decode($message);
 
-        $this->error = $decodedMessage->error;
-        $this->reason = $decodedMessage->reason;
+        $this->error = '';
+        $this->reason = '';
+
+        // Parse returned error if it is valid JSON
+        if (null !== $decodedMessage) {
+            // Overwrite 'code' if the JSON data contains one
+            if (isset($decodedMessage->code)) {
+                $code = $decodedMessage->code;
+            }
+
+            if (isset($decodedMessage->error)) {
+                $this->error = $decodedMessage->error;
+            }
+
+            if (isset($decodedMessage->reason)) {
+                $this->reason = $decodedMessage->reason;
+            }
+        }
+
+        parent::__construct($message, $code, $previous);
     }
 
     /**
