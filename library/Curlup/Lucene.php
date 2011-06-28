@@ -100,7 +100,7 @@ class Lucene
         }
 
         return $this->designView($designDocument, $view)
-            ->setQueryData(array('q' => $query));
+        ->setQueryData(array('q' => $query));
     }
 
     /**

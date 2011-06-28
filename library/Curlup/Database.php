@@ -94,7 +94,7 @@ class Database
             ),
             Request::HTTP_METHOD_POST
         )
-            ->setJsonDecodedBody(array('keys' => $keys));
+        ->setJsonDecodedBody(array('keys' => $keys));
 
         return $request;
     }
@@ -118,12 +118,12 @@ class Database
             ),
             Request::HTTP_METHOD_POST
         )
-            ->setJsonDecodedBody(
-                array(
-                    'all_or_nothing' => $allOrNothing,
-                    'docs' => $docs
-                )
-            );
+        ->setJsonDecodedBody(
+            array(
+                'all_or_nothing' => $allOrNothing,
+                'docs' => $docs
+            )
+        );
 
         return $request;
     }
@@ -223,7 +223,7 @@ class Database
             ),
             Request::HTTP_METHOD_DELETE
         )
-            ->setQueryData(array('rev' => $rev));
+        ->setQueryData(array('rev' => $rev));
 
         return $request;
     }
@@ -308,8 +308,8 @@ class Database
             $view,
             $viewDesignDocument
         )
-            ->setMethod(Request::HTTP_METHOD_POST)
-            ->setJsonDecodedBody(array('keys' => $keys));
+        ->setMethod(Request::HTTP_METHOD_POST)
+        ->setJsonDecodedBody(array('keys' => $keys));
 
         return $request;
     }
@@ -420,7 +420,7 @@ class Database
             ),
             Request::HTTP_METHOD_POST
         )
-            ->setJsonDecodedBody(array('keys' => $keys));
+        ->setJsonDecodedBody(array('keys' => $keys));
 
         return $request;
     }
@@ -538,8 +538,8 @@ class Database
             ),
             Request::HTTP_METHOD_POST
         )
-            ->addHeader('Content-Type', 'application/json;charset=UTF-8')
-            ->setBody($doc);
+        ->addHeader('Content-Type', 'application/json;charset=UTF-8')
+        ->setBody($doc);
 
         return $request;
     }
@@ -561,8 +561,8 @@ class Database
             ),
             Request::HTTP_METHOD_PUT
         )
-            ->addHeader('Content-Type', 'application/json;charset=UTF-8')
-            ->setBody($doc);
+        ->addHeader('Content-Type', 'application/json;charset=UTF-8')
+        ->setBody($doc);
 
         return $request;
     }
@@ -587,8 +587,8 @@ class Database
             ),
             Request::HTTP_METHOD_PUT
         )
-            ->setQueryData(array('rev' => $rev))
-            ->setBody($body);
+        ->setQueryData(array('rev' => $rev))
+        ->setBody($body);
 
         return $request;
     }
@@ -629,7 +629,7 @@ class Database
             ),
             $method
         )
-            ->setJsonDecodedBody($doc);
+        ->setJsonDecodedBody($doc);
 
         return $request;
     }
@@ -649,7 +649,7 @@ class Database
             ),
             Request::HTTP_METHOD_POST
         )
-            ->setJsonDecodedBody($viewFunction);
+        ->setJsonDecodedBody($viewFunction);
 
         return $request;
     }

@@ -247,7 +247,7 @@ class CouchDb
             '/_replicate',
             Request::HTTP_METHOD_POST
         )
-            ->setJsonDecodedBody($body);
+        ->setJsonDecodedBody($body);
 
         return $request;
     }
@@ -265,7 +265,7 @@ class CouchDb
             '/_restart',
             Request::HTTP_METHOD_POST
         )
-            ->addHeader('Content-Type', 'application/json;charset=UTF-8');
+        ->addHeader('Content-Type', 'application/json;charset=UTF-8');
 
         return $request;
     }
