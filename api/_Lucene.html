@@ -1,0 +1,270 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>DocBlox Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">Lucene.php</h1>
+<div class="file_menu">
+<a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Curlup</dd>
+<dt>package</dt>
+<dd>Curlup</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CCurlup%5CLucene">Lucene</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">curlup</p>
+<div class="long-description">
+</div>
+<a name="classes"></a><a id="\Curlup\Lucene"></a><h2 class="class">\Curlup\Lucene<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>category</dt>
+<dd>Curlup</dd>
+<dt>package</dt>
+<dd>Curlup</dd>
+<dt>Properties</dt>
+<dd><a class="property protected" href="#%5CCurlup%5CLucene::%24database">$database</a></dd>
+<dt>Methods</dt>
+<dd><a class="method public" href="#%5CCurlup%5CLucene::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CLucene::designView()">designView</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CLucene::query()">query</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CLucene::escape()">escape</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">couchdb-lucene instance</p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Curlup\Lucene::$database"></a><h4 class="property protected">$database<div class="to-top"><a href="#%5CCurlup%5CLucene">jump to class</a></div>
+</h4>
+<div class="property">
+<code><a href="_Database.html#%5CCurlup%5CDatabase">\Curlup\Database</a> <span class="highlight">$database</span> = ''</code><p class="short-description">Database instance</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>
+<a href="_Database.html#%5CCurlup%5CDatabase">\Curlup\Database</a><br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Curlup\Lucene::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#Lucene">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+           $database
+          )
+        </span>
+        :
+        </code><p class="short-description">Accepts a CouchDB database instance</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$database</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\Lucene::designView()"></a><h4 class="method public">designView<div class="to-top"><a href="#Lucene">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">designView</span><span class="nb-faded-text">(
+          \Curlup\$designDocument $designDocument, \Curlup\$view $view
+          )
+        </span>
+        :
+        <a href="_Request.html#%5CCurlup%5CRequest">\Curlup\Request</a></code><p class="short-description">Query a couchdb-lucene index</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$designDocument</dt>
+<dd>\Curlup\$designDocument<br><em>Name of the design document</em>
+</dd>
+<dt>$view</dt>
+<dd>\Curlup\$view<br><em>View index in the design document to query</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Request.html#%5CCurlup%5CRequest">\Curlup\Request</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\Lucene::escape()"></a><h4 class="method public">escape<div class="to-top"><a href="#Lucene">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">escape</span><span class="nb-faded-text">(
+          \string $query
+          )
+        </span>
+        :
+        \string</code><p class="short-description">Escape special query characters</p>
+<div class="long-description"><p>Adapted from Apache Solr</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$query</dt>
+<dd>\string<br><em>Query string to escape</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>true</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\Lucene::query()"></a><h4 class="method public">query<div class="to-top"><a href="#Lucene">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">query</span><span class="nb-faded-text">(
+          \Curlup\$designDocument $query, \Curlup\$view $designDocument,  $view
+          )
+        </span>
+        :
+        <a href="_Request.html#%5CCurlup%5CRequest">\Curlup\Request</a></code><p class="short-description">Convenience function for issuing a query to a couchdb-lucene view index</p>
+<div class="long-description"><p>$param string $query Lucene query to issue</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$query</dt>
+<dd>\Curlup\$designDocument<br><em>Name of the design document</em>
+</dd>
+<dt>$designDocument</dt>
+<dd>\Curlup\$view<br><em>View index in the design document to query</em>
+</dd>
+<dt>$view</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Request.html#%5CCurlup%5CRequest">\Curlup\Request</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.11.0</a>.
+    </small></body></html>

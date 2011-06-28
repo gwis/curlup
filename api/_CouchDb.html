@@ -1,0 +1,737 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>DocBlox Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">CouchDb.php</h1>
+<div class="file_menu">
+<a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Curlup</dd>
+<dt>package</dt>
+<dd>Curlup</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CCurlup%5CCouchDb">CouchDb</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">curlup</p>
+<div class="long-description">
+</div>
+<a name="classes"></a><a id="\Curlup\CouchDb"></a><h2 class="class">\Curlup\CouchDb<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>category</dt>
+<dd>Curlup</dd>
+<dt>package</dt>
+<dd>Curlup</dd>
+<dt>Properties</dt>
+<dd><a class="property protected" href="#%5CCurlup%5CCouchDb::%24uri">$uri</a></dd>
+<dd><a class="property protected" href="#%5CCurlup%5CCouchDb::%24timeout">$timeout</a></dd>
+<dt>Methods</dt>
+<dd><a class="method public" href="#%5CCurlup%5CCouchDb::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CCouchDb::createRequest()">createRequest</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CCouchDb::createRequestPool()">createRequestPool</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CCouchDb::getUri()">getUri</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CCouchDb::getTimeout()">getTimeout</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CCouchDb::setOptions()">setOptions</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CCouchDb::setTimeout()">setTimeout</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CCouchDb::setUri()">setUri</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CCouchDb::allDbs()">allDbs</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CCouchDb::activeTasks()">activeTasks</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CCouchDb::log()">log</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CCouchDb::replicate()">replicate</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CCouchDb::restart()">restart</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CCouchDb::root()">root</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CCouchDb::stats()">stats</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CCouchDb::uuids()">uuids</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">CouchDB instance</p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Curlup\CouchDb::$timeout"></a><h4 class="property protected">$timeout<div class="to-top"><a href="#%5CCurlup%5CCouchDb">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\int <span class="highlight">$timeout</span> = ''</code><p class="short-description">Timeout for requests created from this object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\int<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\CouchDb::$uri"></a><h4 class="property protected">$uri<div class="to-top"><a href="#%5CCurlup%5CCouchDb">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\string <span class="highlight">$uri</span> = ''</code><p class="short-description">URI for the local CouchDB instance</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\string<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Curlup\CouchDb::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#CouchDb">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+           $options
+              =
+              array
+          )
+        </span>
+        :
+        </code><p class="short-description">Constructor</p>
+<div class="long-description"><p>Options passed to the constructor will be passed to {@see setOptions()}</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$options</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\CouchDb::activeTasks()"></a><h4 class="method public">activeTasks<div class="to-top"><a href="#CouchDb">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">activeTasks</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Request.html#%5CCurlup%5CRequest">\Curlup\Request</a></code><p class="short-description">Corresponds to the _active_tasks API endpoint</p>
+<div class="long-description"><p>http://wiki.apache.org/couchdb/HttpGetActiveTasks</p>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Request.html#%5CCurlup%5CRequest">\Curlup\Request</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\CouchDb::allDbs()"></a><h4 class="method public">allDbs<div class="to-top"><a href="#CouchDb">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">allDbs</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Request.html#%5CCurlup%5CRequest">\Curlup\Request</a></code><p class="short-description">Corresponds to the _all_dbs API endpoint</p>
+<div class="long-description"><p>http://wiki.apache.org/couchdb/HttpGetAllDbs</p>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Request.html#%5CCurlup%5CRequest">\Curlup\Request</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\CouchDb::createRequest()"></a><h4 class="method public">createRequest<div class="to-top"><a href="#CouchDb">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">createRequest</span><span class="nb-faded-text">(
+          \string $path, \string $method
+          )
+        </span>
+        :
+        <a href="_Request.html#%5CCurlup%5CRequest">\Curlup\Request</a></code><p class="short-description">Generate a new request</p>
+<div class="long-description"><p>Requests should be generated using this method, because then some of
+the options that were set up when the instance of the CouchDb object
+were created can be passed along.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$path</dt>
+<dd>\string<br><em>URI path (requires leading slash if you want one)</em>
+</dd>
+<dt>$method</dt>
+<dd>\string<br><em>Request method</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Request.html#%5CCurlup%5CRequest">\Curlup\Request</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\CouchDb::createRequestPool()"></a><h4 class="method public">createRequestPool<div class="to-top"><a href="#CouchDb">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">createRequestPool</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_RequestPool.html#%5CCurlup%5CRequestPool">\Curlup\RequestPool</a></code><p class="short-description">Generate a new request pool</p>
+<div class="long-description"><p>Request pools should be generated using this method, because then some of
+the options that were set up when the instance of the CouchDb object
+were created can be passed along.</p>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_RequestPool.html#%5CCurlup%5CRequestPool">\Curlup\RequestPool</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\CouchDb::getTimeout()"></a><h4 class="method public">getTimeout<div class="to-top"><a href="#CouchDb">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getTimeout</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \int</code><p class="short-description">Set the timeout for requests created from this object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\int</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\CouchDb::getUri()"></a><h4 class="method public">getUri<div class="to-top"><a href="#CouchDb">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getUri</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \string</code><p class="short-description">Get the base CouchDB URI</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\string</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\CouchDb::log()"></a><h4 class="method public">log<div class="to-top"><a href="#CouchDb">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">log</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Request.html#%5CCurlup%5CRequest">\Curlup\Request</a></code><p class="short-description">Corresponds to the _log API endpoint</p>
+<div class="long-description"><p>http://wiki.apache.org/couchdb/HttpGetLog</p>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Request.html#%5CCurlup%5CRequest">\Curlup\Request</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\CouchDb::replicate()"></a><h4 class="method public">replicate<div class="to-top"><a href="#CouchDb">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">replicate</span><span class="nb-faded-text">(
+          \Curlup\$body $body
+          )
+        </span>
+        :
+        <a href="_Request.html#%5CCurlup%5CRequest">\Curlup\Request</a></code><p class="short-description">Corresponds to the _replicate API endpoint</p>
+<div class="long-description"><p>http://wiki.apache.org/couchdb/Replication</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$body</dt>
+<dd>\Curlup\$body<br><em>Replication POST body as a PHP data structure</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Request.html#%5CCurlup%5CRequest">\Curlup\Request</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\CouchDb::restart()"></a><h4 class="method public">restart<div class="to-top"><a href="#CouchDb">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">restart</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Request.html#%5CCurlup%5CRequest">\Curlup\Request</a></code><p class="short-description">Corresponds to the _restart API endpoint</p>
+<div class="long-description"><p>http://wiki.apache.org/couchdb/Complete_HTTP_API_Reference</p>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Request.html#%5CCurlup%5CRequest">\Curlup\Request</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\CouchDb::root()"></a><h4 class="method public">root<div class="to-top"><a href="#CouchDb">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">root</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Request.html#%5CCurlup%5CRequest">\Curlup\Request</a></code><p class="short-description">Corresponds to the / (root) API endpoint</p>
+<div class="long-description"><p>http://wiki.apache.org/couchdb/HttpGetRoot</p>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Request.html#%5CCurlup%5CRequest">\Curlup\Request</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\CouchDb::setOptions()"></a><h4 class="method public">setOptions<div class="to-top"><a href="#CouchDb">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setOptions</span><span class="nb-faded-text">(
+           $options
+          )
+        </span>
+        :
+        <a href="_CouchDb.html#%5CCurlup%5CCouchDb">\Curlup\CouchDb</a></code><p class="short-description">Set options for this object</p>
+<div class="long-description"><p>All array keys passed will be filtered through a method call that will be
+generated by capitalizing the first letter of the key and prepending
+'set'.</p>
+
+<p>Implements a fluent interface.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$options</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_CouchDb.html#%5CCurlup%5CCouchDb">\Curlup\CouchDb</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\CouchDb::setTimeout()"></a><h4 class="method public">setTimeout<div class="to-top"><a href="#CouchDb">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setTimeout</span><span class="nb-faded-text">(
+           $timeout
+          )
+        </span>
+        :
+        \Curlup\self</code><p class="short-description">Set the timeout for requests created from this object</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$timeout</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\Curlup\self</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\CouchDb::setUri()"></a><h4 class="method public">setUri<div class="to-top"><a href="#CouchDb">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setUri</span><span class="nb-faded-text">(
+          \Curlup\$uri $uri
+          )
+        </span>
+        :
+        \Curlup\self</code><p class="short-description">Set the base CouchDB URI</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$uri</dt>
+<dd>\Curlup\$uri<br><em>URI</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\Curlup\self</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\CouchDb::stats()"></a><h4 class="method public">stats<div class="to-top"><a href="#CouchDb">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">stats</span><span class="nb-faded-text">(
+          \Curlup\$name $name
+              =
+              array
+          )
+        </span>
+        :
+        <a href="_Request.html#%5CCurlup%5CRequest">\Curlup\Request</a></code><p class="short-description">Corresponds to the _stats API endpoint</p>
+<div class="long-description"><p>http://wiki.apache.org/couchdb/Runtime_Statistics</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$name</dt>
+<dd>\Curlup\$name<br><em>A group/key pair for specific stat retrieval</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Request.html#%5CCurlup%5CRequest">\Curlup\Request</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+<dt>throws</dt>
+<dd>when $name has an invalid member count</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\CouchDb::uuids()"></a><h4 class="method public">uuids<div class="to-top"><a href="#CouchDb">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">uuids</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_Request.html#%5CCurlup%5CRequest">\Curlup\Request</a></code><p class="short-description">Corresponds to the _uuids API endpoint</p>
+<div class="long-description"><p>http://wiki.apache.org/couchdb/HttpGetUuids</p>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_Request.html#%5CCurlup%5CRequest">\Curlup\Request</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.11.0</a>.
+    </small></body></html>

@@ -1,0 +1,2118 @@
+<?xml version="1.0"?>
+<project version="0.11.0" title="">
+  <file path="Exception.php" hash="d26be73c7d60772e86e073b4cfaacb05">
+    <docblock>
+      <description>curlup</description>
+      <long-description>
+</long-description>
+      <tag name="category" description="Curlup"/>
+      <tag name="package" description="Curlup"/>
+    </docblock>
+    <class final="false" abstract="false" line="34" namespace="Curlup">
+      <name>Exception</name>
+      <extends>\RuntimeException</extends>
+      <full_name>\Curlup\Exception</full_name>
+      <docblock>
+        <description>Base Curlup exception</description>
+        <long-description>
+</long-description>
+        <tag name="category" description="Curlup" line="28"/>
+        <tag name="package" description="Curlup" line="28"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="CurlException.php" hash="94a8a90123debe0e96d17d0e40e0ca07">
+    <docblock>
+      <description>curlup</description>
+      <long-description>
+</long-description>
+      <tag name="category" description="Curlup"/>
+      <tag name="package" description="Curlup"/>
+    </docblock>
+    <class final="false" abstract="false" line="42" namespace="Curlup">
+      <name>CurlException</name>
+      <extends>\Curlup\Exception</extends>
+      <full_name>\Curlup\CurlException</full_name>
+      <docblock>
+        <description>Exception thrown when there is a cURL error</description>
+        <long-description>&lt;p&gt;cURL errors include, but are not limited to:&lt;/p&gt;
+
+&lt;pre&gt;
+connection errors
+timeouts
+invalid protocol stuff
+&lt;/pre&gt;
+</long-description>
+        <tag name="category" description="Curlup" line="28"/>
+        <tag name="package" description="Curlup" line="28"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="CouchDb.php" hash="b183a1d72a084bcc590bdba99e5f6a5a">
+    <docblock>
+      <description>curlup</description>
+      <long-description>
+</long-description>
+      <tag name="category" description="Curlup"/>
+      <tag name="package" description="Curlup"/>
+    </docblock>
+    <class final="false" abstract="false" line="34" namespace="Curlup">
+      <name>CouchDb</name>
+      <extends/>
+      <full_name>\Curlup\CouchDb</full_name>
+      <docblock>
+        <description>CouchDB instance</description>
+        <long-description>
+</long-description>
+        <tag name="category" description="Curlup" line="28"/>
+        <tag name="package" description="Curlup" line="28"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="41">
+        <name>$uri</name>
+        <default/>
+        <docblock>
+          <description>URI for the local CouchDB instance</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\string" line="36">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="48">
+        <name>$timeout</name>
+        <default/>
+        <docblock>
+          <description>Timeout for requests created from this object</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\int" line="43">
+            <type by_reference="false">\int</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="57">
+        <name>__construct</name>
+        <docblock>
+          <description>Constructor</description>
+          <long-description>&lt;p&gt;Options passed to the constructor will be passed to {@see setOptions()}&lt;/p&gt;
+</long-description>
+          <tag name="param" description="" type="" variable="$options" line="50"/>
+        </docblock>
+        <argument line="57">
+          <name>$options</name>
+          <default>array</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="73">
+        <name>createRequest</name>
+        <docblock>
+          <description>Generate a new request</description>
+          <long-description>&lt;p&gt;Requests should be generated using this method, because then some of
+the options that were set up when the instance of the CouchDb object
+were created can be passed along.&lt;/p&gt;
+</long-description>
+          <tag name="param" description="URI path (requires leading slash if you want one)" type="\string" variable="$path" line="62">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="Request method" type="\string" variable="$method" line="62">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\Request" line="62">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="73">
+          <name>$path</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="73">
+          <name>$method</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="95">
+        <name>createRequestPool</name>
+        <docblock>
+          <description>Generate a new request pool</description>
+          <long-description>&lt;p&gt;Request pools should be generated using this method, because then some of
+the options that were set up when the instance of the CouchDb object
+were created can be passed along.&lt;/p&gt;
+</long-description>
+          <tag name="return" description="" type="\Curlup\RequestPool" line="86">
+            <type by_reference="false">\Curlup\RequestPool</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="107">
+        <name>getUri</name>
+        <docblock>
+          <description>Get the base CouchDB URI</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\string" line="102">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="117">
+        <name>getTimeout</name>
+        <docblock>
+          <description>Set the timeout for requests created from this object</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\int" line="112">
+            <type by_reference="false">\int</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="134">
+        <name>setOptions</name>
+        <docblock>
+          <description>Set options for this object</description>
+          <long-description>&lt;p&gt;All array keys passed will be filtered through a method call that will be
+generated by capitalizing the first letter of the key and prepending
+'set'.&lt;/p&gt;
+
+&lt;p&gt;Implements a fluent interface.&lt;/p&gt;
+</long-description>
+          <tag name="param" description="" type="" variable="$options" line="122"/>
+          <tag name="return" description="" type="\Curlup\CouchDb" line="122">
+            <type by_reference="false">\Curlup\CouchDb</type>
+          </tag>
+        </docblock>
+        <argument line="134">
+          <name>$options</name>
+          <default/>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="153">
+        <name>setTimeout</name>
+        <docblock>
+          <description>Set the timeout for requests created from this object</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="" type="" variable="$timeout" line="147"/>
+          <tag name="return" description="" type="\Curlup\self" line="147">
+            <type by_reference="false">\Curlup\self</type>
+          </tag>
+        </docblock>
+        <argument line="153">
+          <name>$timeout</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="175">
+        <name>setUri</name>
+        <docblock>
+          <description>Set the base CouchDB URI</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="URI" type="\Curlup\$uri" variable="$uri" line="169">
+            <type by_reference="false">\Curlup\$uri</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\self" line="169">
+            <type by_reference="false">\Curlup\self</type>
+          </tag>
+        </docblock>
+        <argument line="175">
+          <name>$uri</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="192">
+        <name>allDbs</name>
+        <docblock>
+          <description>Corresponds to the _all_dbs API endpoint</description>
+          <long-description>&lt;p&gt;http://wiki.apache.org/couchdb/HttpGetAllDbs&lt;/p&gt;
+</long-description>
+          <tag name="return" description="" type="\Curlup\Request" line="185">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="209">
+        <name>activeTasks</name>
+        <docblock>
+          <description>Corresponds to the _active_tasks API endpoint</description>
+          <long-description>&lt;p&gt;http://wiki.apache.org/couchdb/HttpGetActiveTasks&lt;/p&gt;
+</long-description>
+          <tag name="return" description="" type="\Curlup\Request" line="202">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="226">
+        <name>log</name>
+        <docblock>
+          <description>Corresponds to the _log API endpoint</description>
+          <long-description>&lt;p&gt;http://wiki.apache.org/couchdb/HttpGetLog&lt;/p&gt;
+</long-description>
+          <tag name="return" description="" type="\Curlup\Request" line="219">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="244">
+        <name>replicate</name>
+        <docblock>
+          <description>Corresponds to the _replicate API endpoint</description>
+          <long-description>&lt;p&gt;http://wiki.apache.org/couchdb/Replication&lt;/p&gt;
+</long-description>
+          <tag name="param" description="Replication POST body as a PHP data structure" type="\Curlup\$body" variable="$body" line="236">
+            <type by_reference="false">\Curlup\$body</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\Request" line="236">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="244">
+          <name>$body</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="262">
+        <name>restart</name>
+        <docblock>
+          <description>Corresponds to the _restart API endpoint</description>
+          <long-description>&lt;p&gt;http://wiki.apache.org/couchdb/Complete_HTTP_API_Reference&lt;/p&gt;
+</long-description>
+          <tag name="return" description="" type="\Curlup\Request" line="255">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="280">
+        <name>root</name>
+        <docblock>
+          <description>Corresponds to the / (root) API endpoint</description>
+          <long-description>&lt;p&gt;http://wiki.apache.org/couchdb/HttpGetRoot&lt;/p&gt;
+</long-description>
+          <tag name="return" description="" type="\Curlup\Request" line="273">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="299">
+        <name>stats</name>
+        <docblock>
+          <description>Corresponds to the _stats API endpoint</description>
+          <long-description>&lt;p&gt;http://wiki.apache.org/couchdb/Runtime_Statistics&lt;/p&gt;
+</long-description>
+          <tag name="param" description="A group/key pair for specific stat retrieval" type="\Curlup\$name" variable="$name" line="290">
+            <type by_reference="false">\Curlup\$name</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\Request" line="290">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+          <tag name="throws" description="when $name has an invalid member count" type="\InvalidArgumentException" line="290">
+            <type by_reference="false">\InvalidArgumentException</type>
+          </tag>
+        </docblock>
+        <argument line="299">
+          <name>$name</name>
+          <default>array</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="332">
+        <name>uuids</name>
+        <docblock>
+          <description>Corresponds to the _uuids API endpoint</description>
+          <long-description>&lt;p&gt;http://wiki.apache.org/couchdb/HttpGetUuids&lt;/p&gt;
+</long-description>
+          <tag name="return" description="" type="\Curlup\Request" line="325">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Message.php" hash="5c7c0b5240ce30c2107ef1b071b05dee">
+    <docblock>
+      <description>curlup</description>
+      <long-description>
+</long-description>
+      <tag name="category" description="Curlup"/>
+      <tag name="package" description="Curlup"/>
+    </docblock>
+    <class final="false" abstract="false" line="34" namespace="Curlup">
+      <name>Message</name>
+      <extends/>
+      <full_name>\Curlup\Message</full_name>
+      <docblock>
+        <description>CouchDB HTTP message</description>
+        <long-description>
+</long-description>
+        <tag name="category" description="Curlup" line="28"/>
+        <tag name="package" description="Curlup" line="28"/>
+      </docblock>
+      <constant namespace="Curlup" line="41">
+        <name>HTTP_METHOD_DELETE</name>
+        <value>DELETE</value>
+        <docblock>
+          <description>HTTP DELETE</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\string" line="36">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <constant namespace="Curlup" line="48">
+        <name>HTTP_METHOD_COPY</name>
+        <value>COPY</value>
+        <docblock>
+          <description>HTTP COPY</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\string" line="43">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <constant namespace="Curlup" line="55">
+        <name>HTTP_METHOD_GET</name>
+        <value>GET</value>
+        <docblock>
+          <description>HTTP GET</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\string" line="50">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <constant namespace="Curlup" line="62">
+        <name>HTTP_METHOD_HEAD</name>
+        <value>HEAD</value>
+        <docblock>
+          <description>HTTP HEAD</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\string" line="57">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <constant namespace="Curlup" line="69">
+        <name>HTTP_METHOD_POST</name>
+        <value>POST</value>
+        <docblock>
+          <description>HTTP POST</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\string" line="64">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <constant namespace="Curlup" line="76">
+        <name>HTTP_METHOD_PUT</name>
+        <value>PUT</value>
+        <docblock>
+          <description>HTTP PUT</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\string" line="71">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <property final="false" static="false" visibility="protected" line="83">
+        <name>$body</name>
+        <default/>
+        <docblock>
+          <description>HTTP message body</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\string" line="78">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="90">
+        <name>$headers</name>
+        <default/>
+        <docblock>
+          <description>HTTP headers</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\array" line="85">
+            <type by_reference="false">\array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="97">
+        <name>$httpVersion</name>
+        <default/>
+        <docblock>
+          <description>HTTP message version</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\string" line="92">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="104">
+        <name>$responseCode</name>
+        <default/>
+        <docblock>
+          <description>HTTP response code</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\int" line="99">
+            <type by_reference="false">\int</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="111">
+        <name>$responseStatus</name>
+        <default/>
+        <docblock>
+          <description>HTTP response status line</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\string" line="106">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="113">
+        <name>__construct</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="126">
+        <name>addHeader</name>
+        <docblock>
+          <description>Add a header key/value pair</description>
+          <long-description>&lt;p&gt;Will overwrite existing headers.&lt;/p&gt;
+</long-description>
+          <tag name="param" description="Header key" type="\string" variable="$header" line="118">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="Header value" type="\string" variable="$value" line="118">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="126">
+          <name>$header</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="126">
+          <name>$value</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="138">
+        <name>getBody</name>
+        <docblock>
+          <description>Fetch the body of the message</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\string" line="133">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="148">
+        <name>getHeaders</name>
+        <docblock>
+          <description>Fetch the current header key/value pairs</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\array" line="143">
+            <type by_reference="false">\array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="158">
+        <name>getHttpVersion</name>
+        <docblock>
+          <description>Return the current HTTP version</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\string" line="153">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="170">
+        <name>getJsonDecodedBody</name>
+        <docblock>
+          <description>Decodes and returns the body of the message, assuming it is JSON-encoded</description>
+          <long-description>&lt;p&gt;Accepts optional parameters which are passed directly to json_decode&lt;/p&gt;
+</long-description>
+          <tag name="return" description="" type="\mixed" line="163">
+            <type by_reference="false">\mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="183">
+        <name>getResponseCode</name>
+        <docblock>
+          <description>Return the current HTTP response code</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\int" line="178">
+            <type by_reference="false">\int</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="193">
+        <name>getResponseStatus</name>
+        <docblock>
+          <description>Return the current HTTP response status</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\string" line="188">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="203">
+        <name>setBody</name>
+        <docblock>
+          <description>Set the raw body of the messag</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\Curlup\Message" line="198">
+            <type by_reference="false">\Curlup\Message</type>
+          </tag>
+        </docblock>
+        <argument line="203">
+          <name>$body</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="215">
+        <name>setHeaders</name>
+        <docblock>
+          <description>Set the raw body of the messag</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\Curlup\Message" line="210">
+            <type by_reference="false">\Curlup\Message</type>
+          </tag>
+        </docblock>
+        <argument line="215">
+          <name>$headers</name>
+          <default/>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="227">
+        <name>setHttpVersion</name>
+        <docblock>
+          <description>Set the HTTP version for the message</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\Curlup\Message" line="222">
+            <type by_reference="false">\Curlup\Message</type>
+          </tag>
+        </docblock>
+        <argument line="227">
+          <name>$version</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="242">
+        <name>setJsonDecodedBody</name>
+        <docblock>
+          <description>Encodes the body of the message as JSON and sets as the message body</description>
+          <long-description>&lt;p&gt;Accepts optional arguments which are passed directly to json_encode.
+Sets/overwrites the Content-Type header appropriately.&lt;/p&gt;
+</long-description>
+          <tag name="return" description="" type="\Curlup\Message" line="234">
+            <type by_reference="false">\Curlup\Message</type>
+          </tag>
+        </docblock>
+        <argument line="242">
+          <name>$body</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="263">
+        <name>setOptions</name>
+        <docblock>
+          <description>Set multiple values for the Message object</description>
+          <long-description>&lt;p&gt;You may use this as a shortcut for setting options, but the method
+names must conform to&lt;/p&gt;
+
+&lt;pre&gt;'set' . ucfirst($key)&lt;/pre&gt;
+
+&lt;p&gt;and the
+methods can only accept a single value.&lt;/p&gt;
+</long-description>
+          <tag name="param" description="" type="" variable="$options" line="253"/>
+          <tag name="return" description="" type="\Curlup\Message" line="253">
+            <type by_reference="false">\Curlup\Message</type>
+          </tag>
+        </docblock>
+        <argument line="263">
+          <name>$options</name>
+          <default/>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="282">
+        <name>setResponseCode</name>
+        <docblock>
+          <description>Set HTTP code</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="" type="\int" variable="$code" line="276">
+            <type by_reference="false">\int</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\Message" line="276">
+            <type by_reference="false">\Curlup\Message</type>
+          </tag>
+        </docblock>
+        <argument line="282">
+          <name>$code</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="304">
+        <name>setResponseStatus</name>
+        <docblock>
+          <description>Set HTTP response status</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="" type="\string" variable="$status" line="298">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\Message" line="298">
+            <type by_reference="false">\Curlup\Message</type>
+          </tag>
+        </docblock>
+        <argument line="304">
+          <name>$status</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Response.php" hash="b405547b8f7d907aa37c91c9ae8c9962">
+    <docblock>
+      <description>curlup</description>
+      <long-description>
+</long-description>
+      <tag name="category" description="Curlup"/>
+      <tag name="package" description="Curlup"/>
+    </docblock>
+    <class final="false" abstract="false" line="34" namespace="Curlup">
+      <name>Response</name>
+      <extends>\Curlup\Message</extends>
+      <full_name>\Curlup\Response</full_name>
+      <docblock>
+        <description>CouchDB HTTP response</description>
+        <long-description>
+</long-description>
+        <tag name="category" description="Curlup" line="28"/>
+        <tag name="package" description="Curlup" line="28"/>
+      </docblock>
+      <property final="false" static="true" visibility="protected" line="41">
+        <name>$throwsExceptions</name>
+        <default>true</default>
+        <docblock>
+          <description>Determine whether or not to throw exceptions on error</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\bool" line="36">
+            <type by_reference="false">\bool</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="true" visibility="public" line="49">
+        <name>factory</name>
+        <docblock>
+          <description>Create a valid Response object from a raw HTTP message</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="" type="\string" variable="$rawMessage" line="43">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\Response" line="43">
+            <type by_reference="false">\Curlup\Response</type>
+          </tag>
+        </docblock>
+        <argument line="49">
+          <name>$rawMessage</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" line="88">
+        <name>getThrowsExceptions</name>
+        <docblock>
+          <description>Get the state of the throwsExceptions option</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\bool" line="83">
+            <type by_reference="false">\bool</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" line="99">
+        <name>setThrowsExceptions</name>
+        <docblock>
+          <description>Set the state of the throwsExceptions option</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="" type="\bool" variable="$flag" line="93">
+            <type by_reference="false">\bool</type>
+          </tag>
+          <tag name="return" description="" type="\void" line="93">
+            <type by_reference="false">\void</type>
+          </tag>
+        </docblock>
+        <argument line="99">
+          <name>$flag</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Lucene.php" hash="8f04f2c47ad214a4f3444badc18f71f2">
+    <docblock>
+      <description>curlup</description>
+      <long-description>
+</long-description>
+      <tag name="category" description="Curlup"/>
+      <tag name="package" description="Curlup"/>
+    </docblock>
+    <class final="false" abstract="false" line="34" namespace="Curlup">
+      <name>Lucene</name>
+      <extends/>
+      <full_name>\Curlup\Lucene</full_name>
+      <docblock>
+        <description>couchdb-lucene instance</description>
+        <long-description>
+</long-description>
+        <tag name="category" description="Curlup" line="28"/>
+        <tag name="package" description="Curlup" line="28"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="41">
+        <name>$database</name>
+        <default/>
+        <docblock>
+          <description>Database instance</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\Curlup\Database" line="36">
+            <type by_reference="false">\Curlup\Database</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="48">
+        <name>__construct</name>
+        <docblock>
+          <description>Accepts a CouchDB database instance</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="" type="" variable="$database" line="43"/>
+        </docblock>
+        <argument line="48">
+          <name>$database</name>
+          <default/>
+          <type>Database</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="60">
+        <name>designView</name>
+        <docblock>
+          <description>Query a couchdb-lucene index</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="Name of the design document" type="\Curlup\$designDocument" variable="$designDocument" line="53">
+            <type by_reference="false">\Curlup\$designDocument</type>
+          </tag>
+          <tag name="param" description="View index in the design document to query" type="\Curlup\$view" variable="$view" line="53">
+            <type by_reference="false">\Curlup\$view</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\Request" line="53">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="60">
+          <name>$designDocument</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="60">
+          <name>$view</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="94">
+        <name>query</name>
+        <docblock>
+          <description>Convenience function for issuing a query to a couchdb-lucene view index</description>
+          <long-description>&lt;p&gt;$param string $query Lucene query to issue&lt;/p&gt;
+</long-description>
+          <tag name="param" description="Name of the design document" type="\Curlup\$designDocument" variable="$query" line="86">
+            <type by_reference="false">\Curlup\$designDocument</type>
+          </tag>
+          <tag name="param" description="View index in the design document to query" type="\Curlup\$view" variable="$designDocument" line="86">
+            <type by_reference="false">\Curlup\$view</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\Request" line="86">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="94">
+          <name>$query</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="94">
+          <name>$designDocument</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="94">
+          <name>$view</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" line="114">
+        <name>escape</name>
+        <docblock>
+          <description>Escape special query characters</description>
+          <long-description>&lt;p&gt;Adapted from Apache Solr&lt;/p&gt;
+</long-description>
+          <tag name="param" description="Query string to escape" type="\string" variable="$query" line="106">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\string" line="106">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="114">
+          <name>$query</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="RequestPool.php" hash="bfd841b1bef1c3ae4661d17e316c6870">
+    <docblock>
+      <description>curlup</description>
+      <long-description>
+</long-description>
+      <tag name="category" description="Curlup"/>
+      <tag name="package" description="Curlup"/>
+    </docblock>
+    <namespace-alias name="SplObjectStorage">SplObjectStorage</namespace-alias>
+    <class final="false" abstract="false" line="36" namespace="Curlup">
+      <name>RequestPool</name>
+      <extends/>
+      <full_name>\Curlup\RequestPool</full_name>
+      <docblock>
+        <description>CouchDB HTTP request pool</description>
+        <long-description>
+</long-description>
+        <tag name="category" description="Curlup" line="30"/>
+        <tag name="package" description="Curlup" line="30"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="43">
+        <name>$curlMultiHandle</name>
+        <default/>
+        <docblock>
+          <description>Current cURL multi handle</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\resource" line="38">
+            <type by_reference="false">\resource</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="50">
+        <name>$requests</name>
+        <default/>
+        <docblock>
+          <description>Requests added to the pool</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\SplObjectStorage" line="45">
+            <type by_reference="false">\SplObjectStorage</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="57">
+        <name>$responses</name>
+        <default/>
+        <docblock>
+          <description>Responses added to the pool</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\SplObjectStorage" line="52">
+            <type by_reference="false">\SplObjectStorage</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="64">
+        <name>$timeout</name>
+        <default/>
+        <docblock>
+          <description>Timeout for the entire request pool</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\int" line="59">
+            <type by_reference="false">\int</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="66">
+        <name>__construct</name>
+        <argument line="66">
+          <name>$options</name>
+          <default>array</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="77">
+        <name>__destruct</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="88">
+        <name>attach</name>
+        <docblock>
+          <description>Add a request to the pool</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="Request to attach" type="\Curlup\$request" variable="$request" line="82">
+            <type by_reference="false">\Curlup\$request</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\RequestPool" line="82">
+            <type by_reference="false">\Curlup\RequestPool</type>
+          </tag>
+        </docblock>
+        <argument line="88">
+          <name>$request</name>
+          <default/>
+          <type>Request</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="100">
+        <name>clear</name>
+        <docblock>
+          <description>Clear all requests in the pool</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\Curlup\RequestPool" line="95">
+            <type by_reference="false">\Curlup\RequestPool</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="113">
+        <name>detach</name>
+        <docblock>
+          <description>Remove a specific request from the pool</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="Request to remove" type="\Curlup\$request" variable="$request" line="107">
+            <type by_reference="false">\Curlup\$request</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\RequestPool" line="107">
+            <type by_reference="false">\Curlup\RequestPool</type>
+          </tag>
+        </docblock>
+        <argument line="113">
+          <name>$request</name>
+          <default/>
+          <type>Request</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="125">
+        <name>getRequests</name>
+        <docblock>
+          <description>Get the current requests</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\SplObjectStorage" line="120">
+            <type by_reference="false">\SplObjectStorage</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="135">
+        <name>getResponses</name>
+        <docblock>
+          <description>Get the current responses</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\SplObjectStorage" line="130">
+            <type by_reference="false">\SplObjectStorage</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="145">
+        <name>getTimeout</name>
+        <docblock>
+          <description>Get the timeout</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\int" line="140">
+            <type by_reference="false">\int</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="157">
+        <name>send</name>
+        <docblock>
+          <description>Send (execute) all requests in the pool</description>
+          <long-description>&lt;p&gt;Returns SplObjectStorage container of responses.&lt;/p&gt;
+</long-description>
+          <tag name="return" description="" type="\SplObjectStorage" line="150">
+            <type by_reference="false">\SplObjectStorage</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="250">
+        <name>setOptions</name>
+        <docblock>
+          <description>Set multiple values for the RequestPool object</description>
+          <long-description>&lt;p&gt;You may use this as a shortcut for setting options, but the method
+names must conform to&lt;/p&gt;
+
+&lt;pre&gt;'set' . ucfirst($key)&lt;/pre&gt;
+
+&lt;p&gt;and the
+methods can only accept a single value.&lt;/p&gt;
+</long-description>
+          <tag name="param" description="" type="" variable="$options" line="240"/>
+          <tag name="return" description="" type="\Curlup\RequestPool" line="240">
+            <type by_reference="false">\Curlup\RequestPool</type>
+          </tag>
+        </docblock>
+        <argument line="250">
+          <name>$options</name>
+          <default/>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="269">
+        <name>setTimeout</name>
+        <docblock>
+          <description>Set the timeout</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="" type="\int" variable="$timeout" line="263">
+            <type by_reference="false">\int</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\RequestPool" line="263">
+            <type by_reference="false">\Curlup\RequestPool</type>
+          </tag>
+        </docblock>
+        <argument line="269">
+          <name>$timeout</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Request.php" hash="8058933ae9458a32162deb0a81118b51">
+    <docblock>
+      <description>curlup</description>
+      <long-description>
+</long-description>
+      <tag name="category" description="Curlup"/>
+      <tag name="package" description="Curlup"/>
+    </docblock>
+    <class final="false" abstract="false" line="34" namespace="Curlup">
+      <name>Request</name>
+      <extends>\Curlup\Message</extends>
+      <full_name>\Curlup\Request</full_name>
+      <docblock>
+        <description>CouchDB HTTP request</description>
+        <long-description>
+</long-description>
+        <tag name="category" description="Curlup" line="28"/>
+        <tag name="package" description="Curlup" line="28"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="41">
+        <name>$curlHandle</name>
+        <default/>
+        <docblock>
+          <description>Current cURL handle</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\resource" line="36">
+            <type by_reference="false">\resource</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="48">
+        <name>$method</name>
+        <default/>
+        <docblock>
+          <description>HTTP method</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\string" line="43">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="55">
+        <name>$queryData</name>
+        <default/>
+        <docblock>
+          <description>Query data key/values</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\array" line="50">
+            <type by_reference="false">\array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="62">
+        <name>$timeout</name>
+        <default/>
+        <docblock>
+          <description>Timeout, in seconds</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\int" line="57">
+            <type by_reference="false">\int</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="69">
+        <name>$uri</name>
+        <default/>
+        <docblock>
+          <description>URI for the request</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\string" line="64">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="71">
+        <name>__construct</name>
+        <argument line="71">
+          <name>$options</name>
+          <default>array</default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="83">
+        <name>__destruct</name>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="96">
+        <name>addQueryData</name>
+        <docblock>
+          <description>Add a query string key/value pair</description>
+          <long-description>&lt;p&gt;Will overwrite existing query string keys.&lt;/p&gt;
+</long-description>
+          <tag name="param" description="Query string key" type="\string" variable="$header" line="88">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="Query string value" type="\string" variable="$value" line="88">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="96">
+          <name>$key</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="96">
+          <name>$value</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="108">
+        <name>getCurlHandle</name>
+        <docblock>
+          <description>Get the current cURL handle</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\resource" line="103">
+            <type by_reference="false">\resource</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="118">
+        <name>getCurlOptions</name>
+        <docblock>
+          <description>Get the current cURL options (based on the current options)</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\array" line="113">
+            <type by_reference="false">\array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="168">
+        <name>getMethod</name>
+        <docblock>
+          <description>Get the HTTP method</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\string" line="163">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="178">
+        <name>getQueryData</name>
+        <docblock>
+          <description>Get the query data key/value pairs</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\array" line="173">
+            <type by_reference="false">\array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="188">
+        <name>getTimeout</name>
+        <docblock>
+          <description>Get the timeout</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\int" line="183">
+            <type by_reference="false">\int</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="198">
+        <name>getUri</name>
+        <docblock>
+          <description>Get the URI</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\string" line="193">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="208">
+        <name>send</name>
+        <docblock>
+          <description>Set up the cURL handle, perform the request, and return the response</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\Curlup\Response" line="203">
+            <type by_reference="false">\Curlup\Response</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="239">
+        <name>sendAndDecode</name>
+        <docblock>
+          <description>Convenience method for sending a request and decoding the response</description>
+          <long-description>&lt;p&gt;This calls the {@see send()} method and then the
+{@see Message::getJsonDecodedBody()} method, and returns the result.&lt;/p&gt;
+
+&lt;p&gt;This function accepts parameters which will be passed directly to
+{@see Message::getJsonDecodedBody()}. This can be generally used to
+pass extra arguments to json_decode.&lt;/p&gt;
+</long-description>
+          <tag name="return" description="" type="\mixed" line="227">
+            <type by_reference="false">\mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="253">
+        <name>setMethod</name>
+        <docblock>
+          <description>Set the HTTP method</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="" type="\string" variable="$method" line="247">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\Request" line="247">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="253">
+          <name>$method</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="266">
+        <name>setQueryData</name>
+        <docblock>
+          <description>Set the query data key/value pairs</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="" type="" variable="$queryData" line="260"/>
+          <tag name="return" description="" type="\Curlup\Request" line="260">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="266">
+          <name>$queryData</name>
+          <default/>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="279">
+        <name>setTimeout</name>
+        <docblock>
+          <description>Set the timeout</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="" type="\int" variable="$timeout" line="273">
+            <type by_reference="false">\int</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\Request" line="273">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="279">
+          <name>$timeout</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="301">
+        <name>setUri</name>
+        <docblock>
+          <description>Set the URI</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="" type="\string" variable="$uri" line="295">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\Request" line="295">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="301">
+          <name>$uri</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="CouchDbException.php" hash="e4d19f2763fbbee9c603da6ddb46ccf3">
+    <docblock>
+      <description>curlup</description>
+      <long-description>
+</long-description>
+      <tag name="category" description="Curlup"/>
+      <tag name="package" description="Curlup"/>
+    </docblock>
+    <class final="false" abstract="false" line="42" namespace="Curlup">
+      <name>CouchDbException</name>
+      <extends>\Curlup\Exception</extends>
+      <full_name>\Curlup\CouchDbException</full_name>
+      <docblock>
+        <description>Exception thrown when there is a CouchDB error</description>
+        <long-description>&lt;p&gt;CouchDB errors include, but are not limited to:&lt;/p&gt;
+
+&lt;pre&gt;
+cannot find a document
+unexpected or invalid values in headers
+CouchDB crashed
+&lt;/pre&gt;
+</long-description>
+        <tag name="category" description="Curlup" line="28"/>
+        <tag name="package" description="Curlup" line="28"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="54">
+        <name>$error</name>
+        <default/>
+        <docblock>
+          <description>Error as reported by CouchDB</description>
+          <long-description>&lt;p&gt;These are not currently well-documented, but they are represented here
+as a string, and in the CouchDB source code as an erlang atom.&lt;/p&gt;
+
+&lt;p&gt;Example: "not_found"&lt;/p&gt;
+</long-description>
+          <tag name="var" description="" type="\string" line="44">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="65">
+        <name>$reason</name>
+        <default/>
+        <docblock>
+          <description>Reason for error as reported by CouchDB</description>
+          <long-description>&lt;p&gt;These are not currently well-documented, but they are strings.&lt;/p&gt;
+
+&lt;p&gt;Example: "missing"&lt;/p&gt;
+</long-description>
+          <tag name="var" description="" type="\string" line="56">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="73">
+        <name>__construct</name>
+        <docblock>
+          <description>Constructor</description>
+          <long-description>&lt;p&gt;Decodes the message, which since it comes from CouchDB is assumed to
+be valid JSON, and then sets up the exception members.&lt;/p&gt;
+</long-description>
+        </docblock>
+        <argument line="73">
+          <name>$message</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="73">
+          <name>$code</name>
+          <default>0</default>
+          <type/>
+        </argument>
+        <argument line="73">
+          <name>$previous</name>
+          <default>null</default>
+          <type>Exception</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="104">
+        <name>getError</name>
+        <docblock>
+          <description>Retrieve the CouchDB error</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\string" line="99">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="114">
+        <name>getReason</name>
+        <docblock>
+          <description>Retrieve the CouchDB error reason</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\string" line="109">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Database.php" hash="1210b297bf84c4c192f8c3d3e772e945">
+    <docblock>
+      <description>curlup</description>
+      <long-description>
+</long-description>
+      <tag name="category" description="Curlup"/>
+      <tag name="package" description="Curlup"/>
+    </docblock>
+    <class final="false" abstract="false" line="34" namespace="Curlup">
+      <name>Database</name>
+      <extends/>
+      <full_name>\Curlup\Database</full_name>
+      <docblock>
+        <description>CouchDB database</description>
+        <long-description>
+</long-description>
+        <tag name="category" description="Curlup" line="28"/>
+        <tag name="package" description="Curlup" line="28"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="41">
+        <name>$couchDb</name>
+        <default/>
+        <docblock>
+          <description>CouchDB instance</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\Curlup\CouchDb" line="36">
+            <type by_reference="false">\Curlup\CouchDb</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="48">
+        <name>$databaseName</name>
+        <default/>
+        <docblock>
+          <description>Database name</description>
+          <long-description>
+</long-description>
+          <tag name="var" description="" type="\string" line="43">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" line="56">
+        <name>__construct</name>
+        <docblock>
+          <description>Accepts a CouchDB instance and a database name</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="" type="" variable="$couchDb" line="50"/>
+          <tag name="param" description="" type="\string" variable="$databaseName" line="50">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+        <argument line="56">
+          <name>$couchDb</name>
+          <default/>
+          <type>CouchDb</type>
+        </argument>
+        <argument line="56">
+          <name>$databaseName</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="67">
+        <name>allDocs</name>
+        <docblock>
+          <description>Corresponds to the /&lt;db&gt;/_all_docs API endpoint</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\Curlup\Request" line="62">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="88">
+        <name>allDocsMultiKey</name>
+        <docblock>
+          <description>Corresponds to the /&lt;db&gt;/_all_docs API endpoint</description>
+          <long-description>&lt;p&gt;Accepts multiple document keys.&lt;/p&gt;
+</long-description>
+          <tag name="param" description="" type="" variable="$keys" line="80"/>
+          <tag name="return" description="" type="\Curlup\Request" line="80">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="88">
+          <name>$keys</name>
+          <default/>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="112">
+        <name>bulkDocs</name>
+        <docblock>
+          <description>Correponds to the /&lt;db&gt;/_bulk_docs API endpoint</description>
+          <long-description>&lt;p&gt;Accepts an array of documents, and the concurrency method you wish to
+use when attempting to persist them.&lt;/p&gt;
+</long-description>
+          <tag name="param" description="" type="" variable="$docs" line="102"/>
+          <tag name="param" description="See CouchDB documentation for details" type="\bool" variable="$allOrNothing" line="102">
+            <type by_reference="false">\bool</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\Request" line="102">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="112">
+          <name>$docs</name>
+          <default/>
+          <type>array</type>
+        </argument>
+        <argument line="112">
+          <name>$allOrNothing</name>
+          <default>false</default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="136">
+        <name>changes</name>
+        <docblock>
+          <description>Corresponds to the /&lt;db&gt;/_changes API endpoint</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\Curlup\Request" line="131">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="154">
+        <name>compact</name>
+        <docblock>
+          <description>Corresponds to the /&lt;db&gt;/_compact API endpoint</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\Curlup\Request" line="149">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="175">
+        <name>compactViews</name>
+        <docblock>
+          <description>Corresponds to the /&lt;db&gt;/_compact API endpoint</description>
+          <long-description>&lt;p&gt;Compacts all views in the given view group. See CouchDB documentation
+for more details.&lt;/p&gt;
+</long-description>
+          <tag name="return" description="" type="\Curlup\Request" line="167">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="175">
+          <name>$viewGroup</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="204">
+        <name>deleteDocument</name>
+        <docblock>
+          <description>Delete the given document ID</description>
+          <long-description>&lt;p&gt;Corresponds to the DELETE /&lt;db&gt;/&lt;docId&gt; API endpoint&lt;/p&gt;
+</long-description>
+          <tag name="param" description="Document ID" type="\string" variable="$id" line="195">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="Revision ID to delete" type="\string" variable="$rev" line="195">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\Request" line="195">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="204">
+          <name>$id</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="204">
+          <name>$rev</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="242">
+        <name>designList</name>
+        <docblock>
+          <description>Fetch results of a list function in a given design document</description>
+          <long-description>&lt;p&gt;Corresponds to the GET /&lt;db&gt;/_design/&lt;ddoc&gt;/_list/&lt;listId&gt;/&lt;viewId&gt;/?&lt;viewddoc&gt; API endpoint&lt;/p&gt;
+</long-description>
+          <tag name="param" description="List function" type="\string" variable="$list" line="231">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="List design document" type="\string" variable="$listDesignDocument" line="231">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="View function" type="\string" variable="$view" line="231">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="Optional view design document" type="\string" variable="$viewDesignDocument" line="231">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\Request" line="231">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="242">
+          <name>$list</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="242">
+          <name>$listDesignDocument</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="242">
+          <name>$view</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="242">
+          <name>$viewDesignDocument</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="303">
+        <name>designListMultiKey</name>
+        <docblock>
+          <description>Fetch results of specific keys against a list function in a given design document</description>
+          <long-description>&lt;p&gt;Corresponds to the POST /&lt;db&gt;/_design/&lt;ddoc&gt;/_list/&lt;listId&gt;/&lt;viewId&gt;/?&lt;viewddoc&gt; API endpoint&lt;/p&gt;
+</long-description>
+          <tag name="param" description="Keys to query for" type="\Curlup\$keys" variable="$keys" line="291">
+            <type by_reference="false">\Curlup\$keys</type>
+          </tag>
+          <tag name="param" description="List function" type="\string" variable="$list" line="291">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="List design document" type="\string" variable="$listDesignDocument" line="291">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="View function" type="\string" variable="$view" line="291">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="Optional view design document" type="\string" variable="$viewDesignDocument" line="291">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\Request" line="291">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="303">
+          <name>$keys</name>
+          <default/>
+          <type>array</type>
+        </argument>
+        <argument line="303">
+          <name>$list</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="303">
+          <name>$listDesignDocument</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="303">
+          <name>$view</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="303">
+          <name>$viewDesignDocument</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="327">
+        <name>designShow</name>
+        <docblock>
+          <description>Fetch results of a show function in a given design document against a given document</description>
+          <long-description>&lt;p&gt;Corresponds to the GET /&lt;db&gt;/_design/&lt;ddoc&gt;/_show/&lt;showId&gt;/&lt;docId&gt; API endpoint&lt;/p&gt;
+</long-description>
+          <tag name="param" description="Show function" type="\string" variable="$show" line="317">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="Show design document" type="\string" variable="$showDesignDocument" line="317">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="Document ID to show" type="\string" variable="$docId" line="317">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\Request" line="317">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="327">
+          <name>$show</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="327">
+          <name>$showDesignDocument</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="327">
+          <name>$docId</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="375">
+        <name>designView</name>
+        <docblock>
+          <description>Fetch results of a view function in a given design document</description>
+          <long-description>&lt;p&gt;Corresponds to the GET /&lt;db&gt;/_design/&lt;ddoc&gt;/_view/&lt;viewId&gt; API endpoint&lt;/p&gt;
+</long-description>
+          <tag name="param" description="View design document" type="\string" variable="$designDocument" line="366">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="View function" type="\string" variable="$view" line="366">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\Request" line="366">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="375">
+          <name>$designDocument</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="375">
+          <name>$view</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="412">
+        <name>designViewMultiKey</name>
+        <docblock>
+          <description>Fetch results of specific keys against a view function in a given design document</description>
+          <long-description>&lt;p&gt;Corresponds to the GET /&lt;db&gt;/_design/&lt;ddoc&gt;/_view/&lt;viewId&gt; API endpoint&lt;/p&gt;
+</long-description>
+          <tag name="param" description="Keys to query for" type="\Curlup\$keys" variable="$keys" line="402">
+            <type by_reference="false">\Curlup\$keys</type>
+          </tag>
+          <tag name="param" description="View design document" type="\string" variable="$designDocument" line="402">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="View function" type="\string" variable="$view" line="402">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\Request" line="402">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="412">
+          <name>$keys</name>
+          <default/>
+          <type>array</type>
+        </argument>
+        <argument line="412">
+          <name>$designDocument</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="412">
+          <name>$view</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="433">
+        <name>ensureFullCommit</name>
+        <docblock>
+          <description>Corresponds to the POST /&lt;db&gt;/_ensure_full_commit API endpoint</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\Curlup\Request" line="428">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="453">
+        <name>fetchAttachment</name>
+        <docblock>
+          <description>Retrieve a single attachment from the database by attachment ID</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="Document for the attachment" type="\string" variable="$docId" line="446">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="Attachment id" type="\string" variable="$attachmentId" line="446">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\Request" line="446">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="453">
+          <name>$docId</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="453">
+          <name>$attachmentId</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="486">
+        <name>fetchDocument</name>
+        <docblock>
+          <description>Retrieve a single document from the database by document ID</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="Document ID" type="\string" variable="$id" line="480">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\Request" line="480">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="486">
+          <name>$id</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="511">
+        <name>getCouchDb</name>
+        <docblock>
+          <description>Get the underlying CouchDB instance</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\Curlup\CouchDb" line="506">
+            <type by_reference="false">\Curlup\CouchDb</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="521">
+        <name>getDatabaseName</name>
+        <docblock>
+          <description>Get the current database name</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\string" line="516">
+            <type by_reference="false">\string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="532">
+        <name>postRawDocument</name>
+        <docblock>
+          <description>POST a raw pre-encoded JSON document to the database</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="JSON-encoded document" type="\string" variable="$doc" line="526">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\Request" line="526">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="532">
+          <name>$doc</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="554">
+        <name>putRawDocument</name>
+        <docblock>
+          <description>PUT a raw pre-encoded JSON document to the database</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="JSON-encoded document" type="\string" variable="$doc" line="547">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="Document ID" type="\string" variable="$id" line="547">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\Request" line="547">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="554">
+          <name>$doc</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="554">
+          <name>$id</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="579">
+        <name>saveAttachment</name>
+        <docblock>
+          <description>Attach something to a document</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="Attachment body" type="\string" variable="$body" line="570">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="Document ID to attach to" type="\string" variable="$docId" line="570">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="Attachment ID" type="\string" variable="$attachmentId" line="570">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="param" description="Document revision to attach to" type="\string" variable="$rev" line="570">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\Request" line="570">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="579">
+          <name>$body</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="579">
+          <name>$docId</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="579">
+          <name>$attachmentId</name>
+          <default/>
+          <type/>
+        </argument>
+        <argument line="579">
+          <name>$rev</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="602">
+        <name>saveDocument</name>
+        <docblock>
+          <description>Persist a document to the database</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="Array or object representation of a document" type="\Curlup\$doc" variable="$doc" line="596">
+            <type by_reference="false">\Curlup\$doc</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\Request" line="596">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="602">
+          <name>$doc</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="643">
+        <name>tempView</name>
+        <docblock>
+          <description>Corresponds to the /&lt;db&gt;/_temp_view API endpoint</description>
+          <long-description>
+</long-description>
+          <tag name="param" description="View function to execute on the server" type="\string" variable="$viewFunction" line="637">
+            <type by_reference="false">\string</type>
+          </tag>
+          <tag name="return" description="" type="\Curlup\Request" line="637">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="643">
+          <name>$viewFunction</name>
+          <default/>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" line="662">
+        <name>viewCleanup</name>
+        <docblock>
+          <description>Corresponds to the /&lt;db&gt;/_view_cleanup API endpoint</description>
+          <long-description>
+</long-description>
+          <tag name="return" description="" type="\Curlup\Request" line="657">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <package name=""/>
+  <package name="Curlup"/>
+  <namespace name="Curlup"/>
+  <marker>todo</marker>
+  <marker>fixme</marker>
+</project>

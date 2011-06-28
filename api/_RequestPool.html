@@ -1,0 +1,579 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>DocBlox Documentation</title><meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta><link rel="stylesheet" href="css/black-tie/jquery-ui-1.8.2.custom.css" type="text/css"></link><link rel="stylesheet" href="css/jquery.treeview.css" type="text/css"></link><link rel="stylesheet" href="css/theme.css" type="text/css"></link><script type="text/javascript" src="js/jquery-1.4.2.min.js"></script><script type="text/javascript" src="js/jquery-ui-1.8.2.custom.min.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/jquery.treeview.js"></script><script type="text/javascript">
+            $(document).ready(function() {
+                $(".filetree").treeview({
+                    collapsed: true,
+                    persist: "cookie"
+                });
+
+                $("#accordion").accordion({
+                    collapsible: true,
+                    autoHeight:  false,
+                    fillSpace:   true
+                });
+
+                $(".tabs").tabs();
+            });
+        </script></head><body><div xmlns="" id="content">
+<script>
+      $(document).ready(function() {
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().css('cursor', 'pointer');
+        $('dl.function-info, dl.constant-info, dl.property-info').prev().click(function() {
+          if ($(this).next().is(':hidden'))
+          {
+            $(this).children('img')[0].src = 'images/arrow_down.gif';
+          } else
+          {
+            $(this).children('img')[0].src = 'images/arrow_right.gif';
+          }
+          $(this).next().slideToggle();
+        });
+      $('dl.function-info, dl.constant-info, dl.property-info').hide();
+      $('dl.function-info img, dl.constant-info img, dl.property-info img').show();
+      });
+    </script><a name="top"></a><h1 class="file">RequestPool.php</h1>
+<div class="file_menu">
+<a href="#classes">Classes</a> </div>
+<dl class="file-info">
+<dt>category</dt>
+<dd>Curlup</dd>
+<dt>package</dt>
+<dd>Curlup</dd>
+<dt>Classes</dt>
+<dd><a class="class" href="#%5CCurlup%5CRequestPool">RequestPool</a></dd>
+</dl>
+<h2>Description</h2>
+<p class="short-description">curlup</p>
+<div class="long-description">
+</div>
+<a name="classes"></a><a id="\Curlup\RequestPool"></a><h2 class="class">\Curlup\RequestPool<div class="to-top"><a href="#top">jump to top</a></div>
+</h2>
+<div class="class">
+<dl class="class-info">
+<dt>category</dt>
+<dd>Curlup</dd>
+<dt>package</dt>
+<dd>Curlup</dd>
+<dt>Properties</dt>
+<dd><a class="property protected" href="#%5CCurlup%5CRequestPool::%24curlMultiHandle">$curlMultiHandle</a></dd>
+<dd><a class="property protected" href="#%5CCurlup%5CRequestPool::%24requests">$requests</a></dd>
+<dd><a class="property protected" href="#%5CCurlup%5CRequestPool::%24responses">$responses</a></dd>
+<dd><a class="property protected" href="#%5CCurlup%5CRequestPool::%24timeout">$timeout</a></dd>
+<dt>Methods</dt>
+<dd><a class="method public" href="#%5CCurlup%5CRequestPool::__construct()">__construct</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CRequestPool::__destruct()">__destruct</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CRequestPool::attach()">attach</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CRequestPool::clear()">clear</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CRequestPool::detach()">detach</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CRequestPool::getRequests()">getRequests</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CRequestPool::getResponses()">getResponses</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CRequestPool::getTimeout()">getTimeout</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CRequestPool::send()">send</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CRequestPool::setOptions()">setOptions</a></dd>
+<dd><a class="method public" href="#%5CCurlup%5CRequestPool::setTimeout()">setTimeout</a></dd>
+</dl>
+<h3>Description</h3>
+<p class="short-description">CouchDB HTTP request pool</p>
+<div class="long-description">
+</div>
+<h3>Properties</h3>
+<div>
+<a id="\Curlup\RequestPool::$curlMultiHandle"></a><h4 class="property protected">$curlMultiHandle<div class="to-top"><a href="#%5CCurlup%5CRequestPool">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\resource <span class="highlight">$curlMultiHandle</span> = ''</code><p class="short-description">Current cURL multi handle</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\resource<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\RequestPool::$requests"></a><h4 class="property protected">$requests<div class="to-top"><a href="#%5CCurlup%5CRequestPool">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\SplObjectStorage <span class="highlight">$requests</span> = ''</code><p class="short-description">Requests added to the pool</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\SplObjectStorage<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\RequestPool::$responses"></a><h4 class="property protected">$responses<div class="to-top"><a href="#%5CCurlup%5CRequestPool">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\SplObjectStorage <span class="highlight">$responses</span> = ''</code><p class="short-description">Responses added to the pool</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\SplObjectStorage<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\RequestPool::$timeout"></a><h4 class="property protected">$timeout<div class="to-top"><a href="#%5CCurlup%5CRequestPool">jump to class</a></div>
+</h4>
+<div class="property">
+<code>\int <span class="highlight">$timeout</span> = ''</code><p class="short-description">Timeout for the entire request pool</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h4 class="info">
+<img src="images/arrow_right.gif"> Details</h4>
+<dl class="property-info">
+<dt></dt>
+<dd>\int<br><em></em>
+</dd>
+<dt>visibility</dt>
+<dd>protected</dd>
+<dt>default</dt>
+<dd></dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+<h3>Methods</h3>
+<div>
+<a id="\Curlup\RequestPool::__construct()"></a><h4 class="method public">__construct<div class="to-top"><a href="#RequestPool">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__construct</span><span class="nb-faded-text">(
+           $options
+              =
+              array
+          )
+        </span>
+        :
+        </code><div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$options</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\RequestPool::__destruct()"></a><h4 class="method public">__destruct<div class="to-top"><a href="#RequestPool">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">__destruct</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        </code><div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\RequestPool::attach()"></a><h4 class="method public">attach<div class="to-top"><a href="#RequestPool">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">attach</span><span class="nb-faded-text">(
+          \Curlup\$request $request
+          )
+        </span>
+        :
+        <a href="_RequestPool.html#%5CCurlup%5CRequestPool">\Curlup\RequestPool</a></code><p class="short-description">Add a request to the pool</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$request</dt>
+<dd>\Curlup\$request<br><em>Request to attach</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_RequestPool.html#%5CCurlup%5CRequestPool">\Curlup\RequestPool</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\RequestPool::clear()"></a><h4 class="method public">clear<div class="to-top"><a href="#RequestPool">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">clear</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        <a href="_RequestPool.html#%5CCurlup%5CRequestPool">\Curlup\RequestPool</a></code><p class="short-description">Clear all requests in the pool</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_RequestPool.html#%5CCurlup%5CRequestPool">\Curlup\RequestPool</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\RequestPool::detach()"></a><h4 class="method public">detach<div class="to-top"><a href="#RequestPool">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">detach</span><span class="nb-faded-text">(
+          \Curlup\$request $request
+          )
+        </span>
+        :
+        <a href="_RequestPool.html#%5CCurlup%5CRequestPool">\Curlup\RequestPool</a></code><p class="short-description">Remove a specific request from the pool</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$request</dt>
+<dd>\Curlup\$request<br><em>Request to remove</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_RequestPool.html#%5CCurlup%5CRequestPool">\Curlup\RequestPool</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\RequestPool::getRequests()"></a><h4 class="method public">getRequests<div class="to-top"><a href="#RequestPool">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getRequests</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \SplObjectStorage</code><p class="short-description">Get the current requests</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\SplObjectStorage</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\RequestPool::getResponses()"></a><h4 class="method public">getResponses<div class="to-top"><a href="#RequestPool">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getResponses</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \SplObjectStorage</code><p class="short-description">Get the current responses</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\SplObjectStorage</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\RequestPool::getTimeout()"></a><h4 class="method public">getTimeout<div class="to-top"><a href="#RequestPool">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">getTimeout</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \int</code><p class="short-description">Get the timeout</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\int</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\RequestPool::send()"></a><h4 class="method public">send<div class="to-top"><a href="#RequestPool">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">send</span><span class="nb-faded-text">(
+          
+          )
+        </span>
+        :
+        \SplObjectStorage</code><p class="short-description">Send (execute) all requests in the pool</p>
+<div class="long-description"><p>Returns SplObjectStorage container of responses.</p>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\SplObjectStorage</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\RequestPool::setOptions()"></a><h4 class="method public">setOptions<div class="to-top"><a href="#RequestPool">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setOptions</span><span class="nb-faded-text">(
+           $options
+          )
+        </span>
+        :
+        <a href="_RequestPool.html#%5CCurlup%5CRequestPool">\Curlup\RequestPool</a></code><p class="short-description">Set multiple values for the RequestPool object</p>
+<div class="long-description"><p>You may use this as a shortcut for setting options, but the method
+names must conform to</p>
+
+<pre>'set' . ucfirst($key)</pre>
+
+<p>and the
+methods can only accept a single value.</p>
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$options</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_RequestPool.html#%5CCurlup%5CRequestPool">\Curlup\RequestPool</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+<a id="\Curlup\RequestPool::setTimeout()"></a><h4 class="method public">setTimeout<div class="to-top"><a href="#RequestPool">jump to class</a></div>
+</h4>
+<div class="method">
+<code><span class="highlight">setTimeout</span><span class="nb-faded-text">(
+          \int $timeout
+          )
+        </span>
+        :
+        <a href="_RequestPool.html#%5CCurlup%5CRequestPool">\Curlup\RequestPool</a></code><p class="short-description">Set the timeout</p>
+<div class="long-description">
+</div>
+<div class="api-section">
+<h5 class="arguments">Arguments</h5>
+<dl class="argument-info">
+<dt>$timeout</dt>
+<dd>\int<br><em></em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt><a href="_RequestPool.html#%5CCurlup%5CRequestPool">\Curlup\RequestPool</a></dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="info">
+<img src="images/arrow_right.gif"> Details</h5>
+<dl class="function-info">
+<dt>visibility</dt>
+<dd>public</dd>
+<dt>final</dt>
+<dd>false</dd>
+<dt>static</dt>
+<dd>false</dd>
+</dl>
+<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<small xmlns="" class="footer">Documentation was generated by <a href="http://docblox-project.org">DocBlox 0.11.0</a>.
+    </small></body></html>
