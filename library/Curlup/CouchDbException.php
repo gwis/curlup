@@ -1,6 +1,13 @@
 <?php
 
 /**
+ * curlup
+ *
+ * @category Curlup
+ * @package Curlup
+ */
+
+/**
  * Copyright © 2011, Gordon Stratton <gordon.stratton@gmail.com>
  *
  * Permission to use, copy, modify, and/or distribute this software for any
@@ -28,6 +35,9 @@ namespace Curlup;
  * unexpected or invalid values in headers
  * CouchDB crashed
  * </pre>
+ *
+ * @category Curlup
+ * @package Curlup
  */
 class CouchDbException extends Exception
 {

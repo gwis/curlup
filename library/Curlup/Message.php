@@ -1,6 +1,13 @@
 <?php
 
 /**
+ * curlup
+ *
+ * @category Curlup
+ * @package Curlup
+ */
+
+/**
  * Copyright © 2011, Gordon Stratton <gordon.stratton@gmail.com>
  *
  * Permission to use, copy, modify, and/or distribute this software for any
@@ -18,6 +25,12 @@
 
 namespace Curlup;
 
+/**
+ * CouchDB HTTP message
+ *
+ * @category Curlup
+ * @package Curlup
+ */
 class Message
 {
     /**
@@ -102,6 +115,14 @@ class Message
         $this->headers = array();
     }
 
+    /**
+     * Add a header key/value pair
+     *
+     * Will overwrite existing headers.
+     *
+     * @param string $header Header key
+     * @param string $value Header value
+     */
     public function addHeader($header, $value)
     {
         $this->headers[$header] = $value;
@@ -109,21 +130,43 @@ class Message
         return $this;
     }
 
+    /**
+     * Fetch the body of the message
+     *
+     * @return string
+     */
     public function getBody()
     {
         return $this->body;
     }
 
+    /**
+     * Fetch the current header key/value pairs
+     *
+     * @return array
+     */
     public function getHeaders()
     {
         return $this->headers;
     }
 
+    /**
+     * Return the current HTTP version
+     *
+     * @return string
+     */
     public function getHttpVersion()
     {
         return $this->httpVersion;
     }
 
+    /**
+     * Decodes and returns the body of the message, assuming it is JSON-encoded
+     *
+     * Accepts optional parameters which are passed directly to json_decode
+     *
+     * @return mixed
+     */
     public function getJsonDecodedBody()
     {
         $args = func_get_args();
@@ -132,16 +175,31 @@ class Message
         return call_user_func_array('json_decode', $args);
     }
 
+    /**
+     * Return the current HTTP response code
+     *
+     * @return int
+     */
     public function getResponseCode()
     {
         return $this->responseCode;
     }
 
+    /**
+     * Return the current HTTP response status
+     *
+     * @return string
+     */
     public function getResponseStatus()
     {
         return $this->responseStatus;
     }
 
+    /**
+     * Set the raw body of the messag
+     *
+     * @return Message
+     */
     public function setBody($body)
     {
         $this->body = $body;
@@ -149,6 +207,11 @@ class Message
         return $this;
     }
 
+    /**
+     * Set the raw body of the messag
+     *
+     * @return Message
+     */
     public function setHeaders(array $headers)
     {
         $this->headers = array_change_key_case($headers);
@@ -156,6 +219,11 @@ class Message
         return $this;
     }
 
+    /**
+     * Set the HTTP version for the message
+     *
+     * @return Message
+     */
     public function setHttpVersion($version)
     {
         $this->httpVersion = $version;
@@ -163,6 +231,14 @@ class Message
         return $this;
     }
 
+    /**
+     * Encodes the body of the message as JSON and sets as the message body
+     *
+     * Accepts optional arguments which are passed directly to json_encode.
+     * Sets/overwrites the Content-Type header appropriately.
+     *
+     * @return Message
+     */
     public function setJsonDecodedBody($body)
     {
         $this->addHeader('Content-Type', 'application/json;charset=UTF-8');
@@ -174,6 +250,16 @@ class Message
         return $this;
     }
 
+    /**
+     * Set multiple values for the Message object
+     *
+     * You may use this as a shortcut for setting options, but the method
+     * names must conform to <pre>'set' . ucfirst($key)</pre> and the
+     * methods can only accept a single value.
+     *
+     * @param $options
+     * @return Message
+     */
     public function setOptions(array $options)
     {
         foreach ($options as $key => $value) {
@@ -187,6 +273,12 @@ class Message
         return $this;
     }
 
+    /**
+     * Set HTTP code
+     *
+     * @param int $code
+     * @return Message
+     */
     public function setResponseCode($code)
     {
         $this->responseCode = filter_var(
@@ -203,6 +295,12 @@ class Message
         return $this;
     }
 
+    /**
+     * Set HTTP response status
+     *
+     * @param string $status
+     * @return Message
+     */
     public function setResponseStatus($status)
     {
         $this->responseStatus = $status;

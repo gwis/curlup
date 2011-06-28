@@ -1,6 +1,13 @@
 <?php
 
 /**
+ * curlup
+ *
+ * @category Curlup
+ * @package Curlup
+ */
+
+/**
  * Copyright © 2011, Gordon Stratton <gordon.stratton@gmail.com>
  *
  * Permission to use, copy, modify, and/or distribute this software for any
@@ -19,7 +26,10 @@
 namespace Curlup;
 
 /**
- * Represents a base CouchDB instance
+ * CouchDB instance
+ *
+ * @category Curlup
+ * @package Curlup
  */
 class CouchDb
 {

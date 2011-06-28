@@ -1,6 +1,13 @@
 <?php
 
 /**
+ * curlup
+ *
+ * @category Curlup
+ * @package Curlup
+ */
+
+/**
  * Copyright © 2011, Gordon Stratton <gordon.stratton@gmail.com>
  *
  * Permission to use, copy, modify, and/or distribute this software for any
@@ -18,6 +25,12 @@
 
 namespace Curlup;
 
+/**
+ * CouchDB database
+ *
+ * @category Curlup
+ * @package Curlup
+ */
 class Database
 {
     /**
@@ -215,6 +228,17 @@ class Database
         return $request;
     }
 
+    /**
+     * Fetch results of a list function in a given design document
+     *
+     * Corresponds to the GET /<db>/_design/<ddoc>/_list/<listId>/<viewId>/?<viewddoc> API endpoint
+     *
+     * @param string $list List function
+     * @param string $listDesignDocument List design document
+     * @param string $view View function
+     * @param string $viewDesignDocument Optional view design document
+     * @return Request
+     */
     public function designList($list, $listDesignDocument, $view, $viewDesignDocument = '')
     {
         if (empty($list)) {
@@ -264,6 +288,18 @@ class Database
         return $request;
     }
 
+    /**
+     * Fetch results of specific keys against a list function in a given design document
+     *
+     * Corresponds to the POST /<db>/_design/<ddoc>/_list/<listId>/<viewId>/?<viewddoc> API endpoint
+     *
+     * @param $keys Keys to query for
+     * @param string $list List function
+     * @param string $listDesignDocument List design document
+     * @param string $view View function
+     * @param string $viewDesignDocument Optional view design document
+     * @return Request
+     */
     public function designListMultiKey(array $keys, $list, $listDesignDocument, $view, $viewDesignDocument = '')
     {
         $request = $this->designList(
@@ -278,6 +314,16 @@ class Database
         return $request;
     }
 
+    /**
+     * Fetch results of a show function in a given design document against a given document
+     *
+     * Corresponds to the GET /<db>/_design/<ddoc>/_show/<showId>/<docId> API endpoint
+     *
+     * @param string $show Show function
+     * @param string $showDesignDocument Show design document
+     * @param string $docId Document ID to show
+     * @return Request
+     */
     public function designShow($show, $showDesignDocument, $docId)
     {
         if (empty($show)) {
@@ -317,6 +363,15 @@ class Database
         return $request;
     }
 
+    /**
+     * Fetch results of a view function in a given design document
+     *
+     * Corresponds to the GET /<db>/_design/<ddoc>/_view/<viewId> API endpoint
+     *
+     * @param string $designDocument View design document
+     * @param string $view View function
+     * @return Request
+     */
     public function designView($designDocument, $view)
     {
         if (empty($designDocument)) {
@@ -344,6 +399,16 @@ class Database
         return $request;
     }
 
+    /**
+     * Fetch results of specific keys against a view function in a given design document
+     *
+     * Corresponds to the GET /<db>/_design/<ddoc>/_view/<viewId> API endpoint
+     *
+     * @param $keys Keys to query for
+     * @param string $designDocument View design document
+     * @param string $view View function
+     * @return Request
+     */
     public function designViewMultiKey(array $keys, $designDocument, $view)
     {
         $request = $this->getCouchDb()->createRequest(
@@ -360,6 +425,11 @@ class Database
         return $request;
     }
 
+    /**
+     * Corresponds to the POST /<db>/_ensure_full_commit API endpoint
+     *
+     * @return Request
+     */
     public function ensureFullCommit()
     {
         $request = $this->getCouchDb()->createRequest(
@@ -407,6 +477,12 @@ class Database
         return $request;
     }
 
+    /**
+     * Retrieve a single document from the database by document ID
+     *
+     * @param string $id Document ID
+     * @return Request
+     */
     public function fetchDocument($id)
     {
         if (empty($id)) {
@@ -427,16 +503,32 @@ class Database
         return $request;
     }
 
+    /**
+     * Get the underlying CouchDB instance
+     *
+     * @return CouchDb
+     */
     public function getCouchDb()
     {
         return $this->couchDb;
     }
 
+    /**
+     * Get the current database name
+     *
+     * @return string
+     */
     public function getDatabaseName()
     {
         return $this->databaseName;
     }
 
+    /**
+     * POST a raw pre-encoded JSON document to the database
+     *
+     * @param string $doc JSON-encoded document
+     * @return Request
+     */
     public function postRawDocument($doc)
     {
         $request = $this->getCouchDb()->createRequest(
@@ -452,6 +544,13 @@ class Database
         return $request;
     }
 
+    /**
+     * PUT a raw pre-encoded JSON document to the database
+     *
+     * @param string $doc JSON-encoded document
+     * @param string $id Document ID
+     * @return Request
+     */
     public function putRawDocument($doc, $id)
     {
         $request = $this->getCouchDb()->createRequest(
@@ -468,6 +567,15 @@ class Database
         return $request;
     }
 
+    /**
+     * Attach something to a document
+     *
+     * @param string $body Attachment body
+     * @param string $docId Document ID to attach to
+     * @param string $attachmentId Attachment ID
+     * @param string $rev Document revision to attach to
+     * @return Request
+     */
     public function saveAttachment($body, $docId, $attachmentId, $rev)
     {
         $request = $this->getCouchDb()->createRequest(
@@ -485,6 +593,12 @@ class Database
         return $request;
     }
 
+    /**
+     * Persist a document to the database
+     *
+     * @param $doc Array or object representation of a document
+     * @return Request
+     */
     public function saveDocument($doc)
     {
         $encodedId = '';
@@ -520,6 +634,12 @@ class Database
         return $request;
     }
 
+    /**
+     * Corresponds to the /<db>/_temp_view API endpoint
+     *
+     * @param string $viewFunction View function to execute on the server
+     * @return Request
+     */
     public function tempView($viewFunction)
     {
         $request = $this->getCouchDb()->createRequest(
@@ -534,6 +654,11 @@ class Database
         return $request;
     }
 
+    /**
+     * Corresponds to the /<db>/_view_cleanup API endpoint
+     *
+     * @return Request
+     */
     public function viewCleanup()
     {
         $request = $this->getCouchDb()->createRequest(

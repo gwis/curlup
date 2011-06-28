@@ -1,6 +1,13 @@
 <?php
 
 /**
+ * curlup
+ *
+ * @category Curlup
+ * @package Curlup
+ */
+
+/**
  * Copyright © 2011, Gordon Stratton <gordon.stratton@gmail.com>
  *
  * Permission to use, copy, modify, and/or distribute this software for any
@@ -18,19 +25,50 @@
 
 namespace Curlup;
 
+use SplObjectStorage;
+
+/**
+ * CouchDB HTTP request pool
+ *
+ * @category Curlup
+ * @package Curlup
+ */
 class RequestPool
 {
+    /**
+     * Current cURL multi handle
+     *
+     * @var resource
+     */
     protected $curlMultiHandle;
+
+    /**
+     * Requests added to the pool
+     *
+     * @var SplObjectStorage
+     */
     protected $requests;
+
+    /**
+     * Responses added to the pool
+     *
+     * @var SplObjectStorage
+     */
     protected $responses;
+
+    /**
+     * Timeout for the entire request pool
+     *
+     * @var int
+     */
     protected $timeout;
 
     public function __construct(array $options = array())
     {
         $this->curlMultiHandle = curl_multi_init();
 
-        $this->requests = new \SplObjectStorage();
-        $this->responses = new \SplObjectStorage();
+        $this->requests = new SplObjectStorage();
+        $this->responses = new SplObjectStorage();
         $this->timeout = 10;
 
         $this->setOptions($options);
@@ -41,6 +79,12 @@ class RequestPool
         curl_multi_close($this->curlMultiHandle);
     }
 
+    /**
+     * Add a request to the pool
+     *
+     * @param $request Request to attach
+     * @return RequestPool
+     */
     public function attach(Request $request)
     {
         $this->requests->attach($request);
@@ -48,6 +92,11 @@ class RequestPool
         return $this;
     }
 
+    /**
+     * Clear all requests in the pool
+     *
+     * @return RequestPool
+     */
     public function clear()
     {
         $this->requests->removeAll($this->requests);
@@ -55,6 +104,12 @@ class RequestPool
         return $this;
     }
 
+    /**
+     * Remove a specific request from the pool
+     *
+     * @param $request Request to remove
+     * @return RequestPool
+     */
     public function detach(Request $request)
     {
         $this->requests->detach($request);
@@ -62,21 +117,43 @@ class RequestPool
         return $this;
     }
 
+    /**
+     * Get the current requests
+     *
+     * @return SplObjectStorage
+     */
     public function getRequests()
     {
         return $this->requests;
     }
 
+    /**
+     * Get the current responses
+     *
+     * @return SplObjectStorage
+     */
     public function getResponses()
     {
         return $this->responses;
     }
 
+    /**
+     * Get the timeout
+     *
+     * @return int
+     */
     public function getTimeout()
     {
         return $this->timeout;
     }
 
+    /**
+     * Send (execute) all requests in the pool
+     *
+     * Returns SplObjectStorage container of responses.
+     *
+     * @return SplObjectStorage
+     */
     public function send()
     {
         // Reusable fun to run all runnable cURL handles
@@ -160,6 +237,16 @@ class RequestPool
         return $this->responses;
     }
 
+    /**
+     * Set multiple values for the RequestPool object
+     *
+     * You may use this as a shortcut for setting options, but the method
+     * names must conform to <pre>'set' . ucfirst($key)</pre> and the
+     * methods can only accept a single value.
+     *
+     * @param $options
+     * @return RequestPool
+     */
     public function setOptions(array $options)
     {
         foreach ($options as $key => $value) {
@@ -173,6 +260,12 @@ class RequestPool
         return $this;
     }
 
+    /**
+     * Set the timeout
+     *
+     * @param int $timeout
+     * @return RequestPool
+     */
     public function setTimeout($timeout)
     {
         $this->timeout = filter_var(
@@ -185,5 +278,7 @@ class RequestPool
                 )
             )
         );
+
+        return $this;
     }
 }

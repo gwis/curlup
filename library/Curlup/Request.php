@@ -1,6 +1,13 @@
 <?php
 
 /**
+ * curlup
+ *
+ * @category Curlup
+ * @package Curlup
+ */
+
+/**
  * Copyright © 2011, Gordon Stratton <gordon.stratton@gmail.com>
  *
  * Permission to use, copy, modify, and/or distribute this software for any
@@ -18,12 +25,47 @@
 
 namespace Curlup;
 
+/**
+ * CouchDB HTTP request
+ *
+ * @category Curlup
+ * @package Curlup
+ */
 class Request extends Message
 {
+    /**
+     * Current cURL handle
+     *
+     * @var resource
+     */
     protected $curlHandle;
+
+    /**
+     * HTTP method
+     *
+     * @var string
+     */
     protected $method;
+
+    /**
+     * Query data key/values
+     *
+     * @var array
+     */
     protected $queryData;
+
+    /**
+     * Timeout, in seconds
+     *
+     * @var int
+     */
     protected $timeout;
+
+    /**
+     * URI for the request
+     *
+     * @var string
+     */
     protected $uri;
 
     public function __construct(array $options = array())
@@ -43,6 +85,14 @@ class Request extends Message
         curl_close($this->curlHandle);
     }
 
+    /**
+     * Add a query string key/value pair
+     *
+     * Will overwrite existing query string keys.
+     *
+     * @param string $header Query string key
+     * @param string $value Query string value
+     */
     public function addQueryData($key, $value)
     {
         $this->queryData[$key] = $value;
@@ -50,11 +100,21 @@ class Request extends Message
         return $this;
     }
 
+    /**
+     * Get the current cURL handle
+     *
+     * @return resource
+     */
     public function getCurlHandle()
     {
         return $this->curlHandle;
     }
 
+    /**
+     * Get the current cURL options (based on the current options)
+     *
+     * @return array
+     */
     public function getCurlOptions()
     {
         $curlOptions = array(
@@ -100,27 +160,51 @@ class Request extends Message
         return $curlOptions;
     }
 
-
+    /**
+     * Get the HTTP method
+     *
+     * @return string
+     */
     public function getMethod()
     {
         return $this->method;
     }
 
+    /**
+     * Get the query data key/value pairs
+     *
+     * @return array
+     */
     public function getQueryData()
     {
         return $this->queryData;
     }
 
+    /**
+     * Get the timeout
+     *
+     * @return int
+     */
     public function getTimeout()
     {
         return $this->timeout;
     }
 
+    /**
+     * Get the URI
+     *
+     * @return string
+     */
     public function getUri()
     {
         return $this->uri;
     }
 
+    /**
+     * Set up the cURL handle, perform the request, and return the response
+     *
+     * @return Response
+     */
     public function send()
     {
         curl_setopt_array(
@@ -160,11 +244,25 @@ class Request extends Message
         );
     }
 
+    /**
+     * Set the HTTP method
+     *
+     * @param string $method
+     * @return Request
+     */
     public function setMethod($method)
     {
         $this->method = $method;
+
+        return $this;
     }
 
+    /**
+     * Set the query data key/value pairs
+     *
+     * @param $queryData
+     * @return Request
+     */
     public function setQueryData(array $queryData)
     {
         $this->queryData = $queryData;
@@ -172,6 +270,12 @@ class Request extends Message
         return $this;
     }
 
+    /**
+     * Set the timeout
+     *
+     * @param int $timeout
+     * @return Request
+     */
     public function setTimeout($timeout)
     {
         $this->timeout = filter_var(
@@ -184,10 +288,20 @@ class Request extends Message
                 )
             )
         );
+
+        return $this;
     }
 
+    /**
+     * Set the URI
+     *
+     * @param string $uri
+     * @return Request
+     */
     public function setUri($uri)
     {
         $this->uri = $uri;
+
+        return $this;
     }
 }
