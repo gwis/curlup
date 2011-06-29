@@ -18,9 +18,9 @@ set_include_path(
     implode(
         PATH_SEPARATOR,
         array(
-            get_include_path(),
             TESTS_CURLUP_ROOT,
             dirname(__DIR__) . DIRECTORY_SEPARATOR . 'library',
+            get_include_path()
         )
     )
 );
