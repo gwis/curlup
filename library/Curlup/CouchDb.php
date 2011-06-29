@@ -56,6 +56,9 @@ class CouchDb
      */
     public function __construct(array $options = array())
     {
+        $this->timeout = 10;
+        $this->uri = 'http://localhost:5984';
+
         $this->setOptions($options);
     }
 
@@ -72,13 +75,11 @@ class CouchDb
      */
     public function createRequest($path, $method)
     {
-        $request = new Request(
-            array(
-                'method' => $method,
-                'timeout' => $this->getTimeout(),
-                'uri' => $this->getUri() . $path
-            )
-        );
+        $request = new Request(array(
+            'method' => $method,
+            'timeout' => $this->getTimeout(),
+            'uri' => $this->getUri() . $path
+        ));
 
         return $request;
     }
@@ -94,7 +95,9 @@ class CouchDb
      */
     public function createRequestPool()
     {
-        $requestPool = new RequestPool();
+        $requestPool = new RequestPool(array(
+            'timeout' => $this->getTimeout()
+        ));
 
         return $requestPool;
     }
@@ -179,6 +182,12 @@ class CouchDb
             FILTER_VALIDATE_URL
         );
 
+        if (false === $this->uri) {
+            throw new Exception(
+                'Invalid URI'
+            );
+        }
+
         return $this;
     }
 
@@ -211,6 +220,52 @@ class CouchDb
         $request = $this->createRequest(
             '/_active_tasks',
             Request::HTTP_METHOD_GET
+        );
+
+        return $request;
+    }
+
+    /**
+     * Corresponds to the / API endpoint
+     *
+     * The database name will be properly encoded for you.
+     *
+     * http://wiki.apache.org/couchdb/HTTP_database_API#PUT_.28Create_New_Database.29
+     *
+     * @string $db Database name
+     * @return Request
+     */
+    public function createDb($db)
+    {
+        $request = $this->createRequest(
+            sprintf(
+                '/%s/',
+                urlencode($db)
+            ),
+            Request::HTTP_METHOD_PUT
+        );
+
+        return $request;
+    }
+
+    /**
+     * Corresponds to the / API endpoint
+     *
+     * The database name will be properly encoded for you.
+     *
+     * http://wiki.apache.org/couchdb/HTTP_database_API#DELETE
+     *
+     * @string $db Database name
+     * @return Request
+     */
+    public function deleteDb($db)
+    {
+        $request = $this->createRequest(
+            sprintf(
+                '/%s/',
+                urlencode($db)
+            ),
+            Request::HTTP_METHOD_DELETE
         );
 
         return $request;
