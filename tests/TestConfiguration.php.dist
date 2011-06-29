@@ -1,0 +1,4 @@
+<?php
+
+define('TESTS_CURLUP_COUCHDB_URI', 'http://localhost:5984');
+define('TESTS_CURLUP_COUCHDB_DATABASE_SUFFIX', uniqid());
