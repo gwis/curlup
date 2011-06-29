@@ -48,10 +48,11 @@ class Database
     protected $databaseName;
 
     /**
-     * Accepts a CouchDB instance and a database name
+     * Constructor
      *
-     * @param $couchDb
+     * @param $couchDb CouchDB instance
      * @param string $databaseName
+     * @return void
      */
     public function __construct(CouchDb $couchDb, $databaseName)
     {
@@ -170,6 +171,7 @@ class Database
      * Compacts all views in the given view group. See CouchDB documentation
      * for more details.
      *
+     * @param string $viewGroup View group
      * @return Request
      */
     public function compactViews($viewGroup)

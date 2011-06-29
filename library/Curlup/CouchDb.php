@@ -53,6 +53,7 @@ class CouchDb
      * Options passed to the constructor will be passed to {@see setOptions()}
      *
      * @param $options
+     * @return void
      */
     public function __construct(array $options = array())
     {
@@ -232,7 +233,7 @@ class CouchDb
      *
      * http://wiki.apache.org/couchdb/HTTP_database_API#PUT_.28Create_New_Database.29
      *
-     * @string $db Database name
+     * @param string $db Database name
      * @return Request
      */
     public function createDb($db)
@@ -255,7 +256,7 @@ class CouchDb
      *
      * http://wiki.apache.org/couchdb/HTTP_database_API#DELETE
      *
-     * @string $db Database name
+     * @param string $db Database name
      * @return Request
      */
     public function deleteDb($db)

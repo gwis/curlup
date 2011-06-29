@@ -69,6 +69,11 @@ class CouchDbException extends Exception
      *
      * Decodes the message, which since it comes from CouchDB is assumed to
      * be valid JSON, and then sets up the exception members.
+     *
+     * @param string $message
+     * @param int $code
+     * @param $previous
+     * @return void
      */
     public function __construct($message = '', $code = 0, \Exception $previous = null)
     {

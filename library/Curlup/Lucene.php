@@ -41,9 +41,10 @@ class Lucene
     protected $database;
 
     /**
-     * Accepts a CouchDB database instance
+     * Constructor
      *
-     * @param $database
+     * @param $database CouchDB database instance
+     * @return void
      */
     public function __construct(Database $database)
     {
@@ -53,8 +54,8 @@ class Lucene
     /**
      * Query a couchdb-lucene index
      *
-     * @param $view View function
-     * @param $viewDesignDocument View design document
+     * @param string $view View function
+     * @param string $viewDesignDocument View design document
      * @return Request
      */
     public function designView($view, $viewDesignDocument)
@@ -87,9 +88,9 @@ class Lucene
     /**
      * Convenience function for issuing a query to a couchdb-lucene view index
      *
-     * $param string $query Lucene query to issue
-     * @param $view View function
-     * @param $viewDesignDocument View design document
+     * @param string $query Lucene query to issue
+     * @param string $view View function
+     * @param string $viewDesignDocument View design document
      * @return Request
      */
     public function query($query, $view, $viewDesignDocument)

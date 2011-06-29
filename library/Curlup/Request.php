@@ -68,6 +68,12 @@ class Request extends Message
      */
     protected $uri;
 
+    /**
+     * Constructor
+     *
+     * @param $options Initial options for the object
+     * @return void
+     */
     public function __construct(array $options = array())
     {
         $this->curlHandle = curl_init();
@@ -80,6 +86,13 @@ class Request extends Message
         $this->setOptions($options);
     }
 
+    /**
+     * Destructor
+     *
+     * Destroy the cURL handle
+     *
+     * @return void
+     */
     public function __destruct()
     {
         curl_close($this->curlHandle);
@@ -90,7 +103,7 @@ class Request extends Message
      *
      * Will overwrite existing query string keys.
      *
-     * @param string $header Query string key
+     * @param string $key Query string key
      * @param string $value Query string value
      */
     public function addQueryData($key, $value)

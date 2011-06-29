@@ -146,21 +146,30 @@
 </h4>
 <div class="method">
 <code><span class="highlight">__construct</span><span class="nb-faded-text">(
-           $couchDb, \string $databaseName
+          \Curlup\$couchDb $couchDb, \string $databaseName
           )
         </span>
         :
-        </code><p class="short-description">Accepts a CouchDB instance and a database name</p>
+        \void</code><p class="short-description">Constructor</p>
 <div class="long-description">
 </div>
 <div class="api-section">
 <h5 class="arguments">Arguments</h5>
 <dl class="argument-info">
 <dt>$couchDb</dt>
-<dd><em></em></dd>
+<dd>\Curlup\$couchDb<br><em>CouchDB instance</em>
+</dd>
 <dt>$databaseName</dt>
 <dd>\string<br><em></em>
 </dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
 </dl>
 <div class="clear"></div>
 </div>
@@ -369,7 +378,7 @@ use when attempting to persist them.</p>
 </h4>
 <div class="method">
 <code><span class="highlight">compactViews</span><span class="nb-faded-text">(
-           $viewGroup
+          \string $viewGroup
           )
         </span>
         :
@@ -381,7 +390,8 @@ for more details.</p>
 <h5 class="arguments">Arguments</h5>
 <dl class="argument-info">
 <dt>$viewGroup</dt>
-<dd><em></em></dd>
+<dd>\string<br><em>View group</em>
+</dd>
 </dl>
 <div class="clear"></div>
 </div>
@@ -609,7 +619,7 @@ for more details.</p>
 </h4>
 <div class="method">
 <code><span class="highlight">designView</span><span class="nb-faded-text">(
-          \string $designDocument, \string $view
+          \string $view, \string $viewDesignDocument
           )
         </span>
         :
@@ -619,11 +629,11 @@ for more details.</p>
 <div class="api-section">
 <h5 class="arguments">Arguments</h5>
 <dl class="argument-info">
-<dt>$designDocument</dt>
-<dd>\string<br><em>View design document</em>
-</dd>
 <dt>$view</dt>
 <dd>\string<br><em>View function</em>
+</dd>
+<dt>$viewDesignDocument</dt>
+<dd>\string<br><em>View design document</em>
 </dd>
 </dl>
 <div class="clear"></div>
@@ -654,7 +664,7 @@ for more details.</p>
 </h4>
 <div class="method">
 <code><span class="highlight">designViewMultiKey</span><span class="nb-faded-text">(
-          \Curlup\$keys $keys, \string $designDocument, \string $view
+          \Curlup\$keys $keys, \string $view, \string $viewDesignDocument
           )
         </span>
         :
@@ -667,11 +677,11 @@ for more details.</p>
 <dt>$keys</dt>
 <dd>\Curlup\$keys<br><em>Keys to query for</em>
 </dd>
-<dt>$designDocument</dt>
-<dd>\string<br><em>View design document</em>
-</dd>
 <dt>$view</dt>
 <dd>\string<br><em>View function</em>
+</dd>
+<dt>$viewDesignDocument</dt>
+<dd>\string<br><em>View design document</em>
 </dd>
 </dl>
 <div class="clear"></div>
@@ -735,7 +745,7 @@ for more details.</p>
 </h4>
 <div class="method">
 <code><span class="highlight">fetchAttachment</span><span class="nb-faded-text">(
-          \string $docId, \string $attachmentId
+          \string $attachmentId, \string $docId
           )
         </span>
         :
@@ -745,11 +755,11 @@ for more details.</p>
 <div class="api-section">
 <h5 class="arguments">Arguments</h5>
 <dl class="argument-info">
-<dt>$docId</dt>
-<dd>\string<br><em>Document for the attachment</em>
-</dd>
 <dt>$attachmentId</dt>
 <dd>\string<br><em>Attachment id</em>
+</dd>
+<dt>$docId</dt>
+<dd>\string<br><em>Document for the attachment</em>
 </dd>
 </dl>
 <div class="clear"></div>
@@ -975,7 +985,7 @@ for more details.</p>
 </h4>
 <div class="method">
 <code><span class="highlight">saveAttachment</span><span class="nb-faded-text">(
-          \string $body, \string $docId, \string $attachmentId, \string $rev
+          \string $attachmentBody, \string $attachmentId, \string $docId, \string $rev
           )
         </span>
         :
@@ -985,14 +995,14 @@ for more details.</p>
 <div class="api-section">
 <h5 class="arguments">Arguments</h5>
 <dl class="argument-info">
-<dt>$body</dt>
+<dt>$attachmentBody</dt>
 <dd>\string<br><em>Attachment body</em>
-</dd>
-<dt>$docId</dt>
-<dd>\string<br><em>Document ID to attach to</em>
 </dd>
 <dt>$attachmentId</dt>
 <dd>\string<br><em>Attachment ID</em>
+</dd>
+<dt>$docId</dt>
+<dd>\string<br><em>Document ID to attach to</em>
 </dd>
 <dt>$rev</dt>
 <dd>\string<br><em>Document revision to attach to</em>

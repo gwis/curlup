@@ -137,7 +137,7 @@ as a string, and in the CouchDB source code as an erlang atom.</p>
 </h4>
 <div class="method">
 <code><span class="highlight">__construct</span><span class="nb-faded-text">(
-           $message,  $code
+          \string $message, \int $code
               =
               0,  $previous
               =
@@ -145,7 +145,7 @@ as a string, and in the CouchDB source code as an erlang atom.</p>
           )
         </span>
         :
-        </code><p class="short-description">Constructor</p>
+        \void</code><p class="short-description">Constructor</p>
 <div class="long-description"><p>Decodes the message, which since it comes from CouchDB is assumed to
 be valid JSON, and then sets up the exception members.</p>
 </div>
@@ -153,10 +153,20 @@ be valid JSON, and then sets up the exception members.</p>
 <h5 class="arguments">Arguments</h5>
 <dl class="argument-info">
 <dt>$message</dt>
-<dd><em></em></dd>
+<dd>\string<br><em></em>
+</dd>
 <dt>$code</dt>
-<dd><em></em></dd>
+<dd>\int<br><em></em>
+</dd>
 <dt>$previous</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
 <dd><em></em></dd>
 </dl>
 <div class="clear"></div>

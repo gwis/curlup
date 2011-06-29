@@ -110,6 +110,11 @@ class Message
      */
     protected $responseStatus;
 
+    /**
+     * Constructor
+     *
+     * @return void
+     */
     public function __construct()
     {
         $this->headers = array();
@@ -196,8 +201,9 @@ class Message
     }
 
     /**
-     * Set the raw body of the messag
+     * Set the raw body of the message
      *
+     * @param string $body
      * @return Message
      */
     public function setBody($body)
@@ -208,8 +214,9 @@ class Message
     }
 
     /**
-     * Set the raw body of the messag
+     * Set the raw body of the message
      *
+     * @param $headers Header key/value pairs to set
      * @return Message
      */
     public function setHeaders(array $headers)
@@ -222,6 +229,7 @@ class Message
     /**
      * Set the HTTP version for the message
      *
+     * @param string $version
      * @return Message
      */
     public function setHttpVersion($version)
@@ -237,6 +245,7 @@ class Message
      * Accepts optional arguments which are passed directly to json_encode.
      * Sets/overwrites the Content-Type header appropriately.
      *
+     * @param string $body
      * @return Message
      */
     public function setJsonDecodedBody($body)
@@ -257,7 +266,7 @@ class Message
      * names must conform to <pre>'set' . ucfirst($key)</pre> and the
      * methods can only accept a single value.
      *
-     * @param $options
+     * @param $options Option key/value pairs to set
      * @return Message
      */
     public function setOptions(array $options)

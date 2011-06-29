@@ -100,17 +100,26 @@
 </h4>
 <div class="method">
 <code><span class="highlight">__construct</span><span class="nb-faded-text">(
-           $database
+          \Curlup\$database $database
           )
         </span>
         :
-        </code><p class="short-description">Accepts a CouchDB database instance</p>
+        \void</code><p class="short-description">Constructor</p>
 <div class="long-description">
 </div>
 <div class="api-section">
 <h5 class="arguments">Arguments</h5>
 <dl class="argument-info">
 <dt>$database</dt>
+<dd>\Curlup\$database<br><em>CouchDB database instance</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
 <dd><em></em></dd>
 </dl>
 <div class="clear"></div>
@@ -133,7 +142,7 @@
 </h4>
 <div class="method">
 <code><span class="highlight">designView</span><span class="nb-faded-text">(
-          \Curlup\$designDocument $designDocument, \Curlup\$view $view
+          \string $view, \string $viewDesignDocument
           )
         </span>
         :
@@ -143,11 +152,11 @@
 <div class="api-section">
 <h5 class="arguments">Arguments</h5>
 <dl class="argument-info">
-<dt>$designDocument</dt>
-<dd>\Curlup\$designDocument<br><em>Name of the design document</em>
-</dd>
 <dt>$view</dt>
-<dd>\Curlup\$view<br><em>View index in the design document to query</em>
+<dd>\string<br><em>View function</em>
+</dd>
+<dt>$viewDesignDocument</dt>
+<dd>\string<br><em>View design document</em>
 </dd>
 </dl>
 <div class="clear"></div>
@@ -220,24 +229,25 @@
 </h4>
 <div class="method">
 <code><span class="highlight">query</span><span class="nb-faded-text">(
-          \Curlup\$designDocument $query, \Curlup\$view $designDocument,  $view
+          \string $query, \string $view, \string $viewDesignDocument
           )
         </span>
         :
         <a href="_Request.html#%5CCurlup%5CRequest">\Curlup\Request</a></code><p class="short-description">Convenience function for issuing a query to a couchdb-lucene view index</p>
-<div class="long-description"><p>$param string $query Lucene query to issue</p>
+<div class="long-description">
 </div>
 <div class="api-section">
 <h5 class="arguments">Arguments</h5>
 <dl class="argument-info">
 <dt>$query</dt>
-<dd>\Curlup\$designDocument<br><em>Name of the design document</em>
-</dd>
-<dt>$designDocument</dt>
-<dd>\Curlup\$view<br><em>View index in the design document to query</em>
+<dd>\string<br><em>Lucene query to issue</em>
 </dd>
 <dt>$view</dt>
-<dd><em></em></dd>
+<dd>\string<br><em>View function</em>
+</dd>
+<dt>$viewDesignDocument</dt>
+<dd>\string<br><em>View design document</em>
+</dd>
 </dl>
 <div class="clear"></div>
 </div>

@@ -63,6 +63,12 @@ class RequestPool
      */
     protected $timeout;
 
+    /**
+     * Constructor
+     *
+     * @param $options Initial options for the object
+     * @return void
+     */
     public function __construct(array $options = array())
     {
         $this->curlMultiHandle = curl_multi_init();
@@ -74,6 +80,11 @@ class RequestPool
         $this->setOptions($options);
     }
 
+    /**
+     * Destructor
+     *
+     * @return void
+     */
     public function __destruct()
     {
         curl_multi_close($this->curlMultiHandle);

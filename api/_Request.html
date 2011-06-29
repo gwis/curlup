@@ -216,16 +216,28 @@
 </h4>
 <div class="method">
 <code><span class="highlight">__construct</span><span class="nb-faded-text">(
-           $options
+          \Curlup\$options $options
               =
               array
           )
         </span>
         :
-        </code><div class="api-section">
+        \void</code><p class="short-description">Constructor</p>
+<div class="long-description">
+</div>
+<div class="api-section">
 <h5 class="arguments">Arguments</h5>
 <dl class="argument-info">
 <dt>$options</dt>
+<dd>\Curlup\$options<br><em>Initial options for the object</em>
+</dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
 <dd><em></em></dd>
 </dl>
 <div class="clear"></div>
@@ -252,7 +264,18 @@
           )
         </span>
         :
-        </code><div class="api-section">
+        \void</code><p class="short-description">Destructor</p>
+<div class="long-description"><p>Destroy the cURL handle</p>
+</div>
+<div class="api-section">
+<h5 class="output">Output</h5>
+<dl class="return-info">
+<dt>\void</dt>
+<dd><em></em></dd>
+</dl>
+<div class="clear"></div>
+</div>
+<div class="api-section">
 <h5 class="info">
 <img src="images/arrow_right.gif"> Details</h5>
 <dl class="function-info">
@@ -270,7 +293,7 @@
 </h4>
 <div class="method">
 <code><span class="highlight">addQueryData</span><span class="nb-faded-text">(
-           $key, \string $value
+          \string $key, \string $value
           )
         </span>
         :
@@ -281,7 +304,8 @@
 <h5 class="arguments">Arguments</h5>
 <dl class="argument-info">
 <dt>$key</dt>
-<dd><em></em></dd>
+<dd>\string<br><em>Query string key</em>
+</dd>
 <dt>$value</dt>
 <dd>\string<br><em>Query string value</em>
 </dd>
