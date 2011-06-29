@@ -53,13 +53,13 @@ class Lucene
     /**
      * Query a couchdb-lucene index
      *
-     * @param $designDocument Name of the design document
-     * @param $view View index in the design document to query
+     * @param $view View function
+     * @param $viewDesignDocument View design document
      * @return Request
      */
-    public function designView($designDocument, $view)
+    public function designView($view, $viewDesignDocument)
     {
-        if (empty($designDocument)) {
+        if (empty($viewDesignDocument)) {
             throw new \InvalidArgumentException(
                 'supplied view design document must not be empty'
             );
@@ -75,7 +75,7 @@ class Lucene
             sprintf(
                 '/%s/_fti/_design/%s/%s',
                 urlencode($this->database->getDatabaseName()),
-                urlencode($designDocument),
+                urlencode($viewDesignDocument),
                 urlencode($view)
             ),
             Request::HTTP_METHOD_GET
@@ -83,15 +83,16 @@ class Lucene
 
         return $request;
     }
+
     /**
      * Convenience function for issuing a query to a couchdb-lucene view index
      *
      * $param string $query Lucene query to issue
-     * @param $designDocument Name of the design document
-     * @param $view View index in the design document to query
+     * @param $view View function
+     * @param $viewDesignDocument View design document
      * @return Request
      */
-    public function query($query, $designDocument, $view)
+    public function query($query, $view, $viewDesignDocument)
     {
         if (empty($query)) {
             throw new \InvalidArgumentException(
@@ -99,7 +100,7 @@ class Lucene
             );
         }
 
-        return $this->designView($designDocument, $view)
+        return $this->designView($view, $viewDesignDocument)
         ->setQueryData(array('q' => $query));
     }
 

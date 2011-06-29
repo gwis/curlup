@@ -368,13 +368,13 @@ class Database
      *
      * Corresponds to the GET /<db>/_design/<ddoc>/_view/<viewId> API endpoint
      *
-     * @param string $designDocument View design document
      * @param string $view View function
+     * @param string $viewDesignDocument View design document
      * @return Request
      */
-    public function designView($designDocument, $view)
+    public function designView($view, $viewDesignDocument)
     {
-        if (empty($designDocument)) {
+        if (empty($viewDesignDocument)) {
             throw new \InvalidArgumentException(
                 'supplied view design document must not be empty'
             );
@@ -390,7 +390,7 @@ class Database
             sprintf(
                 '/%s/_design/%s/_view/%s',
                 urlencode($this->getDatabaseName()),
-                urlencode($designDocument),
+                urlencode($viewDesignDocument),
                 urlencode($view)
             ),
             Request::HTTP_METHOD_GET
@@ -405,17 +405,17 @@ class Database
      * Corresponds to the GET /<db>/_design/<ddoc>/_view/<viewId> API endpoint
      *
      * @param $keys Keys to query for
-     * @param string $designDocument View design document
      * @param string $view View function
+     * @param string $viewDesignDocument View design document
      * @return Request
      */
-    public function designViewMultiKey(array $keys, $designDocument, $view)
+    public function designViewMultiKey(array $keys, $view, $viewDesignDocument)
     {
         $request = $this->getCouchDb()->createRequest(
             sprintf(
                 '/%s/_design/%s/_view/%s',
                 urlencode($this->getDatabaseName()),
-                urlencode($designDocument),
+                urlencode($viewDesignDocument),
                 urlencode($view)
             ),
             Request::HTTP_METHOD_POST
@@ -446,21 +446,21 @@ class Database
     /**
      * Retrieve a single attachment from the database by attachment ID
      *
-     * @param string $docId Document for the attachment
      * @param string $attachmentId Attachment id
+     * @param string $docId Document for the attachment
      * @return Request
      */
-    public function fetchAttachment($docId, $attachmentId)
+    public function fetchAttachment($attachmentId, $docId)
     {
-        if (empty($docId)) {
-            throw new \InvalidArgumentException(
-                'supplied document ID must not be empty'
-            );
-        }
-
         if (empty($attachmentId)) {
             throw new \InvalidArgumentException(
                 'supplied attachment ID must not be empty'
+            );
+        }
+
+        if (empty($docId)) {
+            throw new \InvalidArgumentException(
+                'supplied document ID must not be empty'
             );
         }
 
@@ -570,13 +570,13 @@ class Database
     /**
      * Attach something to a document
      *
-     * @param string $body Attachment body
-     * @param string $docId Document ID to attach to
+     * @param string $attachmentBody Attachment body
      * @param string $attachmentId Attachment ID
+     * @param string $docId Document ID to attach to
      * @param string $rev Document revision to attach to
      * @return Request
      */
-    public function saveAttachment($body, $docId, $attachmentId, $rev)
+    public function saveAttachment($attachmentBody, $attachmentId, $docId, $rev)
     {
         $request = $this->getCouchDb()->createRequest(
             sprintf(
@@ -588,7 +588,7 @@ class Database
             Request::HTTP_METHOD_PUT
         )
         ->setQueryData(array('rev' => $rev))
-        ->setBody($body);
+        ->setBody($attachmentBody);
 
         return $request;
     }

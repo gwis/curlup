@@ -128,7 +128,7 @@ class Request extends Message
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_TIMEOUT => $this->timeout,
             CURLOPT_URL => $this->uri,
-            CURLOPT_USERAGENT => 'curlup/0.1dev'
+            CURLOPT_USERAGENT => 'curlup/0.5dev'
         );
 
         $headerCount = count($this->headers);
