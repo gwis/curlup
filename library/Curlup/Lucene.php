@@ -41,14 +41,22 @@ class Lucene
     protected $database;
 
     /**
+     * Key for the local CouchDB instance (known to couchdb-lucene)
+     *
+     * @var string
+     */
+    protected $key;
+
+    /**
      * Constructor
      *
      * @param $database CouchDB database instance
      * @return void
      */
-    public function __construct(Database $database)
+    public function __construct(Database $database, $key = 'local')
     {
         $this->database = $database;
+        $this->key = $key;
     }
 
     /**
@@ -74,7 +82,8 @@ class Lucene
 
         $request = $this->database->getCouchDb()->createRequest(
             sprintf(
-                '/%s/_fti/_design/%s/%s',
+                '/_fti/%s/%s/_design/%s/%s',
+                urlencode($this->key),
                 urlencode($this->database->getDatabaseName()),
                 urlencode($viewDesignDocument),
                 urlencode($view)
