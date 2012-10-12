@@ -1,0 +1,2250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project version="0.18.1" title="Curlup documentation">
+  <file path="Curlup/Exception.php" hash="d26be73c7d60772e86e073b4cfaacb05" package="Curlup">
+    <docblock line="3">
+      <description><![CDATA[curlup]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="category" description="Curlup"/>
+      <tag line="3" name="package" description="Curlup"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="Curlup" line="34" package="Curlup">
+      <name>Exception</name>
+      <full_name>\Curlup\Exception</full_name>
+      <extends>\RuntimeException</extends>
+      <docblock line="28">
+        <description><![CDATA[Base Curlup exception]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="28" name="category" description="Curlup"/>
+        <tag line="28" name="package" description="Curlup"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="Curlup/CurlException.php" hash="94a8a90123debe0e96d17d0e40e0ca07" package="Curlup">
+    <docblock line="3">
+      <description><![CDATA[curlup]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="category" description="Curlup"/>
+      <tag line="3" name="package" description="Curlup"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="Curlup" line="42" package="Curlup">
+      <name>CurlException</name>
+      <full_name>\Curlup\CurlException</full_name>
+      <extends>\Curlup\Exception</extends>
+      <docblock line="28">
+        <description><![CDATA[Exception thrown when there is a cURL error]]></description>
+        <long-description><![CDATA[<p>cURL errors include, but are not limited to:</p>
+
+<pre>
+connection errors
+timeouts
+invalid protocol stuff
+</pre>]]></long-description>
+        <tag line="28" name="category" description="Curlup"/>
+        <tag line="28" name="package" description="Curlup"/>
+      </docblock>
+    </class>
+  </file>
+  <file path="Curlup/CouchDb.php" hash="49ab89f024c3a95d445635af6aefad58" package="Curlup">
+    <docblock line="3">
+      <description><![CDATA[curlup]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="category" description="Curlup"/>
+      <tag line="3" name="package" description="Curlup"/>
+    </docblock>
+    <parse_markers>
+      <error line="50" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $options in __construct()</error>
+      <error line="126" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $options in setOptions()</error>
+      <error line="346" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $name in stats()</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Curlup" line="34" package="Curlup">
+      <name>CouchDb</name>
+      <full_name>\Curlup\CouchDb</full_name>
+      <extends/>
+      <docblock line="28">
+        <description><![CDATA[CouchDB instance]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="28" name="category" description="Curlup"/>
+        <tag line="28" name="package" description="Curlup"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="41" package="Default">
+        <name>$uri</name>
+        <default><![CDATA[]]></default>
+        <docblock line="36">
+          <description><![CDATA[URI for the local CouchDB instance]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="36" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="48" package="Default">
+        <name>$timeout</name>
+        <default><![CDATA[]]></default>
+        <docblock line="43">
+          <description><![CDATA[Timeout for requests created from this object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="43" name="var" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="58" package="Default">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="50">
+          <description><![CDATA[Constructor]]></description>
+          <long-description><![CDATA[<p>Options passed to the constructor will be passed to {@see setOptions()}</p>]]></long-description>
+          <tag line="50" name="param" description="" type="" variable="$options"/>
+          <tag line="50" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="58">
+          <name>$options</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="77" package="Default">
+        <name>createRequest</name>
+        <type>function</type>
+        <docblock line="66">
+          <description><![CDATA[Generate a new request]]></description>
+          <long-description><![CDATA[<p>Requests should be generated using this method, because then some of
+the options that were set up when the instance of the CouchDb object
+were created can be passed along.</p>]]></long-description>
+          <tag line="66" name="param" description="URI path (requires leading slash if you want one)" type="string" variable="$path">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="66" name="param" description="Request method" type="string" variable="$method">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="66" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="77">
+          <name>$path</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="77">
+          <name>$method</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="97" package="Default">
+        <name>createRequestPool</name>
+        <type>function</type>
+        <docblock line="88">
+          <description><![CDATA[Generate a new request pool]]></description>
+          <long-description><![CDATA[<p>Request pools should be generated using this method, because then some of
+the options that were set up when the instance of the CouchDb object
+were created can be passed along.</p>]]></long-description>
+          <tag line="88" name="return" description="" type="\Curlup\RequestPool">
+            <type by_reference="false">\Curlup\RequestPool</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="111" package="Default">
+        <name>getUri</name>
+        <type>function</type>
+        <docblock line="106">
+          <description><![CDATA[Get the base CouchDB URI]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="106" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="121" package="Default">
+        <name>getTimeout</name>
+        <type>function</type>
+        <docblock line="116">
+          <description><![CDATA[Set the timeout for requests created from this object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="116" name="return" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="138" package="Default">
+        <name>setOptions</name>
+        <type>function</type>
+        <docblock line="126">
+          <description><![CDATA[Set options for this object]]></description>
+          <long-description><![CDATA[<p>All array keys passed will be filtered through a method call that will be
+generated by capitalizing the first letter of the key and prepending
+'set'.</p>
+
+<p>Implements a fluent interface.</p>]]></long-description>
+          <tag line="126" name="param" description="" type="" variable="$options"/>
+          <tag line="126" name="return" description="" type="\Curlup\CouchDb">
+            <type by_reference="false">\Curlup\CouchDb</type>
+          </tag>
+        </docblock>
+        <argument line="138">
+          <name>$options</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="157" package="Default">
+        <name>setTimeout</name>
+        <type>function</type>
+        <docblock line="151">
+          <description><![CDATA[Set the timeout for requests created from this object]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="151" name="param" description="" type="" variable="$timeout"/>
+          <tag line="151" name="return" description="" type="\Curlup\self">
+            <type by_reference="false">\Curlup\self</type>
+          </tag>
+        </docblock>
+        <argument line="157">
+          <name>$timeout</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="179" package="Default">
+        <name>setUri</name>
+        <type>function</type>
+        <docblock line="173">
+          <description><![CDATA[Set the base CouchDB URI]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="173" name="param" description="URI" type="\Curlup\$uri" variable="$uri">
+            <type by_reference="false">\Curlup\$uri</type>
+          </tag>
+          <tag line="173" name="return" description="" type="\Curlup\self">
+            <type by_reference="false">\Curlup\self</type>
+          </tag>
+        </docblock>
+        <argument line="179">
+          <name>$uri</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="202" package="Default">
+        <name>allDbs</name>
+        <type>function</type>
+        <docblock line="195">
+          <description><![CDATA[Corresponds to the _all_dbs API endpoint]]></description>
+          <long-description><![CDATA[<p>http://wiki.apache.org/couchdb/HttpGetAllDbs</p>]]></long-description>
+          <tag line="195" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="219" package="Default">
+        <name>activeTasks</name>
+        <type>function</type>
+        <docblock line="212">
+          <description><![CDATA[Corresponds to the _active_tasks API endpoint]]></description>
+          <long-description><![CDATA[<p>http://wiki.apache.org/couchdb/HttpGetActiveTasks</p>]]></long-description>
+          <tag line="212" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="239" package="Default">
+        <name>createDb</name>
+        <type>function</type>
+        <docblock line="229">
+          <description><![CDATA[Corresponds to the / API endpoint]]></description>
+          <long-description><![CDATA[<p>The database name will be properly encoded for you.</p>
+
+<p>http://wiki.apache.org/couchdb/HTTP_database_API#PUT_.28Create_New_Database.29</p>]]></long-description>
+          <tag line="229" name="param" description="Database name" type="string" variable="$db">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="229" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="239">
+          <name>$db</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="262" package="Default">
+        <name>deleteDb</name>
+        <type>function</type>
+        <docblock line="252">
+          <description><![CDATA[Corresponds to the / API endpoint]]></description>
+          <long-description><![CDATA[<p>The database name will be properly encoded for you.</p>
+
+<p>http://wiki.apache.org/couchdb/HTTP_database_API#DELETE</p>]]></long-description>
+          <tag line="252" name="param" description="Database name" type="string" variable="$db">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="252" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="262">
+          <name>$db</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="282" package="Default">
+        <name>log</name>
+        <type>function</type>
+        <docblock line="275">
+          <description><![CDATA[Corresponds to the _log API endpoint]]></description>
+          <long-description><![CDATA[<p>http://wiki.apache.org/couchdb/HttpGetLog</p>]]></long-description>
+          <tag line="275" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="300" package="Default">
+        <name>replicate</name>
+        <type>function</type>
+        <docblock line="292">
+          <description><![CDATA[Corresponds to the _replicate API endpoint]]></description>
+          <long-description><![CDATA[<p>http://wiki.apache.org/couchdb/Replication</p>]]></long-description>
+          <tag line="292" name="param" description="Replication POST body as a PHP data structure" type="\Curlup\$body" variable="$body">
+            <type by_reference="false">\Curlup\$body</type>
+          </tag>
+          <tag line="292" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="300">
+          <name>$body</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="318" package="Default">
+        <name>restart</name>
+        <type>function</type>
+        <docblock line="311">
+          <description><![CDATA[Corresponds to the _restart API endpoint]]></description>
+          <long-description><![CDATA[<p>http://wiki.apache.org/couchdb/Complete_HTTP_API_Reference</p>]]></long-description>
+          <tag line="311" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="336" package="Default">
+        <name>root</name>
+        <type>function</type>
+        <docblock line="329">
+          <description><![CDATA[Corresponds to the / (root) API endpoint]]></description>
+          <long-description><![CDATA[<p>http://wiki.apache.org/couchdb/HttpGetRoot</p>]]></long-description>
+          <tag line="329" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="355" package="Default">
+        <name>stats</name>
+        <type>function</type>
+        <docblock line="346">
+          <description><![CDATA[Corresponds to the _stats API endpoint]]></description>
+          <long-description><![CDATA[<p>http://wiki.apache.org/couchdb/Runtime_Statistics</p>]]></long-description>
+          <tag line="346" name="param" description="A group/key pair for specific stat retrieval" type="\Curlup\$name" variable="$name">
+            <type by_reference="false">\Curlup\$name</type>
+          </tag>
+          <tag line="346" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+          <tag line="346" name="throws" description="when $name has an invalid member count" type="\InvalidArgumentException">
+            <type by_reference="false">\InvalidArgumentException</type>
+          </tag>
+        </docblock>
+        <argument line="355">
+          <name>$name</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="388" package="Default">
+        <name>uuids</name>
+        <type>function</type>
+        <docblock line="381">
+          <description><![CDATA[Corresponds to the _uuids API endpoint]]></description>
+          <long-description><![CDATA[<p>http://wiki.apache.org/couchdb/HttpGetUuids</p>]]></long-description>
+          <tag line="381" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Curlup/Message.php" hash="1b3ea0f80854d02f3ce9cb3b4d3cd713" package="Curlup">
+    <docblock line="3">
+      <description><![CDATA[curlup]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="category" description="Curlup"/>
+      <tag line="3" name="package" description="Curlup"/>
+    </docblock>
+    <parse_markers>
+      <error line="216" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $headers in setHeaders()</error>
+      <error line="262" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $options in setOptions()</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Curlup" line="34" package="Curlup">
+      <name>Message</name>
+      <full_name>\Curlup\Message</full_name>
+      <extends/>
+      <docblock line="28">
+        <description><![CDATA[CouchDB HTTP message]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="28" name="category" description="Curlup"/>
+        <tag line="28" name="package" description="Curlup"/>
+      </docblock>
+      <constant namespace="Curlup" line="41" package="Default">
+        <name>HTTP_METHOD_DELETE</name>
+        <value><![CDATA['DELETE']]></value>
+        <docblock line="36">
+          <description><![CDATA[HTTP DELETE]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="36" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <constant namespace="Curlup" line="48" package="Default">
+        <name>HTTP_METHOD_COPY</name>
+        <value><![CDATA['COPY']]></value>
+        <docblock line="43">
+          <description><![CDATA[HTTP COPY]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="43" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <constant namespace="Curlup" line="55" package="Default">
+        <name>HTTP_METHOD_GET</name>
+        <value><![CDATA['GET']]></value>
+        <docblock line="50">
+          <description><![CDATA[HTTP GET]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="50" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <constant namespace="Curlup" line="62" package="Default">
+        <name>HTTP_METHOD_HEAD</name>
+        <value><![CDATA['HEAD']]></value>
+        <docblock line="57">
+          <description><![CDATA[HTTP HEAD]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="57" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <constant namespace="Curlup" line="69" package="Default">
+        <name>HTTP_METHOD_POST</name>
+        <value><![CDATA['POST']]></value>
+        <docblock line="64">
+          <description><![CDATA[HTTP POST]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="64" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <constant namespace="Curlup" line="76" package="Default">
+        <name>HTTP_METHOD_PUT</name>
+        <value><![CDATA['PUT']]></value>
+        <docblock line="71">
+          <description><![CDATA[HTTP PUT]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="71" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </constant>
+      <property final="false" static="false" visibility="protected" line="83" package="Default">
+        <name>$body</name>
+        <default><![CDATA[]]></default>
+        <docblock line="78">
+          <description><![CDATA[HTTP message body]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="78" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="90" package="Default">
+        <name>$headers</name>
+        <default><![CDATA[]]></default>
+        <docblock line="85">
+          <description><![CDATA[HTTP headers]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="85" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="97" package="Default">
+        <name>$httpVersion</name>
+        <default><![CDATA[]]></default>
+        <docblock line="92">
+          <description><![CDATA[HTTP message version]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="92" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="104" package="Default">
+        <name>$responseCode</name>
+        <default><![CDATA[]]></default>
+        <docblock line="99">
+          <description><![CDATA[HTTP response code]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="99" name="var" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="111" package="Default">
+        <name>$responseStatus</name>
+        <default><![CDATA[]]></default>
+        <docblock line="106">
+          <description><![CDATA[HTTP response status line]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="106" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="118" package="Default">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="113">
+          <description><![CDATA[Constructor]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="113" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="131" package="Default">
+        <name>addHeader</name>
+        <type>function</type>
+        <docblock line="123">
+          <description><![CDATA[Add a header key/value pair]]></description>
+          <long-description><![CDATA[<p>Will overwrite existing headers.</p>]]></long-description>
+          <tag line="123" name="param" description="Header key" type="string" variable="$header">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="123" name="param" description="Header value" type="string" variable="$value">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="131">
+          <name>$header</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="131">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="143" package="Default">
+        <name>getBody</name>
+        <type>function</type>
+        <docblock line="138">
+          <description><![CDATA[Fetch the body of the message]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="138" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="153" package="Default">
+        <name>getHeaders</name>
+        <type>function</type>
+        <docblock line="148">
+          <description><![CDATA[Fetch the current header key/value pairs]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="148" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="163" package="Default">
+        <name>getHttpVersion</name>
+        <type>function</type>
+        <docblock line="158">
+          <description><![CDATA[Return the current HTTP version]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="158" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="175" package="Default">
+        <name>getJsonDecodedBody</name>
+        <type>function</type>
+        <docblock line="168">
+          <description><![CDATA[Decodes and returns the body of the message, assuming it is JSON-encoded]]></description>
+          <long-description><![CDATA[<p>Accepts optional parameters which are passed directly to json_decode</p>]]></long-description>
+          <tag line="168" name="return" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="188" package="Default">
+        <name>getResponseCode</name>
+        <type>function</type>
+        <docblock line="183">
+          <description><![CDATA[Return the current HTTP response code]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="183" name="return" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="198" package="Default">
+        <name>getResponseStatus</name>
+        <type>function</type>
+        <docblock line="193">
+          <description><![CDATA[Return the current HTTP response status]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="193" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="209" package="Default">
+        <name>setBody</name>
+        <type>function</type>
+        <docblock line="203">
+          <description><![CDATA[Set the raw body of the message]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="203" name="param" description="" type="string" variable="$body">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="203" name="return" description="" type="\Curlup\Message">
+            <type by_reference="false">\Curlup\Message</type>
+          </tag>
+        </docblock>
+        <argument line="209">
+          <name>$body</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="222" package="Default">
+        <name>setHeaders</name>
+        <type>function</type>
+        <docblock line="216">
+          <description><![CDATA[Set the raw body of the message]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="216" name="param" description="Header key/value pairs to set" type="\Curlup\$headers" variable="$headers">
+            <type by_reference="false">\Curlup\$headers</type>
+          </tag>
+          <tag line="216" name="return" description="" type="\Curlup\Message">
+            <type by_reference="false">\Curlup\Message</type>
+          </tag>
+        </docblock>
+        <argument line="222">
+          <name>$headers</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="235" package="Default">
+        <name>setHttpVersion</name>
+        <type>function</type>
+        <docblock line="229">
+          <description><![CDATA[Set the HTTP version for the message]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="229" name="param" description="" type="string" variable="$version">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="229" name="return" description="" type="\Curlup\Message">
+            <type by_reference="false">\Curlup\Message</type>
+          </tag>
+        </docblock>
+        <argument line="235">
+          <name>$version</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="251" package="Default">
+        <name>setJsonDecodedBody</name>
+        <type>function</type>
+        <docblock line="242">
+          <description><![CDATA[Encodes the body of the message as JSON and sets as the message body]]></description>
+          <long-description><![CDATA[<p>Accepts optional arguments which are passed directly to json_encode.
+Sets/overwrites the Content-Type header appropriately.</p>]]></long-description>
+          <tag line="242" name="param" description="" type="string" variable="$body">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="242" name="return" description="" type="\Curlup\Message">
+            <type by_reference="false">\Curlup\Message</type>
+          </tag>
+        </docblock>
+        <argument line="251">
+          <name>$body</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="272" package="Default">
+        <name>setOptions</name>
+        <type>function</type>
+        <docblock line="262">
+          <description><![CDATA[Set multiple values for the Message object]]></description>
+          <long-description><![CDATA[<p>You may use this as a shortcut for setting options, but the method
+names must conform to</p>
+
+<pre>'set' . ucfirst($key)</pre>
+
+<p>and the
+methods can only accept a single value.</p>]]></long-description>
+          <tag line="262" name="param" description="Option key/value pairs to set" type="\Curlup\$options" variable="$options">
+            <type by_reference="false">\Curlup\$options</type>
+          </tag>
+          <tag line="262" name="return" description="" type="\Curlup\Message">
+            <type by_reference="false">\Curlup\Message</type>
+          </tag>
+        </docblock>
+        <argument line="272">
+          <name>$options</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="291" package="Default">
+        <name>setResponseCode</name>
+        <type>function</type>
+        <docblock line="285">
+          <description><![CDATA[Set HTTP code]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="285" name="param" description="" type="int" variable="$code">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="285" name="return" description="" type="\Curlup\Message">
+            <type by_reference="false">\Curlup\Message</type>
+          </tag>
+        </docblock>
+        <argument line="291">
+          <name>$code</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="313" package="Default">
+        <name>setResponseStatus</name>
+        <type>function</type>
+        <docblock line="307">
+          <description><![CDATA[Set HTTP response status]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="307" name="param" description="" type="string" variable="$status">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="307" name="return" description="" type="\Curlup\Message">
+            <type by_reference="false">\Curlup\Message</type>
+          </tag>
+        </docblock>
+        <argument line="313">
+          <name>$status</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Curlup/Response.php" hash="b405547b8f7d907aa37c91c9ae8c9962" package="Curlup">
+    <docblock line="3">
+      <description><![CDATA[curlup]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="category" description="Curlup"/>
+      <tag line="3" name="package" description="Curlup"/>
+    </docblock>
+    <class final="false" abstract="false" namespace="Curlup" line="34" package="Curlup">
+      <name>Response</name>
+      <full_name>\Curlup\Response</full_name>
+      <extends>\Curlup\Message</extends>
+      <docblock line="28">
+        <description><![CDATA[CouchDB HTTP response]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="28" name="category" description="Curlup"/>
+        <tag line="28" name="package" description="Curlup"/>
+      </docblock>
+      <property final="false" static="true" visibility="protected" line="41" package="Default">
+        <name>$throwsExceptions</name>
+        <default><![CDATA[true]]></default>
+        <docblock line="36">
+          <description><![CDATA[Determine whether or not to throw exceptions on error]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="36" name="var" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Curlup" line="49" package="Default">
+        <name>factory</name>
+        <type>function</type>
+        <docblock line="43">
+          <description><![CDATA[Create a valid Response object from a raw HTTP message]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="43" name="param" description="" type="string" variable="$rawMessage">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="43" name="return" description="" type="\Curlup\Response">
+            <type by_reference="false">\Curlup\Response</type>
+          </tag>
+        </docblock>
+        <argument line="49">
+          <name>$rawMessage</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Curlup" line="88" package="Default">
+        <name>getThrowsExceptions</name>
+        <type>function</type>
+        <docblock line="83">
+          <description><![CDATA[Get the state of the throwsExceptions option]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="83" name="return" description="" type="bool">
+            <type by_reference="false">bool</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Curlup" line="99" package="Default">
+        <name>setThrowsExceptions</name>
+        <type>function</type>
+        <docblock line="93">
+          <description><![CDATA[Set the state of the throwsExceptions option]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="93" name="param" description="" type="bool" variable="$flag">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="93" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="99">
+          <name>$flag</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Curlup/Lucene.php" hash="bfb21c75bf852158d655065cf3900752" package="Curlup">
+    <docblock line="3">
+      <description><![CDATA[curlup]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="category" description="Curlup"/>
+      <tag line="3" name="package" description="Curlup"/>
+    </docblock>
+    <parse_markers>
+      <error line="50" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $database in __construct()</error>
+      <error line="50" code="50015">Argument $key is missing from the Docblock of __construct()</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Curlup" line="34" package="Curlup">
+      <name>Lucene</name>
+      <full_name>\Curlup\Lucene</full_name>
+      <extends/>
+      <docblock line="28">
+        <description><![CDATA[couchdb-lucene instance]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="28" name="category" description="Curlup"/>
+        <tag line="28" name="package" description="Curlup"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="41" package="Default">
+        <name>$database</name>
+        <default><![CDATA[]]></default>
+        <docblock line="36">
+          <description><![CDATA[Database instance]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="36" name="var" description="" type="\Curlup\Database">
+            <type by_reference="false">\Curlup\Database</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="48" package="Default">
+        <name>$key</name>
+        <default><![CDATA[]]></default>
+        <docblock line="43">
+          <description><![CDATA[Key for the local CouchDB instance (known to couchdb-lucene)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="43" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="56" package="Default">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="50">
+          <description><![CDATA[Constructor]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="50" name="param" description="CouchDB database instance" type="\Curlup\$database" variable="$database">
+            <type by_reference="false">\Curlup\$database</type>
+          </tag>
+          <tag line="50" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="56">
+          <name>$database</name>
+          <default><![CDATA[]]></default>
+          <type>Database</type>
+        </argument>
+        <argument line="56">
+          <name>$key</name>
+          <default><![CDATA['local']]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="69" package="Default">
+        <name>designView</name>
+        <type>function</type>
+        <docblock line="62">
+          <description><![CDATA[Query a couchdb-lucene index]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="62" name="param" description="View function" type="string" variable="$view">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="62" name="param" description="View design document" type="string" variable="$viewDesignDocument">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="62" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="69">
+          <name>$view</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="69">
+          <name>$viewDesignDocument</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="105" package="Default">
+        <name>query</name>
+        <type>function</type>
+        <docblock line="97">
+          <description><![CDATA[Convenience function for issuing a query to a couchdb-lucene view index]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="97" name="param" description="Lucene query to issue" type="string" variable="$query">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="97" name="param" description="View function" type="string" variable="$view">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="97" name="param" description="View design document" type="string" variable="$viewDesignDocument">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="97" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="105">
+          <name>$query</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="105">
+          <name>$view</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="105">
+          <name>$viewDesignDocument</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="true" visibility="public" namespace="Curlup" line="125" package="Default">
+        <name>escape</name>
+        <type>function</type>
+        <docblock line="117">
+          <description><![CDATA[Escape special query characters]]></description>
+          <long-description><![CDATA[<p>Adapted from Apache Solr</p>]]></long-description>
+          <tag line="117" name="param" description="Query string to escape" type="string" variable="$query">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="117" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="125">
+          <name>$query</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Curlup/RequestPool.php" hash="2a68ad10f79d192fa7aafb89e28c2ebf" package="Curlup">
+    <docblock line="3">
+      <description><![CDATA[curlup]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="category" description="Curlup"/>
+      <tag line="3" name="package" description="Curlup"/>
+    </docblock>
+    <parse_markers>
+      <error line="66" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $options in __construct()</error>
+      <error line="93" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $request in attach()</error>
+      <error line="118" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $request in detach()</error>
+      <error line="251" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $options in setOptions()</error>
+    </parse_markers>
+    <namespace-alias name="SplObjectStorage">SplObjectStorage</namespace-alias>
+    <class final="false" abstract="false" namespace="Curlup" line="36" package="Curlup">
+      <name>RequestPool</name>
+      <full_name>\Curlup\RequestPool</full_name>
+      <extends/>
+      <docblock line="30">
+        <description><![CDATA[CouchDB HTTP request pool]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="30" name="category" description="Curlup"/>
+        <tag line="30" name="package" description="Curlup"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="43" package="Default">
+        <name>$curlMultiHandle</name>
+        <default><![CDATA[]]></default>
+        <docblock line="38">
+          <description><![CDATA[Current cURL multi handle]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="38" name="var" description="" type="resource">
+            <type by_reference="false">resource</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="50" package="Default">
+        <name>$requests</name>
+        <default><![CDATA[]]></default>
+        <docblock line="45">
+          <description><![CDATA[Requests added to the pool]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="45" name="var" description="" type="\SplObjectStorage">
+            <type by_reference="false">\SplObjectStorage</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="57" package="Default">
+        <name>$responses</name>
+        <default><![CDATA[]]></default>
+        <docblock line="52">
+          <description><![CDATA[Responses added to the pool]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="52" name="var" description="" type="\SplObjectStorage">
+            <type by_reference="false">\SplObjectStorage</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="64" package="Default">
+        <name>$timeout</name>
+        <default><![CDATA[]]></default>
+        <docblock line="59">
+          <description><![CDATA[Timeout for the entire request pool]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="59" name="var" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="72" package="Default">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="66">
+          <description><![CDATA[Constructor]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="66" name="param" description="Initial options for the object" type="\Curlup\$options" variable="$options">
+            <type by_reference="false">\Curlup\$options</type>
+          </tag>
+          <tag line="66" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="72">
+          <name>$options</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="88" package="Default">
+        <name>__destruct</name>
+        <type>function</type>
+        <docblock line="83">
+          <description><![CDATA[Destructor]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="83" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="99" package="Default">
+        <name>attach</name>
+        <type>function</type>
+        <docblock line="93">
+          <description><![CDATA[Add a request to the pool]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="93" name="param" description="Request to attach" type="\Curlup\$request" variable="$request">
+            <type by_reference="false">\Curlup\$request</type>
+          </tag>
+          <tag line="93" name="return" description="" type="\Curlup\RequestPool">
+            <type by_reference="false">\Curlup\RequestPool</type>
+          </tag>
+        </docblock>
+        <argument line="99">
+          <name>$request</name>
+          <default><![CDATA[]]></default>
+          <type>Request</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="111" package="Default">
+        <name>clear</name>
+        <type>function</type>
+        <docblock line="106">
+          <description><![CDATA[Clear all requests in the pool]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="106" name="return" description="" type="\Curlup\RequestPool">
+            <type by_reference="false">\Curlup\RequestPool</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="124" package="Default">
+        <name>detach</name>
+        <type>function</type>
+        <docblock line="118">
+          <description><![CDATA[Remove a specific request from the pool]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="118" name="param" description="Request to remove" type="\Curlup\$request" variable="$request">
+            <type by_reference="false">\Curlup\$request</type>
+          </tag>
+          <tag line="118" name="return" description="" type="\Curlup\RequestPool">
+            <type by_reference="false">\Curlup\RequestPool</type>
+          </tag>
+        </docblock>
+        <argument line="124">
+          <name>$request</name>
+          <default><![CDATA[]]></default>
+          <type>Request</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="136" package="Default">
+        <name>getRequests</name>
+        <type>function</type>
+        <docblock line="131">
+          <description><![CDATA[Get the current requests]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="131" name="return" description="" type="\SplObjectStorage">
+            <type by_reference="false">\SplObjectStorage</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="146" package="Default">
+        <name>getResponses</name>
+        <type>function</type>
+        <docblock line="141">
+          <description><![CDATA[Get the current responses]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="141" name="return" description="" type="\SplObjectStorage">
+            <type by_reference="false">\SplObjectStorage</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="156" package="Default">
+        <name>getTimeout</name>
+        <type>function</type>
+        <docblock line="151">
+          <description><![CDATA[Get the timeout]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="151" name="return" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="168" package="Default">
+        <name>send</name>
+        <type>function</type>
+        <docblock line="161">
+          <description><![CDATA[Send (execute) all requests in the pool]]></description>
+          <long-description><![CDATA[<p>Returns SplObjectStorage container of responses.</p>]]></long-description>
+          <tag line="161" name="return" description="" type="\SplObjectStorage">
+            <type by_reference="false">\SplObjectStorage</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="261" package="Default">
+        <name>setOptions</name>
+        <type>function</type>
+        <docblock line="251">
+          <description><![CDATA[Set multiple values for the RequestPool object]]></description>
+          <long-description><![CDATA[<p>You may use this as a shortcut for setting options, but the method
+names must conform to</p>
+
+<pre>'set' . ucfirst($key)</pre>
+
+<p>and the
+methods can only accept a single value.</p>]]></long-description>
+          <tag line="251" name="param" description="" type="" variable="$options"/>
+          <tag line="251" name="return" description="" type="\Curlup\RequestPool">
+            <type by_reference="false">\Curlup\RequestPool</type>
+          </tag>
+        </docblock>
+        <argument line="261">
+          <name>$options</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="280" package="Default">
+        <name>setTimeout</name>
+        <type>function</type>
+        <docblock line="274">
+          <description><![CDATA[Set the timeout]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="274" name="param" description="" type="int" variable="$timeout">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="274" name="return" description="" type="\Curlup\RequestPool">
+            <type by_reference="false">\Curlup\RequestPool</type>
+          </tag>
+        </docblock>
+        <argument line="280">
+          <name>$timeout</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Curlup/Request.php" hash="7ff146f8c36b0b4b91afc9e9786ed600" package="Curlup">
+    <docblock line="3">
+      <description><![CDATA[curlup]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="category" description="Curlup"/>
+      <tag line="3" name="package" description="Curlup"/>
+    </docblock>
+    <parse_markers>
+      <error line="71" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $options in __construct()</error>
+      <error line="273" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $queryData in setQueryData()</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Curlup" line="34" package="Curlup">
+      <name>Request</name>
+      <full_name>\Curlup\Request</full_name>
+      <extends>\Curlup\Message</extends>
+      <docblock line="28">
+        <description><![CDATA[CouchDB HTTP request]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="28" name="category" description="Curlup"/>
+        <tag line="28" name="package" description="Curlup"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="41" package="Default">
+        <name>$curlHandle</name>
+        <default><![CDATA[]]></default>
+        <docblock line="36">
+          <description><![CDATA[Current cURL handle]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="36" name="var" description="" type="resource">
+            <type by_reference="false">resource</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="48" package="Default">
+        <name>$method</name>
+        <default><![CDATA[]]></default>
+        <docblock line="43">
+          <description><![CDATA[HTTP method]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="43" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="55" package="Default">
+        <name>$queryData</name>
+        <default><![CDATA[]]></default>
+        <docblock line="50">
+          <description><![CDATA[Query data key/values]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="50" name="var" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="62" package="Default">
+        <name>$timeout</name>
+        <default><![CDATA[]]></default>
+        <docblock line="57">
+          <description><![CDATA[Timeout, in seconds]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="57" name="var" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="69" package="Default">
+        <name>$uri</name>
+        <default><![CDATA[]]></default>
+        <docblock line="64">
+          <description><![CDATA[URI for the request]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="64" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="77" package="Default">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="71">
+          <description><![CDATA[Constructor]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="71" name="param" description="Initial options for the object" type="\Curlup\$options" variable="$options">
+            <type by_reference="false">\Curlup\$options</type>
+          </tag>
+          <tag line="71" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="77">
+          <name>$options</name>
+          <default><![CDATA[array()]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="96" package="Default">
+        <name>__destruct</name>
+        <type>function</type>
+        <docblock line="89">
+          <description><![CDATA[Destructor]]></description>
+          <long-description><![CDATA[<p>Destroy the cURL handle</p>]]></long-description>
+          <tag line="89" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="109" package="Default">
+        <name>addQueryData</name>
+        <type>function</type>
+        <docblock line="101">
+          <description><![CDATA[Add a query string key/value pair]]></description>
+          <long-description><![CDATA[<p>Will overwrite existing query string keys.</p>]]></long-description>
+          <tag line="101" name="param" description="Query string key" type="string" variable="$key">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="101" name="param" description="Query string value" type="string" variable="$value">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+        <argument line="109">
+          <name>$key</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="109">
+          <name>$value</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="121" package="Default">
+        <name>getCurlHandle</name>
+        <type>function</type>
+        <docblock line="116">
+          <description><![CDATA[Get the current cURL handle]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="116" name="return" description="" type="resource">
+            <type by_reference="false">resource</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="131" package="Default">
+        <name>getCurlOptions</name>
+        <type>function</type>
+        <docblock line="126">
+          <description><![CDATA[Get the current cURL options (based on the current options)]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="126" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="181" package="Default">
+        <name>getMethod</name>
+        <type>function</type>
+        <docblock line="176">
+          <description><![CDATA[Get the HTTP method]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="176" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="191" package="Default">
+        <name>getQueryData</name>
+        <type>function</type>
+        <docblock line="186">
+          <description><![CDATA[Get the query data key/value pairs]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="186" name="return" description="" type="array">
+            <type by_reference="false">array</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="201" package="Default">
+        <name>getTimeout</name>
+        <type>function</type>
+        <docblock line="196">
+          <description><![CDATA[Get the timeout]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="196" name="return" description="" type="int">
+            <type by_reference="false">int</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="211" package="Default">
+        <name>getUri</name>
+        <type>function</type>
+        <docblock line="206">
+          <description><![CDATA[Get the URI]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="206" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="221" package="Default">
+        <name>send</name>
+        <type>function</type>
+        <docblock line="216">
+          <description><![CDATA[Set up the cURL handle, perform the request, and return the response]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="216" name="return" description="" type="\Curlup\Response">
+            <type by_reference="false">\Curlup\Response</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="252" package="Default">
+        <name>sendAndDecode</name>
+        <type>function</type>
+        <docblock line="240">
+          <description><![CDATA[Convenience method for sending a request and decoding the response]]></description>
+          <long-description><![CDATA[<p>This calls the {@see send()} method and then the
+{@see Message::getJsonDecodedBody()} method, and returns the result.</p>
+
+<p>This function accepts parameters which will be passed directly to
+{@see Message::getJsonDecodedBody()}. This can be generally used to
+pass extra arguments to json_decode.</p>]]></long-description>
+          <tag line="240" name="return" description="" type="mixed">
+            <type by_reference="false">mixed</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="266" package="Default">
+        <name>setMethod</name>
+        <type>function</type>
+        <docblock line="260">
+          <description><![CDATA[Set the HTTP method]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="260" name="param" description="" type="string" variable="$method">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="260" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="266">
+          <name>$method</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="279" package="Default">
+        <name>setQueryData</name>
+        <type>function</type>
+        <docblock line="273">
+          <description><![CDATA[Set the query data key/value pairs]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="273" name="param" description="" type="" variable="$queryData"/>
+          <tag line="273" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="279">
+          <name>$queryData</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="292" package="Default">
+        <name>setTimeout</name>
+        <type>function</type>
+        <docblock line="286">
+          <description><![CDATA[Set the timeout]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="286" name="param" description="" type="int" variable="$timeout">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="286" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="292">
+          <name>$timeout</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="314" package="Default">
+        <name>setUri</name>
+        <type>function</type>
+        <docblock line="308">
+          <description><![CDATA[Set the URI]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="308" name="param" description="" type="string" variable="$uri">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="308" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="314">
+          <name>$uri</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+    </class>
+  </file>
+  <file path="Curlup/CouchDbException.php" hash="65e2953be5e86af0e0ea41141f0b2974" package="Curlup">
+    <docblock line="3">
+      <description><![CDATA[curlup]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="category" description="Curlup"/>
+      <tag line="3" name="package" description="Curlup"/>
+    </docblock>
+    <parse_markers>
+      <error line="67" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $previous in __construct()</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Curlup" line="42" package="Curlup">
+      <name>CouchDbException</name>
+      <full_name>\Curlup\CouchDbException</full_name>
+      <extends>\Curlup\Exception</extends>
+      <docblock line="28">
+        <description><![CDATA[Exception thrown when there is a CouchDB error]]></description>
+        <long-description><![CDATA[<p>CouchDB errors include, but are not limited to:</p>
+
+<pre>
+cannot find a document
+unexpected or invalid values in headers
+CouchDB crashed
+</pre>]]></long-description>
+        <tag line="28" name="category" description="Curlup"/>
+        <tag line="28" name="package" description="Curlup"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="54" package="Default">
+        <name>$error</name>
+        <default><![CDATA[]]></default>
+        <docblock line="44">
+          <description><![CDATA[Error as reported by CouchDB]]></description>
+          <long-description><![CDATA[<p>These are not currently well-documented, but they are represented here
+as a string, and in the CouchDB source code as an erlang atom.</p>
+
+<p>Example: "not_found"</p>]]></long-description>
+          <tag line="44" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="65" package="Default">
+        <name>$reason</name>
+        <default><![CDATA[]]></default>
+        <docblock line="56">
+          <description><![CDATA[Reason for error as reported by CouchDB]]></description>
+          <long-description><![CDATA[<p>These are not currently well-documented, but they are strings.</p>
+
+<p>Example: "missing"</p>]]></long-description>
+          <tag line="56" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="78" package="Default">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="67">
+          <description><![CDATA[Constructor]]></description>
+          <long-description><![CDATA[<p>Decodes the message, which since it comes from CouchDB is assumed to
+be valid JSON, and then sets up the exception members.</p>]]></long-description>
+          <tag line="67" name="param" description="" type="string" variable="$message">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="67" name="param" description="" type="int" variable="$code">
+            <type by_reference="false">int</type>
+          </tag>
+          <tag line="67" name="param" description="" type="" variable="$previous"/>
+          <tag line="67" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="78">
+          <name>$message</name>
+          <default><![CDATA['']]></default>
+          <type/>
+        </argument>
+        <argument line="78">
+          <name>$code</name>
+          <default><![CDATA[0]]></default>
+          <type/>
+        </argument>
+        <argument line="78">
+          <name>$previous</name>
+          <default><![CDATA[null]]></default>
+          <type>Exception</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="109" package="Default">
+        <name>getError</name>
+        <type>function</type>
+        <docblock line="104">
+          <description><![CDATA[Retrieve the CouchDB error]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="104" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="119" package="Default">
+        <name>getReason</name>
+        <type>function</type>
+        <docblock line="114">
+          <description><![CDATA[Retrieve the CouchDB error reason]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="114" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <file path="Curlup/Database.php" hash="9efa71ccf2b23f88e0370c54c12ba5e9" package="Curlup">
+    <docblock line="3">
+      <description><![CDATA[curlup]]></description>
+      <long-description><![CDATA[]]></long-description>
+      <tag line="3" name="category" description="Curlup"/>
+      <tag line="3" name="package" description="Curlup"/>
+    </docblock>
+    <parse_markers>
+      <error line="50" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $couchDb in __construct()</error>
+      <error line="81" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $keys in allDocsMultiKey()</error>
+      <error line="103" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $docs in bulkDocs()</error>
+      <error line="293" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $keys in designListMultiKey()</error>
+      <error line="404" code="50016">The type hint of the argument is incorrect for the type definition of the @param tag with argument $keys in designViewMultiKey()</error>
+    </parse_markers>
+    <class final="false" abstract="false" namespace="Curlup" line="34" package="Curlup">
+      <name>Database</name>
+      <full_name>\Curlup\Database</full_name>
+      <extends/>
+      <docblock line="28">
+        <description><![CDATA[CouchDB database]]></description>
+        <long-description><![CDATA[]]></long-description>
+        <tag line="28" name="category" description="Curlup"/>
+        <tag line="28" name="package" description="Curlup"/>
+      </docblock>
+      <property final="false" static="false" visibility="protected" line="41" package="Default">
+        <name>$couchDb</name>
+        <default><![CDATA[]]></default>
+        <docblock line="36">
+          <description><![CDATA[CouchDB instance]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="36" name="var" description="" type="\Curlup\CouchDb">
+            <type by_reference="false">\Curlup\CouchDb</type>
+          </tag>
+        </docblock>
+      </property>
+      <property final="false" static="false" visibility="protected" line="48" package="Default">
+        <name>$databaseName</name>
+        <default><![CDATA[]]></default>
+        <docblock line="43">
+          <description><![CDATA[Database name]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="43" name="var" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </property>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="57" package="Default">
+        <name>__construct</name>
+        <type>function</type>
+        <docblock line="50">
+          <description><![CDATA[Constructor]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="50" name="param" description="CouchDB instance" type="\Curlup\$couchDb" variable="$couchDb">
+            <type by_reference="false">\Curlup\$couchDb</type>
+          </tag>
+          <tag line="50" name="param" description="" type="string" variable="$databaseName">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="50" name="return" description="" type="void">
+            <type by_reference="false">void</type>
+          </tag>
+        </docblock>
+        <argument line="57">
+          <name>$couchDb</name>
+          <default><![CDATA[]]></default>
+          <type>CouchDb</type>
+        </argument>
+        <argument line="57">
+          <name>$databaseName</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="68" package="Default">
+        <name>allDocs</name>
+        <type>function</type>
+        <docblock line="63">
+          <description><![CDATA[Corresponds to the /<db>/_all_docs API endpoint]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="63" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="89" package="Default">
+        <name>allDocsMultiKey</name>
+        <type>function</type>
+        <docblock line="81">
+          <description><![CDATA[Corresponds to the /<db>/_all_docs API endpoint]]></description>
+          <long-description><![CDATA[<p>Accepts multiple document keys.</p>]]></long-description>
+          <tag line="81" name="param" description="" type="" variable="$keys"/>
+          <tag line="81" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="89">
+          <name>$keys</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="113" package="Default">
+        <name>bulkDocs</name>
+        <type>function</type>
+        <docblock line="103">
+          <description><![CDATA[Correponds to the /<db>/_bulk_docs API endpoint]]></description>
+          <long-description><![CDATA[<p>Accepts an array of documents, and the concurrency method you wish to
+use when attempting to persist them.</p>]]></long-description>
+          <tag line="103" name="param" description="" type="" variable="$docs"/>
+          <tag line="103" name="param" description="See CouchDB documentation for details" type="bool" variable="$allOrNothing">
+            <type by_reference="false">bool</type>
+          </tag>
+          <tag line="103" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="113">
+          <name>$docs</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+        <argument line="113">
+          <name>$allOrNothing</name>
+          <default><![CDATA[false]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="137" package="Default">
+        <name>changes</name>
+        <type>function</type>
+        <docblock line="132">
+          <description><![CDATA[Corresponds to the /<db>/_changes API endpoint]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="132" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="155" package="Default">
+        <name>compact</name>
+        <type>function</type>
+        <docblock line="150">
+          <description><![CDATA[Corresponds to the /<db>/_compact API endpoint]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="150" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="177" package="Default">
+        <name>compactViews</name>
+        <type>function</type>
+        <docblock line="168">
+          <description><![CDATA[Corresponds to the /<db>/_compact API endpoint]]></description>
+          <long-description><![CDATA[<p>Compacts all views in the given view group. See CouchDB documentation
+for more details.</p>]]></long-description>
+          <tag line="168" name="param" description="View group" type="string" variable="$viewGroup">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="168" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="177">
+          <name>$viewGroup</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="206" package="Default">
+        <name>deleteDocument</name>
+        <type>function</type>
+        <docblock line="197">
+          <description><![CDATA[Delete the given document ID]]></description>
+          <long-description><![CDATA[<p>Corresponds to the DELETE /<db>/<docId> API endpoint</p>]]></long-description>
+          <tag line="197" name="param" description="Document ID" type="string" variable="$id">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="197" name="param" description="Revision ID to delete" type="string" variable="$rev">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="197" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="206">
+          <name>$id</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="206">
+          <name>$rev</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="244" package="Default">
+        <name>designList</name>
+        <type>function</type>
+        <docblock line="233">
+          <description><![CDATA[Fetch results of a list function in a given design document]]></description>
+          <long-description><![CDATA[<p>Corresponds to the GET /<db>/_design/<ddoc>/_list/<listId>/<viewId>/?<viewddoc> API endpoint</p>]]></long-description>
+          <tag line="233" name="param" description="List function" type="string" variable="$list">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="233" name="param" description="List design document" type="string" variable="$listDesignDocument">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="233" name="param" description="View function" type="string" variable="$view">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="233" name="param" description="Optional view design document" type="string" variable="$viewDesignDocument">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="233" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="244">
+          <name>$list</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="244">
+          <name>$listDesignDocument</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="244">
+          <name>$view</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="244">
+          <name>$viewDesignDocument</name>
+          <default><![CDATA['']]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="305" package="Default">
+        <name>designListMultiKey</name>
+        <type>function</type>
+        <docblock line="293">
+          <description><![CDATA[Fetch results of specific keys against a list function in a given design document]]></description>
+          <long-description><![CDATA[<p>Corresponds to the POST /<db>/_design/<ddoc>/_list/<listId>/<viewId>/?<viewddoc> API endpoint</p>]]></long-description>
+          <tag line="293" name="param" description="Keys to query for" type="\Curlup\$keys" variable="$keys">
+            <type by_reference="false">\Curlup\$keys</type>
+          </tag>
+          <tag line="293" name="param" description="List function" type="string" variable="$list">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="293" name="param" description="List design document" type="string" variable="$listDesignDocument">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="293" name="param" description="View function" type="string" variable="$view">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="293" name="param" description="Optional view design document" type="string" variable="$viewDesignDocument">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="293" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="305">
+          <name>$keys</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+        <argument line="305">
+          <name>$list</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="305">
+          <name>$listDesignDocument</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="305">
+          <name>$view</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="305">
+          <name>$viewDesignDocument</name>
+          <default><![CDATA['']]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="329" package="Default">
+        <name>designShow</name>
+        <type>function</type>
+        <docblock line="319">
+          <description><![CDATA[Fetch results of a show function in a given design document against a given document]]></description>
+          <long-description><![CDATA[<p>Corresponds to the GET /<db>/_design/<ddoc>/_show/<showId>/<docId> API endpoint</p>]]></long-description>
+          <tag line="319" name="param" description="Show function" type="string" variable="$show">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="319" name="param" description="Show design document" type="string" variable="$showDesignDocument">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="319" name="param" description="Document ID to show" type="string" variable="$docId">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="319" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="329">
+          <name>$show</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="329">
+          <name>$showDesignDocument</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="329">
+          <name>$docId</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="377" package="Default">
+        <name>designView</name>
+        <type>function</type>
+        <docblock line="368">
+          <description><![CDATA[Fetch results of a view function in a given design document]]></description>
+          <long-description><![CDATA[<p>Corresponds to the GET /<db>/_design/<ddoc>/_view/<viewId> API endpoint</p>]]></long-description>
+          <tag line="368" name="param" description="View function" type="string" variable="$view">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="368" name="param" description="View design document" type="string" variable="$viewDesignDocument">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="368" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="377">
+          <name>$view</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="377">
+          <name>$viewDesignDocument</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="414" package="Default">
+        <name>designViewMultiKey</name>
+        <type>function</type>
+        <docblock line="404">
+          <description><![CDATA[Fetch results of specific keys against a view function in a given design document]]></description>
+          <long-description><![CDATA[<p>Corresponds to the GET /<db>/_design/<ddoc>/_view/<viewId> API endpoint</p>]]></long-description>
+          <tag line="404" name="param" description="Keys to query for" type="\Curlup\$keys" variable="$keys">
+            <type by_reference="false">\Curlup\$keys</type>
+          </tag>
+          <tag line="404" name="param" description="View function" type="string" variable="$view">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="404" name="param" description="View design document" type="string" variable="$viewDesignDocument">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="404" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="414">
+          <name>$keys</name>
+          <default><![CDATA[]]></default>
+          <type>array</type>
+        </argument>
+        <argument line="414">
+          <name>$view</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="414">
+          <name>$viewDesignDocument</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="435" package="Default">
+        <name>ensureFullCommit</name>
+        <type>function</type>
+        <docblock line="430">
+          <description><![CDATA[Corresponds to the POST /<db>/_ensure_full_commit API endpoint]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="430" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="455" package="Default">
+        <name>fetchAttachment</name>
+        <type>function</type>
+        <docblock line="448">
+          <description><![CDATA[Retrieve a single attachment from the database by attachment ID]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="448" name="param" description="Attachment id" type="string" variable="$attachmentId">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="448" name="param" description="Document for the attachment" type="string" variable="$docId">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="448" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="455">
+          <name>$attachmentId</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="455">
+          <name>$docId</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="488" package="Default">
+        <name>fetchDocument</name>
+        <type>function</type>
+        <docblock line="482">
+          <description><![CDATA[Retrieve a single document from the database by document ID]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="482" name="param" description="Document ID" type="string" variable="$id">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="482" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="488">
+          <name>$id</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="513" package="Default">
+        <name>getCouchDb</name>
+        <type>function</type>
+        <docblock line="508">
+          <description><![CDATA[Get the underlying CouchDB instance]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="508" name="return" description="" type="\Curlup\CouchDb">
+            <type by_reference="false">\Curlup\CouchDb</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="523" package="Default">
+        <name>getDatabaseName</name>
+        <type>function</type>
+        <docblock line="518">
+          <description><![CDATA[Get the current database name]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="518" name="return" description="" type="string">
+            <type by_reference="false">string</type>
+          </tag>
+        </docblock>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="534" package="Default">
+        <name>postRawDocument</name>
+        <type>function</type>
+        <docblock line="528">
+          <description><![CDATA[POST a raw pre-encoded JSON document to the database]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="528" name="param" description="JSON-encoded document" type="string" variable="$doc">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="528" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="534">
+          <name>$doc</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="556" package="Default">
+        <name>putRawDocument</name>
+        <type>function</type>
+        <docblock line="549">
+          <description><![CDATA[PUT a raw pre-encoded JSON document to the database]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="549" name="param" description="JSON-encoded document" type="string" variable="$doc">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="549" name="param" description="Document ID" type="string" variable="$id">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="549" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="556">
+          <name>$doc</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="556">
+          <name>$id</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="581" package="Default">
+        <name>saveAttachment</name>
+        <type>function</type>
+        <docblock line="572">
+          <description><![CDATA[Attach something to a document]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="572" name="param" description="Attachment body" type="string" variable="$attachmentBody">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="572" name="param" description="Attachment ID" type="string" variable="$attachmentId">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="572" name="param" description="Document ID to attach to" type="string" variable="$docId">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="572" name="param" description="Document revision to attach to" type="string" variable="$rev">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="572" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="581">
+          <name>$attachmentBody</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="581">
+          <name>$attachmentId</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="581">
+          <name>$docId</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+        <argument line="581">
+          <name>$rev</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="604" package="Default">
+        <name>saveDocument</name>
+        <type>function</type>
+        <docblock line="598">
+          <description><![CDATA[Persist a document to the database]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="598" name="param" description="Array or object representation of a document" type="\Curlup\$doc" variable="$doc">
+            <type by_reference="false">\Curlup\$doc</type>
+          </tag>
+          <tag line="598" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="604">
+          <name>$doc</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="645" package="Default">
+        <name>tempView</name>
+        <type>function</type>
+        <docblock line="639">
+          <description><![CDATA[Corresponds to the /<db>/_temp_view API endpoint]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="639" name="param" description="View function to execute on the server" type="string" variable="$viewFunction">
+            <type by_reference="false">string</type>
+          </tag>
+          <tag line="639" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+        <argument line="645">
+          <name>$viewFunction</name>
+          <default><![CDATA[]]></default>
+          <type/>
+        </argument>
+      </method>
+      <method final="false" abstract="false" static="false" visibility="public" namespace="Curlup" line="664" package="Default">
+        <name>viewCleanup</name>
+        <type>function</type>
+        <docblock line="659">
+          <description><![CDATA[Corresponds to the /<db>/_view_cleanup API endpoint]]></description>
+          <long-description><![CDATA[]]></long-description>
+          <tag line="659" name="return" description="" type="\Curlup\Request">
+            <type by_reference="false">\Curlup\Request</type>
+          </tag>
+        </docblock>
+      </method>
+    </class>
+  </file>
+  <package name="Curlup"/>
+  <package name="Default"/>
+  <namespace name="Curlup"/>
+  <marker>todo</marker>
+  <marker>fixme</marker>
+</project>
