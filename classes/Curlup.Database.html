@@ -1,0 +1,514 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+<meta charset="utf-8">
+<title>Curlup » \Curlup\Database</title>
+<meta name="author" content="Mike van Riel">
+<meta name="description" content="">
+<link href="../css/template.css" rel="stylesheet" media="all">
+<script src="../js/jquery-1.7.1.min.js" type="text/javascript"></script><script src="../js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script><script src="../js/jquery.mousewheel.min.js" type="text/javascript"></script><script src="../js/bootstrap.js" type="text/javascript"></script><script src="../js/template.js" type="text/javascript"></script><script src="../js/prettify/prettify.min.js" type="text/javascript"></script><link rel="shortcut icon" href="../img/favicon.ico">
+<link rel="apple-touch-icon" href="../img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/apple-touch-icon-114x114.png">
+</head>
+<body>
+<div class="navbar navbar-fixed-top">
+<div class="navbar-inner"><div class="container">
+<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a><a class="brand" href="../index.html">Curlup</a><div class="nav-collapse"><ul class="nav">
+<li class="dropdown">
+<a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                    API Documentation <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a>Packages</a></li>
+<li><a href="../packages/Curlup.html"><i class="icon-folder-open"></i> Curlup</a></li>
+</ul>
+</li>
+<li class="dropdown" id="charts-menu">
+<a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                    Charts <b class="caret"></b></a><ul class="dropdown-menu"><li><a href="../graph_class.html"><i class="icon-list-alt"></i> Class hierarchy diagram</a></li></ul>
+</li>
+<li class="dropdown" id="reports-menu">
+<a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                    Reports <b class="caret"></b></a><ul class="dropdown-menu">
+<li><a href="../errors.html"><i class="icon-remove-sign"></i> Errors 
+                <span class="label label-info">19</span></a></li>
+<li><a href="../markers.html"><i class="icon-map-marker"></i> Markers 
+                <ul></ul></a></li>
+<li><a href="../deprecated.html"><i class="icon-stop"></i> Deprecated elements 
+                <span class="label label-info">0</span></a></li>
+</ul>
+</li>
+</ul></div>
+</div></div>
+<div class="go_to_top"><a href="#___" style="color: inherit">Back to top  <i class="icon-upload icon-white"></i></a></div>
+</div>
+<div id="___" class="container">
+<noscript><div class="alert alert-warning">
+                            Javascript is disabled; several features are only available
+                            if Javascript is enabled.
+                        </div></noscript>
+<div class="row">
+<div class="span4">
+<span class="btn-group visibility" data-toggle="buttons-checkbox"><button class="btn public active" title="Show public elements">Public</button><button class="btn protected" title="Show protected elements">Protected</button><button class="btn private" title="Show private elements">Private</button><button class="btn inherited active" title="Show inherited elements">Inherited</button></span><div class="btn-group view pull-right" data-toggle="buttons-radio">
+<button class="btn details" title="Show descriptions and method names"><i class="icon-list"></i></button><button class="btn simple" title="Show only method names"><i class="icon-align-justify"></i></button>
+</div>
+<ul class="side-nav nav nav-list">
+<li class="nav-header">
+<i class="icon-custom icon-method"></i> Methods
+                    <ul>
+<li class="method public "><a href="#method___construct" title="__construct :: Constructor"><span class="description">Constructor</span><pre>__construct()</pre></a></li>
+<li class="method public "><a href="#method_allDocs" title="allDocs :: Corresponds to the /&lt;db&gt;/_all_docs API endpoint"><span class="description">Corresponds to the /&lt;db&gt;/_all_docs API endpoint</span><pre>allDocs()</pre></a></li>
+<li class="method public "><a href="#method_allDocsMultiKey" title="allDocsMultiKey :: Corresponds to the /&lt;db&gt;/_all_docs API endpoint"><span class="description">Corresponds to the /&lt;db&gt;/_all_docs API endpoint</span><pre>allDocsMultiKey()</pre></a></li>
+<li class="method public "><a href="#method_bulkDocs" title="bulkDocs :: Correponds to the /&lt;db&gt;/_bulk_docs API endpoint"><span class="description">Correponds to the /&lt;db&gt;/_bulk_docs API endpoint</span><pre>bulkDocs()</pre></a></li>
+<li class="method public "><a href="#method_changes" title="changes :: Corresponds to the /&lt;db&gt;/_changes API endpoint"><span class="description">Corresponds to the /&lt;db&gt;/_changes API endpoint</span><pre>changes()</pre></a></li>
+<li class="method public "><a href="#method_compact" title="compact :: Corresponds to the /&lt;db&gt;/_compact API endpoint"><span class="description">Corresponds to the /&lt;db&gt;/_compact API endpoint</span><pre>compact()</pre></a></li>
+<li class="method public "><a href="#method_compactViews" title="compactViews :: Corresponds to the /&lt;db&gt;/_compact API endpoint"><span class="description">Corresponds to the /&lt;db&gt;/_compact API endpoint</span><pre>compactViews()</pre></a></li>
+<li class="method public "><a href="#method_deleteDocument" title="deleteDocument :: Delete the given document ID"><span class="description">Delete the given document ID</span><pre>deleteDocument()</pre></a></li>
+<li class="method public "><a href="#method_designList" title="designList :: Fetch results of a list function in a given design document"><span class="description">Fetch results of a list function in a given design document</span><pre>designList()</pre></a></li>
+<li class="method public "><a href="#method_designListMultiKey" title="designListMultiKey :: Fetch results of specific keys against a list function in a given design document"><span class="description">Fetch results of specific keys against a list function in a given design document</span><pre>designListMultiKey()</pre></a></li>
+<li class="method public "><a href="#method_designShow" title="designShow :: Fetch results of a show function in a given design document against a given document"><span class="description">Fetch results of a show function in a given design document against a given document</span><pre>designShow()</pre></a></li>
+<li class="method public "><a href="#method_designView" title="designView :: Fetch results of a view function in a given design document"><span class="description">Fetch results of a view function in a given design document</span><pre>designView()</pre></a></li>
+<li class="method public "><a href="#method_designViewMultiKey" title="designViewMultiKey :: Fetch results of specific keys against a view function in a given design document"><span class="description">Fetch results of specific keys against a view function in a given design document</span><pre>designViewMultiKey()</pre></a></li>
+<li class="method public "><a href="#method_ensureFullCommit" title="ensureFullCommit :: Corresponds to the POST /&lt;db&gt;/_ensure_full_commit API endpoint"><span class="description">Corresponds to the POST /&lt;db&gt;/_ensure_full_commit API endpoint</span><pre>ensureFullCommit()</pre></a></li>
+<li class="method public "><a href="#method_fetchAttachment" title="fetchAttachment :: Retrieve a single attachment from the database by attachment ID"><span class="description">Retrieve a single attachment from the database by attachment ID</span><pre>fetchAttachment()</pre></a></li>
+<li class="method public "><a href="#method_fetchDocument" title="fetchDocument :: Retrieve a single document from the database by document ID"><span class="description">Retrieve a single document from the database by document ID</span><pre>fetchDocument()</pre></a></li>
+<li class="method public "><a href="#method_getCouchDb" title="getCouchDb :: Get the underlying CouchDB instance"><span class="description">Get the underlying CouchDB instance</span><pre>getCouchDb()</pre></a></li>
+<li class="method public "><a href="#method_getDatabaseName" title="getDatabaseName :: Get the current database name"><span class="description">Get the current database name</span><pre>getDatabaseName()</pre></a></li>
+<li class="method public "><a href="#method_postRawDocument" title="postRawDocument :: POST a raw pre-encoded JSON document to the database"><span class="description">POST a raw pre-encoded JSON document to the database</span><pre>postRawDocument()</pre></a></li>
+<li class="method public "><a href="#method_putRawDocument" title="putRawDocument :: PUT a raw pre-encoded JSON document to the database"><span class="description">PUT a raw pre-encoded JSON document to the database</span><pre>putRawDocument()</pre></a></li>
+<li class="method public "><a href="#method_saveAttachment" title="saveAttachment :: Attach something to a document"><span class="description">Attach something to a document</span><pre>saveAttachment()</pre></a></li>
+<li class="method public "><a href="#method_saveDocument" title="saveDocument :: Persist a document to the database"><span class="description">Persist a document to the database</span><pre>saveDocument()</pre></a></li>
+<li class="method public "><a href="#method_tempView" title="tempView :: Corresponds to the /&lt;db&gt;/_temp_view API endpoint"><span class="description">Corresponds to the /&lt;db&gt;/_temp_view API endpoint</span><pre>tempView()</pre></a></li>
+<li class="method public "><a href="#method_viewCleanup" title="viewCleanup :: Corresponds to the /&lt;db&gt;/_view_cleanup API endpoint"><span class="description">Corresponds to the /&lt;db&gt;/_view_cleanup API endpoint</span><pre>viewCleanup()</pre></a></li>
+</ul>
+</li>
+<li class="nav-header">
+<i class="icon-custom icon-property"></i> Properties
+                    <ul></ul>
+</li>
+<li class="nav-header protected">» Protected
+                    <ul>
+<li class="property protected "><a href="#property_couchDb" title="$couchDb :: CouchDB instance"><span class="description">CouchDB instance</span><pre>$couchDb</pre></a></li>
+<li class="property protected "><a href="#property_databaseName" title="$databaseName :: Database name"><span class="description">Database name</span><pre>$databaseName</pre></a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="span8">
+<a id="\Curlup\Database"></a><ul class="breadcrumb">
+<li>
+<a href="../index.html"><i class="icon-custom icon-class"></i></a><span class="divider">\</span>
+</li>
+<li><a href="../namespaces/Curlup.html">Curlup</a></li>
+<li class="active">
+<span class="divider">\</span><a href="../classes/Curlup.Database.html">Database</a>
+</li>
+</ul>
+<div class="element class">
+<p class="short_description">CouchDB database</p>
+<div class="details">
+<div class="long_description"></div>
+<table class="table table-bordered">
+<tr>
+<th>category</th>
+<td>Curlup</td>
+</tr>
+<tr>
+<th>package</th>
+<td><a href="../packages/Curlup.html">Curlup</a></td>
+</tr>
+</table>
+<h3>
+<i class="icon-custom icon-method"></i> Methods</h3>
+<a id="method___construct"></a><div class="element clickable method public method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
+<h2>Constructor</h2>
+<pre>__construct(\Curlup\CouchDb $couchDb, string $databaseName) : void</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$couchDb</h4>
+<code>\Curlup\$couchDb</code><p>CouchDB instance</p></div>
+<div class="subelement argument">
+<h4>$databaseName</h4>
+<code>string</code>
+</div>
+</div></div>
+</div>
+<a id="method_allDocs"></a><div class="element clickable method public method_allDocs" data-toggle="collapse" data-target=".method_allDocs .collapse">
+<h2>Corresponds to the /&lt;db&gt;/_all_docs API endpoint</h2>
+<pre>allDocs() : <a href="../classes/Curlup.Request.html">\Curlup\Request</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Curlup.Request.html">\Curlup\Request</a></code></div>
+</div></div>
+</div>
+<a id="method_allDocsMultiKey"></a><div class="element clickable method public method_allDocsMultiKey" data-toggle="collapse" data-target=".method_allDocsMultiKey .collapse">
+<h2>Corresponds to the /&lt;db&gt;/_all_docs API endpoint</h2>
+<pre>allDocsMultiKey(array $keys) : <a href="../classes/Curlup.Request.html">\Curlup\Request</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Accepts multiple document keys.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$keys</h4></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Curlup.Request.html">\Curlup\Request</a></code></div>
+</div></div>
+</div>
+<a id="method_bulkDocs"></a><div class="element clickable method public method_bulkDocs" data-toggle="collapse" data-target=".method_bulkDocs .collapse">
+<h2>Correponds to the /&lt;db&gt;/_bulk_docs API endpoint</h2>
+<pre>bulkDocs(array $docs, bool $allOrNothing) : <a href="../classes/Curlup.Request.html">\Curlup\Request</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Accepts an array of documents, and the concurrency method you wish to
+use when attempting to persist them.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument"><h4>$docs</h4></div>
+<div class="subelement argument">
+<h4>$allOrNothing</h4>
+<code>bool</code><p>See CouchDB documentation for details</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Curlup.Request.html">\Curlup\Request</a></code></div>
+</div></div>
+</div>
+<a id="method_changes"></a><div class="element clickable method public method_changes" data-toggle="collapse" data-target=".method_changes .collapse">
+<h2>Corresponds to the /&lt;db&gt;/_changes API endpoint</h2>
+<pre>changes() : <a href="../classes/Curlup.Request.html">\Curlup\Request</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Curlup.Request.html">\Curlup\Request</a></code></div>
+</div></div>
+</div>
+<a id="method_compact"></a><div class="element clickable method public method_compact" data-toggle="collapse" data-target=".method_compact .collapse">
+<h2>Corresponds to the /&lt;db&gt;/_compact API endpoint</h2>
+<pre>compact() : <a href="../classes/Curlup.Request.html">\Curlup\Request</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Curlup.Request.html">\Curlup\Request</a></code></div>
+</div></div>
+</div>
+<a id="method_compactViews"></a><div class="element clickable method public method_compactViews" data-toggle="collapse" data-target=".method_compactViews .collapse">
+<h2>Corresponds to the /&lt;db&gt;/_compact API endpoint</h2>
+<pre>compactViews(string $viewGroup) : <a href="../classes/Curlup.Request.html">\Curlup\Request</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Compacts all views in the given view group. See CouchDB documentation
+for more details.</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$viewGroup</h4>
+<code>string</code><p>View group</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Curlup.Request.html">\Curlup\Request</a></code></div>
+</div></div>
+</div>
+<a id="method_deleteDocument"></a><div class="element clickable method public method_deleteDocument" data-toggle="collapse" data-target=".method_deleteDocument .collapse">
+<h2>Delete the given document ID</h2>
+<pre>deleteDocument(string $id, string $rev) : <a href="../classes/Curlup.Request.html">\Curlup\Request</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Corresponds to the DELETE /<db>/<docId> API endpoint</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>string</code><p>Document ID</p></div>
+<div class="subelement argument">
+<h4>$rev</h4>
+<code>string</code><p>Revision ID to delete</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Curlup.Request.html">\Curlup\Request</a></code></div>
+</div></div>
+</div>
+<a id="method_designList"></a><div class="element clickable method public method_designList" data-toggle="collapse" data-target=".method_designList .collapse">
+<h2>Fetch results of a list function in a given design document</h2>
+<pre>designList(string $list, string $listDesignDocument, string $view, string $viewDesignDocument) : <a href="../classes/Curlup.Request.html">\Curlup\Request</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Corresponds to the GET /<db>/_design/<ddoc>/_list/<listId>/<viewId>/?<viewddoc> API endpoint</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$list</h4>
+<code>string</code><p>List function</p></div>
+<div class="subelement argument">
+<h4>$listDesignDocument</h4>
+<code>string</code><p>List design document</p></div>
+<div class="subelement argument">
+<h4>$view</h4>
+<code>string</code><p>View function</p></div>
+<div class="subelement argument">
+<h4>$viewDesignDocument</h4>
+<code>string</code><p>Optional view design document</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Curlup.Request.html">\Curlup\Request</a></code></div>
+</div></div>
+</div>
+<a id="method_designListMultiKey"></a><div class="element clickable method public method_designListMultiKey" data-toggle="collapse" data-target=".method_designListMultiKey .collapse">
+<h2>Fetch results of specific keys against a list function in a given design document</h2>
+<pre>designListMultiKey(array $keys, string $list, string $listDesignDocument, string $view, string $viewDesignDocument) : <a href="../classes/Curlup.Request.html">\Curlup\Request</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Corresponds to the POST /<db>/_design/<ddoc>/_list/<listId>/<viewId>/?<viewddoc> API endpoint</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$keys</h4>
+<code>\Curlup\$keys</code><p>Keys to query for</p></div>
+<div class="subelement argument">
+<h4>$list</h4>
+<code>string</code><p>List function</p></div>
+<div class="subelement argument">
+<h4>$listDesignDocument</h4>
+<code>string</code><p>List design document</p></div>
+<div class="subelement argument">
+<h4>$view</h4>
+<code>string</code><p>View function</p></div>
+<div class="subelement argument">
+<h4>$viewDesignDocument</h4>
+<code>string</code><p>Optional view design document</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Curlup.Request.html">\Curlup\Request</a></code></div>
+</div></div>
+</div>
+<a id="method_designShow"></a><div class="element clickable method public method_designShow" data-toggle="collapse" data-target=".method_designShow .collapse">
+<h2>Fetch results of a show function in a given design document against a given document</h2>
+<pre>designShow(string $show, string $showDesignDocument, string $docId) : <a href="../classes/Curlup.Request.html">\Curlup\Request</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Corresponds to the GET /<db>/_design/<ddoc>/_show/<showId>/<docId> API endpoint</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$show</h4>
+<code>string</code><p>Show function</p></div>
+<div class="subelement argument">
+<h4>$showDesignDocument</h4>
+<code>string</code><p>Show design document</p></div>
+<div class="subelement argument">
+<h4>$docId</h4>
+<code>string</code><p>Document ID to show</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Curlup.Request.html">\Curlup\Request</a></code></div>
+</div></div>
+</div>
+<a id="method_designView"></a><div class="element clickable method public method_designView" data-toggle="collapse" data-target=".method_designView .collapse">
+<h2>Fetch results of a view function in a given design document</h2>
+<pre>designView(string $view, string $viewDesignDocument) : <a href="../classes/Curlup.Request.html">\Curlup\Request</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Corresponds to the GET /<db>/_design/<ddoc>/_view/<viewId> API endpoint</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$view</h4>
+<code>string</code><p>View function</p></div>
+<div class="subelement argument">
+<h4>$viewDesignDocument</h4>
+<code>string</code><p>View design document</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Curlup.Request.html">\Curlup\Request</a></code></div>
+</div></div>
+</div>
+<a id="method_designViewMultiKey"></a><div class="element clickable method public method_designViewMultiKey" data-toggle="collapse" data-target=".method_designViewMultiKey .collapse">
+<h2>Fetch results of specific keys against a view function in a given design document</h2>
+<pre>designViewMultiKey(array $keys, string $view, string $viewDesignDocument) : <a href="../classes/Curlup.Request.html">\Curlup\Request</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"><p>Corresponds to the GET /<db>/_design/<ddoc>/_view/<viewId> API endpoint</p></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$keys</h4>
+<code>\Curlup\$keys</code><p>Keys to query for</p></div>
+<div class="subelement argument">
+<h4>$view</h4>
+<code>string</code><p>View function</p></div>
+<div class="subelement argument">
+<h4>$viewDesignDocument</h4>
+<code>string</code><p>View design document</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Curlup.Request.html">\Curlup\Request</a></code></div>
+</div></div>
+</div>
+<a id="method_ensureFullCommit"></a><div class="element clickable method public method_ensureFullCommit" data-toggle="collapse" data-target=".method_ensureFullCommit .collapse">
+<h2>Corresponds to the POST /&lt;db&gt;/_ensure_full_commit API endpoint</h2>
+<pre>ensureFullCommit() : <a href="../classes/Curlup.Request.html">\Curlup\Request</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Curlup.Request.html">\Curlup\Request</a></code></div>
+</div></div>
+</div>
+<a id="method_fetchAttachment"></a><div class="element clickable method public method_fetchAttachment" data-toggle="collapse" data-target=".method_fetchAttachment .collapse">
+<h2>Retrieve a single attachment from the database by attachment ID</h2>
+<pre>fetchAttachment(string $attachmentId, string $docId) : <a href="../classes/Curlup.Request.html">\Curlup\Request</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$attachmentId</h4>
+<code>string</code><p>Attachment id</p></div>
+<div class="subelement argument">
+<h4>$docId</h4>
+<code>string</code><p>Document for the attachment</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Curlup.Request.html">\Curlup\Request</a></code></div>
+</div></div>
+</div>
+<a id="method_fetchDocument"></a><div class="element clickable method public method_fetchDocument" data-toggle="collapse" data-target=".method_fetchDocument .collapse">
+<h2>Retrieve a single document from the database by document ID</h2>
+<pre>fetchDocument(string $id) : <a href="../classes/Curlup.Request.html">\Curlup\Request</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>string</code><p>Document ID</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Curlup.Request.html">\Curlup\Request</a></code></div>
+</div></div>
+</div>
+<a id="method_getCouchDb"></a><div class="element clickable method public method_getCouchDb" data-toggle="collapse" data-target=".method_getCouchDb .collapse">
+<h2>Get the underlying CouchDB instance</h2>
+<pre>getCouchDb() : <a href="../classes/Curlup.CouchDb.html">\Curlup\CouchDb</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Curlup.CouchDb.html">\Curlup\CouchDb</a></code></div>
+</div></div>
+</div>
+<a id="method_getDatabaseName"></a><div class="element clickable method public method_getDatabaseName" data-toggle="collapse" data-target=".method_getDatabaseName .collapse">
+<h2>Get the current database name</h2>
+<pre>getDatabaseName() : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code>string</code></div>
+</div></div>
+</div>
+<a id="method_postRawDocument"></a><div class="element clickable method public method_postRawDocument" data-toggle="collapse" data-target=".method_postRawDocument .collapse">
+<h2>POST a raw pre-encoded JSON document to the database</h2>
+<pre>postRawDocument(string $doc) : <a href="../classes/Curlup.Request.html">\Curlup\Request</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$doc</h4>
+<code>string</code><p>JSON-encoded document</p>
+</div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Curlup.Request.html">\Curlup\Request</a></code></div>
+</div></div>
+</div>
+<a id="method_putRawDocument"></a><div class="element clickable method public method_putRawDocument" data-toggle="collapse" data-target=".method_putRawDocument .collapse">
+<h2>PUT a raw pre-encoded JSON document to the database</h2>
+<pre>putRawDocument(string $doc, string $id) : <a href="../classes/Curlup.Request.html">\Curlup\Request</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$doc</h4>
+<code>string</code><p>JSON-encoded document</p>
+</div>
+<div class="subelement argument">
+<h4>$id</h4>
+<code>string</code><p>Document ID</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Curlup.Request.html">\Curlup\Request</a></code></div>
+</div></div>
+</div>
+<a id="method_saveAttachment"></a><div class="element clickable method public method_saveAttachment" data-toggle="collapse" data-target=".method_saveAttachment .collapse">
+<h2>Attach something to a document</h2>
+<pre>saveAttachment(string $attachmentBody, string $attachmentId, string $docId, string $rev) : <a href="../classes/Curlup.Request.html">\Curlup\Request</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$attachmentBody</h4>
+<code>string</code><p>Attachment body</p></div>
+<div class="subelement argument">
+<h4>$attachmentId</h4>
+<code>string</code><p>Attachment ID</p></div>
+<div class="subelement argument">
+<h4>$docId</h4>
+<code>string</code><p>Document ID to attach to</p></div>
+<div class="subelement argument">
+<h4>$rev</h4>
+<code>string</code><p>Document revision to attach to</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Curlup.Request.html">\Curlup\Request</a></code></div>
+</div></div>
+</div>
+<a id="method_saveDocument"></a><div class="element clickable method public method_saveDocument" data-toggle="collapse" data-target=".method_saveDocument .collapse">
+<h2>Persist a document to the database</h2>
+<pre>saveDocument(\Curlup\$doc $doc) : <a href="../classes/Curlup.Request.html">\Curlup\Request</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$doc</h4>
+<code>\Curlup\$doc</code><p>Array or object representation of a document</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Curlup.Request.html">\Curlup\Request</a></code></div>
+</div></div>
+</div>
+<a id="method_tempView"></a><div class="element clickable method public method_tempView" data-toggle="collapse" data-target=".method_tempView .collapse">
+<h2>Corresponds to the /&lt;db&gt;/_temp_view API endpoint</h2>
+<pre>tempView(string $viewFunction) : <a href="../classes/Curlup.Request.html">\Curlup\Request</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Parameters</h3>
+<div class="subelement argument">
+<h4>$viewFunction</h4>
+<code>string</code><p>View function to execute on the server</p></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Curlup.Request.html">\Curlup\Request</a></code></div>
+</div></div>
+</div>
+<a id="method_viewCleanup"></a><div class="element clickable method public method_viewCleanup" data-toggle="collapse" data-target=".method_viewCleanup .collapse">
+<h2>Corresponds to the /&lt;db&gt;/_view_cleanup API endpoint</h2>
+<pre>viewCleanup() : <a href="../classes/Curlup.Request.html">\Curlup\Request</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description">
+<div class="long_description"></div>
+<h3>Returns</h3>
+<div class="subelement response"><code><a href="../classes/Curlup.Request.html">\Curlup\Request</a></code></div>
+</div></div>
+</div>
+<h3>
+<i class="icon-custom icon-property"></i> Properties</h3>
+<a id="property_couchDb"> </a><div class="element clickable property protected property_couchDb" data-toggle="collapse" data-target=".property_couchDb .collapse">
+<h2>CouchDB instance</h2>
+<pre>$couchDb : <a href="../classes/Curlup.CouchDb.html">\Curlup\CouchDb</a></pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+<a id="property_databaseName"> </a><div class="element clickable property protected property_databaseName" data-toggle="collapse" data-target=".property_databaseName .collapse">
+<h2>Database name</h2>
+<pre>$databaseName : string</pre>
+<div class="labels"></div>
+<div class="row collapse"><div class="detail-description"><div class="long_description"></div></div></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by <a href="http://glyphicons.com/">Glyphicons</a>.<br>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor 2.0.0a10</a> and<br>
+            generated on 2012-11-06T04:00:37Z.<br></footer></div>
+</div>
+</body>
+</html>

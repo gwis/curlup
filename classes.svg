@@ -20,105 +20,105 @@
 <path fill="none" stroke="gray" d="M268,-20C268,-14 274,-8 280,-8"/>
 <text text-anchor="middle" x="414" y="-446.1" font-family="Times Roman,serif" font-size="11.00" fill="gray">Curlup</text>
 </g>
+<!-- \\Curlup\\Database -->
+<g id="node2" class="node"><title>\\Curlup\\Database</title>
+<a xlink:href="Database.html" xlink:title="Database" target="_parent">
+<polygon fill="none" stroke="black" points="524,-430 454,-430 454,-394 524,-394 524,-430"/>
+<text text-anchor="middle" x="489" y="-409.1" font-family="Courier,monospace" font-size="11.00">Database</text>
+</a>
+</g>
 <!-- \\Curlup\\Exception -->
-<g id="node2" class="node"><title>\\Curlup\\Exception</title>
-<a xlink:href="db_Curlup_Exception.html" xlink:title="Exception" target="_parent">
-<polygon fill="none" stroke="black" points="353,-376 277,-376 277,-340 353,-340 353,-376"/>
-<text text-anchor="middle" x="315" y="-355.1" font-family="Courier,monospace" font-size="11.00">Exception</text>
+<g id="node3" class="node"><title>\\Curlup\\Exception</title>
+<a xlink:href="Exception.html" xlink:title="Exception" target="_parent">
+<polygon fill="none" stroke="black" points="353,-349 277,-349 277,-313 353,-313 353,-349"/>
+<text text-anchor="middle" x="315" y="-328.1" font-family="Courier,monospace" font-size="11.00">Exception</text>
 </a>
 </g>
 <!-- \\RuntimeException -->
 <g id="node13" class="node"><title>\\RuntimeException</title>
-<ellipse fill="none" stroke="black" cx="102" cy="-358" rx="100.953" ry="18"/>
-<text text-anchor="middle" x="102" y="-353.9" font-family="Times Roman,serif" font-size="14.00" fill="gray">\RuntimeException</text>
+<ellipse fill="none" stroke="black" cx="102" cy="-331" rx="100.953" ry="18"/>
+<text text-anchor="middle" x="102" y="-326.9" font-family="Times Roman,serif" font-size="14.00" fill="gray">\RuntimeException</text>
 </g>
 <!-- \\Curlup\\Exception&#45;&gt;\\RuntimeException -->
 <g id="edge3" class="edge"><title>\\Curlup\\Exception&#45;&gt;\\RuntimeException</title>
-<path fill="none" stroke="black" d="M276.427,-358C258.57,-358 236.339,-358 213.791,-358"/>
-<polygon fill="none" stroke="black" points="213.774,-354.5 203.774,-358 213.774,-361.5 213.774,-354.5"/>
+<path fill="none" stroke="black" d="M276.427,-331C258.57,-331 236.339,-331 213.791,-331"/>
+<polygon fill="none" stroke="black" points="213.774,-327.5 203.774,-331 213.774,-334.5 213.774,-327.5"/>
 </g>
-<!-- \\Curlup\\CurlException -->
-<g id="node3" class="node"><title>\\Curlup\\CurlException</title>
-<a xlink:href="db_Curlup_CurlException.html" xlink:title="CurlException" target="_parent">
-<polygon fill="none" stroke="black" points="541,-430 437,-430 437,-394 541,-394 541,-430"/>
-<text text-anchor="middle" x="489" y="-409.1" font-family="Courier,monospace" font-size="11.00">CurlException</text>
-</a>
-</g>
-<!-- \\Curlup\\CurlException&#45;&gt;\\Curlup\\Exception -->
-<g id="edge5" class="edge"><title>\\Curlup\\CurlException&#45;&gt;\\Curlup\\Exception</title>
-<path fill="none" stroke="black" d="M436.794,-395.798C413.512,-388.573 386.25,-380.112 363.427,-373.029"/>
-<polygon fill="none" stroke="black" points="364.203,-369.605 353.615,-369.984 362.128,-376.291 364.203,-369.605"/>
-</g>
-<!-- \\Curlup\\CouchDb -->
-<g id="node4" class="node"><title>\\Curlup\\CouchDb</title>
-<a xlink:href="db_Curlup_CouchDb.html" xlink:title="CouchDb" target="_parent">
-<polygon fill="none" stroke="black" points="521,-376 457,-376 457,-340 521,-340 521,-376"/>
-<text text-anchor="middle" x="489" y="-355.1" font-family="Courier,monospace" font-size="11.00">CouchDb</text>
+<!-- \\Curlup\\Request -->
+<g id="node4" class="node"><title>\\Curlup\\Request</title>
+<a xlink:href="Request.html" xlink:title="Request" target="_parent">
+<polygon fill="none" stroke="black" points="521,-52 457,-52 457,-16 521,-16 521,-52"/>
+<text text-anchor="middle" x="489" y="-31.1" font-family="Courier,monospace" font-size="11.00">Request</text>
 </a>
 </g>
 <!-- \\Curlup\\Message -->
-<g id="node5" class="node"><title>\\Curlup\\Message</title>
-<a xlink:href="db_Curlup_Message.html" xlink:title="Message" target="_parent">
+<g id="node11" class="node"><title>\\Curlup\\Message</title>
+<a xlink:href="Message.html" xlink:title="Message" target="_parent">
 <polygon fill="none" stroke="black" points="347,-133 283,-133 283,-97 347,-97 347,-133"/>
 <text text-anchor="middle" x="315" y="-112.1" font-family="Courier,monospace" font-size="11.00">Message</text>
 </a>
 </g>
-<!-- \\Curlup\\Response -->
-<g id="node6" class="node"><title>\\Curlup\\Response</title>
-<a xlink:href="db_Curlup_Response.html" xlink:title="Response" target="_parent">
-<polygon fill="none" stroke="black" points="524,-106 454,-106 454,-70 524,-70 524,-106"/>
-<text text-anchor="middle" x="489" y="-85.1" font-family="Courier,monospace" font-size="11.00">Response</text>
+<!-- \\Curlup\\Request&#45;&gt;\\Curlup\\Message -->
+<g id="edge5" class="edge"><title>\\Curlup\\Request&#45;&gt;\\Curlup\\Message</title>
+<path fill="none" stroke="black" d="M456.82,-47.4405C446.893,-51.6805 435.956,-56.4478 426,-61 402.845,-71.5866 377.276,-83.9772 356.519,-94.2173"/>
+<polygon fill="none" stroke="black" points="354.757,-91.1841 347.348,-98.7567 357.862,-97.4578 354.757,-91.1841"/>
+</g>
+<!-- \\Curlup\\CurlException -->
+<g id="node5" class="node"><title>\\Curlup\\CurlException</title>
+<a xlink:href="CurlException.html" xlink:title="CurlException" target="_parent">
+<polygon fill="none" stroke="black" points="541,-376 437,-376 437,-340 541,-340 541,-376"/>
+<text text-anchor="middle" x="489" y="-355.1" font-family="Courier,monospace" font-size="11.00">CurlException</text>
 </a>
 </g>
-<!-- \\Curlup\\Response&#45;&gt;\\Curlup\\Message -->
-<g id="edge7" class="edge"><title>\\Curlup\\Response&#45;&gt;\\Curlup\\Message</title>
-<path fill="none" stroke="black" d="M453.369,-93.529C425.442,-97.8625 386.513,-103.903 357.058,-108.474"/>
-<polygon fill="none" stroke="black" points="356.413,-105.032 347.068,-110.024 357.486,-111.949 356.413,-105.032"/>
-</g>
-<!-- \\Curlup\\Lucene -->
-<g id="node7" class="node"><title>\\Curlup\\Lucene</title>
-<a xlink:href="db_Curlup_Lucene.html" xlink:title="Lucene" target="_parent">
-<polygon fill="none" stroke="black" points="517,-268 461,-268 461,-232 517,-232 517,-268"/>
-<text text-anchor="middle" x="489" y="-247.1" font-family="Courier,monospace" font-size="11.00">Lucene</text>
-</a>
+<!-- \\Curlup\\CurlException&#45;&gt;\\Curlup\\Exception -->
+<g id="edge7" class="edge"><title>\\Curlup\\CurlException&#45;&gt;\\Curlup\\Exception</title>
+<path fill="none" stroke="black" d="M436.794,-349.899C413.616,-346.303 386.494,-342.094 363.735,-338.562"/>
+<polygon fill="none" stroke="black" points="364.033,-335.067 353.615,-336.992 362.96,-341.984 364.033,-335.067"/>
 </g>
 <!-- \\Curlup\\RequestPool -->
-<g id="node8" class="node"><title>\\Curlup\\RequestPool</title>
-<a xlink:href="db_Curlup_RequestPool.html" xlink:title="RequestPool" target="_parent">
-<polygon fill="none" stroke="black" points="534,-214 444,-214 444,-178 534,-178 534,-214"/>
-<text text-anchor="middle" x="489" y="-193.1" font-family="Courier,monospace" font-size="11.00">RequestPool</text>
+<g id="node6" class="node"><title>\\Curlup\\RequestPool</title>
+<a xlink:href="RequestPool.html" xlink:title="RequestPool" target="_parent">
+<polygon fill="none" stroke="black" points="534,-268 444,-268 444,-232 534,-232 534,-268"/>
+<text text-anchor="middle" x="489" y="-247.1" font-family="Courier,monospace" font-size="11.00">RequestPool</text>
 </a>
-</g>
-<!-- \\Curlup\\Request -->
-<g id="node9" class="node"><title>\\Curlup\\Request</title>
-<a xlink:href="db_Curlup_Request.html" xlink:title="Request" target="_parent">
-<polygon fill="none" stroke="black" points="521,-160 457,-160 457,-124 521,-124 521,-160"/>
-<text text-anchor="middle" x="489" y="-139.1" font-family="Courier,monospace" font-size="11.00">Request</text>
-</a>
-</g>
-<!-- \\Curlup\\Request&#45;&gt;\\Curlup\\Message -->
-<g id="edge9" class="edge"><title>\\Curlup\\Request&#45;&gt;\\Curlup\\Message</title>
-<path fill="none" stroke="black" d="M456.68,-136.985C428.601,-132.628 387.743,-126.288 357.11,-121.534"/>
-<polygon fill="none" stroke="black" points="357.566,-118.063 347.147,-119.988 356.492,-124.98 357.566,-118.063"/>
 </g>
 <!-- \\Curlup\\CouchDbException -->
-<g id="node10" class="node"><title>\\Curlup\\CouchDbException</title>
-<a xlink:href="db_Curlup_CouchDbException.html" xlink:title="CouchDbException" target="_parent">
+<g id="node7" class="node"><title>\\Curlup\\CouchDbException</title>
+<a xlink:href="CouchDbException.html" xlink:title="CouchDbException" target="_parent">
 <polygon fill="none" stroke="black" points="551,-322 427,-322 427,-286 551,-286 551,-322"/>
 <text text-anchor="middle" x="489" y="-301.1" font-family="Courier,monospace" font-size="11.00">CouchDbException</text>
 </a>
 </g>
 <!-- \\Curlup\\CouchDbException&#45;&gt;\\Curlup\\Exception -->
-<g id="edge11" class="edge"><title>\\Curlup\\CouchDbException&#45;&gt;\\Curlup\\Exception</title>
-<path fill="none" stroke="black" d="M430.576,-322.131C408.672,-328.929 384.049,-336.571 363.177,-343.049"/>
-<polygon fill="none" stroke="black" points="362.081,-339.724 353.568,-346.031 364.156,-346.409 362.081,-339.724"/>
+<g id="edge9" class="edge"><title>\\Curlup\\CouchDbException&#45;&gt;\\Curlup\\Exception</title>
+<path fill="none" stroke="black" d="M426.182,-313.748C405.636,-316.936 383.135,-320.427 363.783,-323.43"/>
+<polygon fill="none" stroke="black" points="363.029,-320.005 353.684,-324.997 364.102,-326.923 363.029,-320.005"/>
 </g>
-<!-- \\Curlup\\Database -->
-<g id="node11" class="node"><title>\\Curlup\\Database</title>
-<a xlink:href="db_Curlup_Database.html" xlink:title="Database" target="_parent">
-<polygon fill="none" stroke="black" points="524,-52 454,-52 454,-16 524,-16 524,-52"/>
-<text text-anchor="middle" x="489" y="-31.1" font-family="Courier,monospace" font-size="11.00">Database</text>
+<!-- \\Curlup\\CouchDb -->
+<g id="node8" class="node"><title>\\Curlup\\CouchDb</title>
+<a xlink:href="CouchDb.html" xlink:title="CouchDb" target="_parent">
+<polygon fill="none" stroke="black" points="521,-160 457,-160 457,-124 521,-124 521,-160"/>
+<text text-anchor="middle" x="489" y="-139.1" font-family="Courier,monospace" font-size="11.00">CouchDb</text>
 </a>
+</g>
+<!-- \\Curlup\\Lucene -->
+<g id="node9" class="node"><title>\\Curlup\\Lucene</title>
+<a xlink:href="Lucene.html" xlink:title="Lucene" target="_parent">
+<polygon fill="none" stroke="black" points="517,-106 461,-106 461,-70 517,-70 517,-106"/>
+<text text-anchor="middle" x="489" y="-85.1" font-family="Courier,monospace" font-size="11.00">Lucene</text>
+</a>
+</g>
+<!-- \\Curlup\\Response -->
+<g id="node10" class="node"><title>\\Curlup\\Response</title>
+<a xlink:href="Response.html" xlink:title="Response" target="_parent">
+<polygon fill="none" stroke="black" points="524,-214 454,-214 454,-178 524,-178 524,-214"/>
+<text text-anchor="middle" x="489" y="-193.1" font-family="Courier,monospace" font-size="11.00">Response</text>
+</a>
+</g>
+<!-- \\Curlup\\Response&#45;&gt;\\Curlup\\Message -->
+<g id="edge11" class="edge"><title>\\Curlup\\Response&#45;&gt;\\Curlup\\Message</title>
+<path fill="none" stroke="black" d="M453.219,-181.017C444.292,-177.183 434.766,-173.008 426,-169 402.845,-158.413 377.276,-146.023 356.519,-135.783"/>
+<polygon fill="none" stroke="black" points="357.862,-132.542 347.348,-131.243 354.757,-138.816 357.862,-132.542"/>
 </g>
 </g>
 </svg>
