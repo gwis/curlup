@@ -1,11 +1,11 @@
 {
-    "name": "gwis/curlup",
+    "name": "uhds/curlup",
     "description": "A simple cURL-based CouchDB library",
     "license": "BSD-2-Clause",
     "authors": [
         {
             "name": "Gordon Stratton",
-            "email": "gordon.stratton@gmail.com"
+            "email": "gordon.stratton@oregonstate.edu"
         }
     ],
     "require-dev": {
